@@ -1,2 +1,2 @@
 # lakehouse-go-sdk
-This is used for lakehouse Go SDK
+This is used for watsonx.data Go SDK
