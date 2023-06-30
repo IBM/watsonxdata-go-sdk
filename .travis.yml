@@ -7,10 +7,6 @@ go:
 - 1.19.x
 - 1.20.x
 
-          else
-            echo "Skipping systest stage for PR build."
-          fi
-
 notifications:
   email: true
 
@@ -29,7 +25,7 @@ install:
 script:
   - make travis-ci
 
-To enable semantic-release, uncomment these sections.
+#To enable semantic-release, uncomment these sections.
 before_deploy:
   - nvm install 14
   - npm install
