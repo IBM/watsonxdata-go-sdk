@@ -26,6 +26,10 @@ script:
 before_deploy:
   - nvm install 14
   - npm install
+  - npm install @semantic-release/changelog
+  - npm install @semantic-release/exec
+  - npm install @semantic-release/git
+  - npm install @semantic-release/github
   - pip install --user bump2version
 
 deploy:
