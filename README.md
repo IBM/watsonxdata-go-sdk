@@ -40,7 +40,7 @@ The IBM Cloud Watsonx.data Go SDK allows developers to programmatically interact
 
 Service Name | Package name 
 --- | --- 
-[Watsonx.data](https://cloud.ibm.com/apidocs/watsonxdata) | watsonxdatav1
+[Watsonx.data](https://cloud.ibm.com/apidocs/watsonxdata) | watsonxdatav2
 
 ## Prerequisites
 
@@ -60,20 +60,20 @@ Here is an example:
 
 ```go
 import (
-	"github.com/IBM/watsonxdata-go-sdk/watsonxdatav1"
+	"github.com/IBM/watsonxdata-go-sdk/watsonxdatav2"
 )
 ```
 Next, run `go build` or `go mod tidy` to download and install the new dependencies and update your application's
 `go.mod` file.  
 
-In the example above, the `watsonxdatav1` part of the import path is the package name
+In the example above, the `watsonxdatav2` part of the import path is the package name
 associated with the Watsonx.data service.
 See the service table above to find the approprate package name for the services used by your application.
 
 ### `go get` command  
 Alternatively, you can use the `go get` command to download and install the appropriate packages needed by your application:
 ```
-go get -u github.com/IBM/watsonxdata-go-sdk/watsonxdatav1
+go get -u github.com/IBM/watsonxdata-go-sdk/watsonxdatav2
 ```
 Be sure to use the appropriate package name from the service table above for the services used by your application.
 
