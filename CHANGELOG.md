@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.1.0...v0.2.0) (2023-12-07)
+
+
+### Features
+
+* add v2 sdk ([b8c167c](https://github.com/IBM/watsonxdata-go-sdk/commit/b8c167cdaa03fdd8d8c8e48d3623edc1828b61a1))
+
 # [0.1.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.0.1...v0.1.0) (2023-06-30)
 
 
