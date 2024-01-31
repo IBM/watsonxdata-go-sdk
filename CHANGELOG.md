@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.2.0...v0.3.0) (2024-01-31)
+
+
+### Features
+
+* **v2 SDK:** Update v2 SDK with new v2 API definition ([#2](https://github.com/IBM/watsonxdata-go-sdk/issues/2)) ([342b85b](https://github.com/IBM/watsonxdata-go-sdk/commit/342b85b5b48d70370e8f05c97f5a40638075a3a1))
+
 # [0.2.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.1.0...v0.2.0) (2023-12-07)
 
 
