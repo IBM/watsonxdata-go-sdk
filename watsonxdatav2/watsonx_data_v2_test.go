@@ -68,14 +68,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		Context(`Using external config, construct service client instances`, func() {
 			// Map containing environment variables used in testing.
 			var testEnvironment = map[string]string{
-				"WATSONX_DATA_URL": "https://watsonxdatav2/api",
+				"WATSONX_DATA_URL":       "https://watsonxdatav2/api",
 				"WATSONX_DATA_AUTH_TYPE": "noauth",
 			}
 
 			It(`Create service client using external config successfully`, func() {
 				SetTestEnvironment(testEnvironment)
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{
-				})
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{})
 				Expect(watsonxDataService).ToNot(BeNil())
 				Expect(serviceErr).To(BeNil())
 				ClearTestEnvironment(testEnvironment)
@@ -104,8 +103,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			})
 			It(`Create service client using external config and set url programatically successfully`, func() {
 				SetTestEnvironment(testEnvironment)
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{
-				})
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{})
 				err := watsonxDataService.SetServiceURL("https://testService/api")
 				Expect(err).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
@@ -123,13 +121,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		Context(`Using external config, construct service client instances with error: Invalid Auth`, func() {
 			// Map containing environment variables used in testing.
 			var testEnvironment = map[string]string{
-				"WATSONX_DATA_URL": "https://watsonxdatav2/api",
+				"WATSONX_DATA_URL":       "https://watsonxdatav2/api",
 				"WATSONX_DATA_AUTH_TYPE": "someOtherAuth",
 			}
 
 			SetTestEnvironment(testEnvironment)
-			watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{
-			})
+			watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2UsingExternalConfig(&watsonxdatav2.WatsonxDataV2Options{})
 
 			It(`Instantiate service client with error`, func() {
 				Expect(watsonxDataService).To(BeNil())
@@ -140,7 +137,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		Context(`Using external config, construct service client instances with error: Invalid URL`, func() {
 			// Map containing environment variables used in testing.
 			var testEnvironment = map[string]string{
-				"WATSONX_DATA_AUTH_TYPE":   "NOAuth",
+				"WATSONX_DATA_AUTH_TYPE": "NOAuth",
 			}
 
 			SetTestEnvironment(testEnvironment)
@@ -30290,7 +30287,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				listIngestionJobsOptionsModel := &watsonxdatav2.ListIngestionJobsOptions{
 					AuthInstanceID: core.StringPtr("testString"),
-					JobsPerPage: core.Int64Ptr(int64(1)),
+					JobsPerPage:    core.Int64Ptr(int64(1)),
 				}
 
 				pager, err := watsonxDataService.NewIngestionJobsPager(listIngestionJobsOptionsModel)
@@ -30316,7 +30313,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				listIngestionJobsOptionsModel := &watsonxdatav2.ListIngestionJobsOptions{
 					AuthInstanceID: core.StringPtr("testString"),
-					JobsPerPage: core.Int64Ptr(int64(1)),
+					JobsPerPage:    core.Int64Ptr(int64(1)),
 				}
 
 				pager, err := watsonxDataService.NewIngestionJobsPager(listIngestionJobsOptionsModel)
@@ -36646,7 +36643,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.Catalog = nil
 			model.Configuration = nil
 			model.Jvm = nil
-			model.EventListener = []string{}
+			model.EventListener = nil
 
 			b, err := json.Marshal(model)
 			Expect(err).To(BeNil())
