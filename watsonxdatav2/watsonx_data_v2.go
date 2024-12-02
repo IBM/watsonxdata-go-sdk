@@ -3224,7 +3224,7 @@ func (watsonxData *WatsonxDataV2) GetPrestissimoEngineCatalogWithContext(ctx con
 	}
 
 	pathParamsMap := map[string]string{
-		"engine_id": *getPrestissimoEngineCatalogOptions.EngineID,
+		"engine_id":  *getPrestissimoEngineCatalogOptions.EngineID,
 		"catalog_id": *getPrestissimoEngineCatalogOptions.CatalogID,
 	}
 
@@ -4369,7 +4369,7 @@ func (watsonxData *WatsonxDataV2) GetPrestoEngineCatalogWithContext(ctx context.
 	}
 
 	pathParamsMap := map[string]string{
-		"engine_id": *getPrestoEngineCatalogOptions.EngineID,
+		"engine_id":  *getPrestoEngineCatalogOptions.EngineID,
 		"catalog_id": *getPrestoEngineCatalogOptions.CatalogID,
 	}
 
@@ -6792,7 +6792,7 @@ func (watsonxData *WatsonxDataV2) GetSparkEngineApplicationStatusWithContext(ctx
 	}
 
 	pathParamsMap := map[string]string{
-		"engine_id": *getSparkEngineApplicationStatusOptions.EngineID,
+		"engine_id":      *getSparkEngineApplicationStatusOptions.EngineID,
 		"application_id": *getSparkEngineApplicationStatusOptions.ApplicationID,
 	}
 
@@ -7084,7 +7084,7 @@ func (watsonxData *WatsonxDataV2) GetSparkEngineCatalogWithContext(ctx context.C
 	}
 
 	pathParamsMap := map[string]string{
-		"engine_id": *getSparkEngineCatalogOptions.EngineID,
+		"engine_id":  *getSparkEngineCatalogOptions.EngineID,
 		"catalog_id": *getSparkEngineCatalogOptions.CatalogID,
 	}
 
@@ -7985,7 +7985,7 @@ func (watsonxData *WatsonxDataV2) DeleteSchemaWithContext(ctx context.Context, d
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *deleteSchemaOptions.CatalogID,
-		"schema_id": *deleteSchemaOptions.SchemaID,
+		"schema_id":  *deleteSchemaOptions.SchemaID,
 	}
 
 	builder := core.NewRequestBuilder(core.DELETE)
@@ -8050,7 +8050,7 @@ func (watsonxData *WatsonxDataV2) ListTablesWithContext(ctx context.Context, lis
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *listTablesOptions.CatalogID,
-		"schema_id": *listTablesOptions.SchemaID,
+		"schema_id":  *listTablesOptions.SchemaID,
 	}
 
 	builder := core.NewRequestBuilder(core.GET)
@@ -8125,8 +8125,8 @@ func (watsonxData *WatsonxDataV2) GetTableWithContext(ctx context.Context, getTa
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *getTableOptions.CatalogID,
-		"schema_id": *getTableOptions.SchemaID,
-		"table_id": *getTableOptions.TableID,
+		"schema_id":  *getTableOptions.SchemaID,
+		"table_id":   *getTableOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.GET)
@@ -8204,8 +8204,8 @@ func (watsonxData *WatsonxDataV2) DeleteTableWithContext(ctx context.Context, de
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *deleteTableOptions.CatalogID,
-		"schema_id": *deleteTableOptions.SchemaID,
-		"table_id": *deleteTableOptions.TableID,
+		"schema_id":  *deleteTableOptions.SchemaID,
+		"table_id":   *deleteTableOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.DELETE)
@@ -8273,8 +8273,8 @@ func (watsonxData *WatsonxDataV2) UpdateTableWithContext(ctx context.Context, up
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *updateTableOptions.CatalogID,
-		"schema_id": *updateTableOptions.SchemaID,
-		"table_id": *updateTableOptions.TableID,
+		"schema_id":  *updateTableOptions.SchemaID,
+		"table_id":   *updateTableOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.PATCH)
@@ -8359,8 +8359,8 @@ func (watsonxData *WatsonxDataV2) ListColumnsWithContext(ctx context.Context, li
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *listColumnsOptions.CatalogID,
-		"schema_id": *listColumnsOptions.SchemaID,
-		"table_id": *listColumnsOptions.TableID,
+		"schema_id":  *listColumnsOptions.SchemaID,
+		"table_id":   *listColumnsOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.GET)
@@ -8435,8 +8435,8 @@ func (watsonxData *WatsonxDataV2) CreateColumnsWithContext(ctx context.Context, 
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *createColumnsOptions.CatalogID,
-		"schema_id": *createColumnsOptions.SchemaID,
-		"table_id": *createColumnsOptions.TableID,
+		"schema_id":  *createColumnsOptions.SchemaID,
+		"table_id":   *createColumnsOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.POST)
@@ -8522,9 +8522,9 @@ func (watsonxData *WatsonxDataV2) DeleteColumnWithContext(ctx context.Context, d
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *deleteColumnOptions.CatalogID,
-		"schema_id": *deleteColumnOptions.SchemaID,
-		"table_id": *deleteColumnOptions.TableID,
-		"column_id": *deleteColumnOptions.ColumnID,
+		"schema_id":  *deleteColumnOptions.SchemaID,
+		"table_id":   *deleteColumnOptions.TableID,
+		"column_id":  *deleteColumnOptions.ColumnID,
 	}
 
 	builder := core.NewRequestBuilder(core.DELETE)
@@ -8589,9 +8589,9 @@ func (watsonxData *WatsonxDataV2) UpdateColumnWithContext(ctx context.Context, u
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *updateColumnOptions.CatalogID,
-		"schema_id": *updateColumnOptions.SchemaID,
-		"table_id": *updateColumnOptions.TableID,
-		"column_id": *updateColumnOptions.ColumnID,
+		"schema_id":  *updateColumnOptions.SchemaID,
+		"table_id":   *updateColumnOptions.TableID,
+		"column_id":  *updateColumnOptions.ColumnID,
 	}
 
 	builder := core.NewRequestBuilder(core.PATCH)
@@ -8673,8 +8673,8 @@ func (watsonxData *WatsonxDataV2) ListTableSnapshotsWithContext(ctx context.Cont
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *listTableSnapshotsOptions.CatalogID,
-		"schema_id": *listTableSnapshotsOptions.SchemaID,
-		"table_id": *listTableSnapshotsOptions.TableID,
+		"schema_id":  *listTableSnapshotsOptions.SchemaID,
+		"table_id":   *listTableSnapshotsOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.GET)
@@ -8749,8 +8749,8 @@ func (watsonxData *WatsonxDataV2) RollbackTableWithContext(ctx context.Context, 
 
 	pathParamsMap := map[string]string{
 		"catalog_id": *rollbackTableOptions.CatalogID,
-		"schema_id": *rollbackTableOptions.SchemaID,
-		"table_id": *rollbackTableOptions.TableID,
+		"schema_id":  *rollbackTableOptions.SchemaID,
+		"table_id":   *rollbackTableOptions.TableID,
 	}
 
 	builder := core.NewRequestBuilder(core.POST)
@@ -9362,7 +9362,7 @@ func (watsonxData *WatsonxDataV2) ListMilvusDatabaseCollectionsWithContext(ctx c
 	}
 
 	pathParamsMap := map[string]string{
-		"service_id": *listMilvusDatabaseCollectionsOptions.ServiceID,
+		"service_id":  *listMilvusDatabaseCollectionsOptions.ServiceID,
 		"database_id": *listMilvusDatabaseCollectionsOptions.DatabaseID,
 	}
 
@@ -10778,24 +10778,24 @@ const (
 	BucketRegistration_BucketType_AdlsGen1 = "adls_gen1"
 	BucketRegistration_BucketType_AdlsGen2 = "adls_gen2"
 	BucketRegistration_BucketType_AmazonS3 = "amazon_s3"
-	BucketRegistration_BucketType_AwsS3 = "aws_s3"
+	BucketRegistration_BucketType_AwsS3    = "aws_s3"
 	BucketRegistration_BucketType_GoogleCs = "google_cs"
-	BucketRegistration_BucketType_IbmCeph = "ibm_ceph"
-	BucketRegistration_BucketType_IbmCos = "ibm_cos"
-	BucketRegistration_BucketType_Minio = "minio"
+	BucketRegistration_BucketType_IbmCeph  = "ibm_ceph"
+	BucketRegistration_BucketType_IbmCos   = "ibm_cos"
+	BucketRegistration_BucketType_Minio    = "minio"
 )
 
 // Constants associated with the BucketRegistration.ManagedBy property.
 // managed by.
 const (
 	BucketRegistration_ManagedBy_Customer = "customer"
-	BucketRegistration_ManagedBy_Ibm = "ibm"
+	BucketRegistration_ManagedBy_Ibm      = "ibm"
 )
 
 // Constants associated with the BucketRegistration.State property.
 // mark bucket active or inactive.
 const (
-	BucketRegistration_State_Active = "active"
+	BucketRegistration_State_Active   = "active"
 	BucketRegistration_State_Inactive = "inactive"
 )
 
@@ -11098,7 +11098,7 @@ type Catalog struct {
 // Managed by.
 const (
 	Catalog_ManagedBy_Customer = "customer"
-	Catalog_ManagedBy_Ibm = "ibm"
+	Catalog_ManagedBy_Ibm      = "ibm"
 )
 
 // UnmarshalCatalog unmarshals an instance of Catalog from the specified map of raw messages.
@@ -11468,26 +11468,26 @@ type CreateBucketRegistrationOptions struct {
 const (
 	CreateBucketRegistrationOptions_BucketType_AdlsGen1 = "adls_gen1"
 	CreateBucketRegistrationOptions_BucketType_AdlsGen2 = "adls_gen2"
-	CreateBucketRegistrationOptions_BucketType_AwsS3 = "aws_s3"
+	CreateBucketRegistrationOptions_BucketType_AwsS3    = "aws_s3"
 	CreateBucketRegistrationOptions_BucketType_GoogleCs = "google_cs"
-	CreateBucketRegistrationOptions_BucketType_IbmCeph = "ibm_ceph"
-	CreateBucketRegistrationOptions_BucketType_IbmCos = "ibm_cos"
-	CreateBucketRegistrationOptions_BucketType_Minio = "minio"
+	CreateBucketRegistrationOptions_BucketType_IbmCeph  = "ibm_ceph"
+	CreateBucketRegistrationOptions_BucketType_IbmCos   = "ibm_cos"
+	CreateBucketRegistrationOptions_BucketType_Minio    = "minio"
 )
 
 // Constants associated with the CreateBucketRegistrationOptions.ManagedBy property.
 // managed by.
 const (
 	CreateBucketRegistrationOptions_ManagedBy_Customer = "customer"
-	CreateBucketRegistrationOptions_ManagedBy_Ibm = "ibm"
+	CreateBucketRegistrationOptions_ManagedBy_Ibm      = "ibm"
 )
 
 // NewCreateBucketRegistrationOptions : Instantiate CreateBucketRegistrationOptions
 func (*WatsonxDataV2) NewCreateBucketRegistrationOptions(bucketType string, description string, managedBy string) *CreateBucketRegistrationOptions {
 	return &CreateBucketRegistrationOptions{
-		BucketType: core.StringPtr(bucketType),
+		BucketType:  core.StringPtr(bucketType),
 		Description: core.StringPtr(description),
-		ManagedBy: core.StringPtr(managedBy),
+		ManagedBy:   core.StringPtr(managedBy),
 	}
 }
 
@@ -11584,10 +11584,10 @@ type CreateColumnsOptions struct {
 // NewCreateColumnsOptions : Instantiate CreateColumnsOptions
 func (*WatsonxDataV2) NewCreateColumnsOptions(engineID string, catalogID string, schemaID string, tableID string) *CreateColumnsOptions {
 	return &CreateColumnsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
 	}
 }
 
@@ -11670,7 +11670,7 @@ type CreateDatabaseRegistrationOptions struct {
 func (*WatsonxDataV2) NewCreateDatabaseRegistrationOptions(databaseDisplayName string, databaseType string) *CreateDatabaseRegistrationOptions {
 	return &CreateDatabaseRegistrationOptions{
 		DatabaseDisplayName: core.StringPtr(databaseDisplayName),
-		DatabaseType: core.StringPtr(databaseType),
+		DatabaseType:        core.StringPtr(databaseType),
 	}
 }
 
@@ -11763,7 +11763,7 @@ type CreateDb2EngineOptions struct {
 const (
 	CreateDb2EngineOptions_Origin_Discover = "discover"
 	CreateDb2EngineOptions_Origin_External = "external"
-	CreateDb2EngineOptions_Origin_Native = "native"
+	CreateDb2EngineOptions_Origin_Native   = "native"
 )
 
 // NewCreateDb2EngineOptions : Instantiate CreateDb2EngineOptions
@@ -11911,7 +11911,7 @@ type CreateExecuteQueryOptions struct {
 // NewCreateExecuteQueryOptions : Instantiate CreateExecuteQueryOptions
 func (*WatsonxDataV2) NewCreateExecuteQueryOptions(engineID string, sqlString string) *CreateExecuteQueryOptions {
 	return &CreateExecuteQueryOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		SqlString: core.StringPtr(sqlString),
 	}
 }
@@ -12022,14 +12022,14 @@ type CreateHdfsStorageOptions struct {
 func (*WatsonxDataV2) NewCreateHdfsStorageOptions(bucketDisplayName string, bucketType string, hmsThriftURI string, hmsThriftPort int64, coreSite string, hdfsSite string, kerberos string, catalogName string, catalogType string) *CreateHdfsStorageOptions {
 	return &CreateHdfsStorageOptions{
 		BucketDisplayName: core.StringPtr(bucketDisplayName),
-		BucketType: core.StringPtr(bucketType),
-		HmsThriftURI: core.StringPtr(hmsThriftURI),
-		HmsThriftPort: core.Int64Ptr(hmsThriftPort),
-		CoreSite: core.StringPtr(coreSite),
-		HdfsSite: core.StringPtr(hdfsSite),
-		Kerberos: core.StringPtr(kerberos),
-		CatalogName: core.StringPtr(catalogName),
-		CatalogType: core.StringPtr(catalogType),
+		BucketType:        core.StringPtr(bucketType),
+		HmsThriftURI:      core.StringPtr(hmsThriftURI),
+		HmsThriftPort:     core.Int64Ptr(hmsThriftPort),
+		CoreSite:          core.StringPtr(coreSite),
+		HdfsSite:          core.StringPtr(hdfsSite),
+		Kerberos:          core.StringPtr(kerberos),
+		CatalogName:       core.StringPtr(catalogName),
+		CatalogType:       core.StringPtr(catalogType),
 	}
 }
 
@@ -12204,8 +12204,8 @@ type CreateIngestionJobsLocalFilesOptions struct {
 // Constants associated with the CreateIngestionJobsLocalFilesOptions.SourceFileType property.
 // File format of source file.
 const (
-	CreateIngestionJobsLocalFilesOptions_SourceFileType_Csv = "csv"
-	CreateIngestionJobsLocalFilesOptions_SourceFileType_JSON = "json"
+	CreateIngestionJobsLocalFilesOptions_SourceFileType_Csv     = "csv"
+	CreateIngestionJobsLocalFilesOptions_SourceFileType_JSON    = "json"
 	CreateIngestionJobsLocalFilesOptions_SourceFileType_Parquet = "parquet"
 )
 
@@ -12214,9 +12214,9 @@ func (*WatsonxDataV2) NewCreateIngestionJobsLocalFilesOptions(authInstanceID str
 	return &CreateIngestionJobsLocalFilesOptions{
 		AuthInstanceID: core.StringPtr(authInstanceID),
 		SourceDataFile: sourceDataFile,
-		TargetTable: core.StringPtr(targetTable),
-		JobID: core.StringPtr(jobID),
-		Username: core.StringPtr(username),
+		TargetTable:    core.StringPtr(targetTable),
+		JobID:          core.StringPtr(jobID),
+		Username:       core.StringPtr(username),
 	}
 }
 
@@ -12346,19 +12346,19 @@ type CreateIngestionJobsOptions struct {
 // Constants associated with the CreateIngestionJobsOptions.SourceFileType property.
 // Source file types (parquet or csv or json).
 const (
-	CreateIngestionJobsOptions_SourceFileType_Csv = "csv"
-	CreateIngestionJobsOptions_SourceFileType_JSON = "json"
+	CreateIngestionJobsOptions_SourceFileType_Csv     = "csv"
+	CreateIngestionJobsOptions_SourceFileType_JSON    = "json"
 	CreateIngestionJobsOptions_SourceFileType_Parquet = "parquet"
 )
 
 // NewCreateIngestionJobsOptions : Instantiate CreateIngestionJobsOptions
 func (*WatsonxDataV2) NewCreateIngestionJobsOptions(authInstanceID string, jobID string, sourceDataFiles string, targetTable string, username string) *CreateIngestionJobsOptions {
 	return &CreateIngestionJobsOptions{
-		AuthInstanceID: core.StringPtr(authInstanceID),
-		JobID: core.StringPtr(jobID),
+		AuthInstanceID:  core.StringPtr(authInstanceID),
+		JobID:           core.StringPtr(jobID),
 		SourceDataFiles: core.StringPtr(sourceDataFiles),
-		TargetTable: core.StringPtr(targetTable),
-		Username: core.StringPtr(username),
+		TargetTable:     core.StringPtr(targetTable),
+		Username:        core.StringPtr(username),
 	}
 }
 
@@ -12580,9 +12580,9 @@ type CreateMilvusServiceOptions struct {
 // NewCreateMilvusServiceOptions : Instantiate CreateMilvusServiceOptions
 func (*WatsonxDataV2) NewCreateMilvusServiceOptions(bucketName string, origin string, rootPath string, serviceDisplayName string) *CreateMilvusServiceOptions {
 	return &CreateMilvusServiceOptions{
-		BucketName: core.StringPtr(bucketName),
-		Origin: core.StringPtr(origin),
-		RootPath: core.StringPtr(rootPath),
+		BucketName:         core.StringPtr(bucketName),
+		Origin:             core.StringPtr(origin),
+		RootPath:           core.StringPtr(rootPath),
 		ServiceDisplayName: core.StringPtr(serviceDisplayName),
 	}
 }
@@ -12796,7 +12796,7 @@ type CreateNetezzaEngineOptions struct {
 const (
 	CreateNetezzaEngineOptions_Origin_Discover = "discover"
 	CreateNetezzaEngineOptions_Origin_External = "external"
-	CreateNetezzaEngineOptions_Origin_Native = "native"
+	CreateNetezzaEngineOptions_Origin_Native   = "native"
 )
 
 // NewCreateNetezzaEngineOptions : Instantiate CreateNetezzaEngineOptions
@@ -12877,13 +12877,13 @@ type CreateOtherEngineOptions struct {
 const (
 	CreateOtherEngineOptions_Origin_Discover = "discover"
 	CreateOtherEngineOptions_Origin_External = "external"
-	CreateOtherEngineOptions_Origin_Native = "native"
+	CreateOtherEngineOptions_Origin_Native   = "native"
 )
 
 // NewCreateOtherEngineOptions : Instantiate CreateOtherEngineOptions
 func (*WatsonxDataV2) NewCreateOtherEngineOptions(engineDetails *OtherEngineDetailsBody, engineDisplayName string) *CreateOtherEngineOptions {
 	return &CreateOtherEngineOptions{
-		EngineDetails: engineDetails,
+		EngineDetails:     engineDetails,
 		EngineDisplayName: core.StringPtr(engineDisplayName),
 	}
 }
@@ -13014,7 +13014,7 @@ type CreatePrestissimoEngineOptions struct {
 const (
 	CreatePrestissimoEngineOptions_Origin_Discover = "discover"
 	CreatePrestissimoEngineOptions_Origin_External = "external"
-	CreatePrestissimoEngineOptions_Origin_Native = "native"
+	CreatePrestissimoEngineOptions_Origin_Native   = "native"
 )
 
 // NewCreatePrestissimoEngineOptions : Instantiate CreatePrestissimoEngineOptions
@@ -13168,7 +13168,7 @@ type CreatePrestoEngineOptions struct {
 const (
 	CreatePrestoEngineOptions_Origin_Discover = "discover"
 	CreatePrestoEngineOptions_Origin_External = "external"
-	CreatePrestoEngineOptions_Origin_Native = "native"
+	CreatePrestoEngineOptions_Origin_Native   = "native"
 )
 
 // NewCreatePrestoEngineOptions : Instantiate CreatePrestoEngineOptions
@@ -13259,15 +13259,15 @@ type CreatePreviewIngestionFileOptions struct {
 // Constants associated with the CreatePreviewIngestionFileOptions.SourceFileType property.
 // File format of source file(s).
 const (
-	CreatePreviewIngestionFileOptions_SourceFileType_Csv = "csv"
-	CreatePreviewIngestionFileOptions_SourceFileType_JSON = "json"
+	CreatePreviewIngestionFileOptions_SourceFileType_Csv     = "csv"
+	CreatePreviewIngestionFileOptions_SourceFileType_JSON    = "json"
 	CreatePreviewIngestionFileOptions_SourceFileType_Parquet = "parquet"
 )
 
 // NewCreatePreviewIngestionFileOptions : Instantiate CreatePreviewIngestionFileOptions
 func (*WatsonxDataV2) NewCreatePreviewIngestionFileOptions(authInstanceID string, sourceDataFiles string) *CreatePreviewIngestionFileOptions {
 	return &CreatePreviewIngestionFileOptions{
-		AuthInstanceID: core.StringPtr(authInstanceID),
+		AuthInstanceID:  core.StringPtr(authInstanceID),
 		SourceDataFiles: core.StringPtr(sourceDataFiles),
 	}
 }
@@ -13461,7 +13461,7 @@ type CreateSalIntegrationOptions struct {
 // NewCreateSalIntegrationOptions : Instantiate CreateSalIntegrationOptions
 func (*WatsonxDataV2) NewCreateSalIntegrationOptions(apikey string, engineID string) *CreateSalIntegrationOptions {
 	return &CreateSalIntegrationOptions{
-		Apikey: core.StringPtr(apikey),
+		Apikey:   core.StringPtr(apikey),
 		EngineID: core.StringPtr(engineID),
 	}
 }
@@ -13529,8 +13529,8 @@ type CreateSalIntegrationUploadGlossaryOptions struct {
 // Constants associated with the CreateSalIntegrationUploadGlossaryOptions.ReplaceOption property.
 // glossary upload replace option.
 const (
-	CreateSalIntegrationUploadGlossaryOptions_ReplaceOption_All = "all"
-	CreateSalIntegrationUploadGlossaryOptions_ReplaceOption_Empty = "empty"
+	CreateSalIntegrationUploadGlossaryOptions_ReplaceOption_All       = "all"
+	CreateSalIntegrationUploadGlossaryOptions_ReplaceOption_Empty     = "empty"
 	CreateSalIntegrationUploadGlossaryOptions_ReplaceOption_Specified = "specified"
 )
 
@@ -13622,8 +13622,8 @@ type CreateSchemaOptions struct {
 // NewCreateSchemaOptions : Instantiate CreateSchemaOptions
 func (*WatsonxDataV2) NewCreateSchemaOptions(engineID string, catalogID string, customPath string, schemaName string) *CreateSchemaOptions {
 	return &CreateSchemaOptions{
-		EngineID: core.StringPtr(engineID),
-		CatalogID: core.StringPtr(catalogID),
+		EngineID:   core.StringPtr(engineID),
+		CatalogID:  core.StringPtr(catalogID),
 		CustomPath: core.StringPtr(customPath),
 		SchemaName: core.StringPtr(schemaName),
 	}
@@ -13723,7 +13723,7 @@ const (
 // NewCreateSparkEngineApplicationOptions : Instantiate CreateSparkEngineApplicationOptions
 func (*WatsonxDataV2) NewCreateSparkEngineApplicationOptions(engineID string, applicationDetails *SparkApplicationDetails) *CreateSparkEngineApplicationOptions {
 	return &CreateSparkEngineApplicationOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:           core.StringPtr(engineID),
 		ApplicationDetails: applicationDetails,
 	}
 }
@@ -13863,7 +13863,7 @@ type CreateSparkEngineOptions struct {
 const (
 	CreateSparkEngineOptions_Origin_Discover = "discover"
 	CreateSparkEngineOptions_Origin_External = "external"
-	CreateSparkEngineOptions_Origin_Native = "native"
+	CreateSparkEngineOptions_Origin_Native   = "native"
 )
 
 // NewCreateSparkEngineOptions : Instantiate CreateSparkEngineOptions
@@ -14105,7 +14105,7 @@ type DatabaseDetails struct {
 // Constants associated with the DatabaseDetails.SaslMechanism property.
 // sasl mechanism for kafka.
 const (
-	DatabaseDetails_SaslMechanism_Plain = "plain"
+	DatabaseDetails_SaslMechanism_Plain       = "plain"
 	DatabaseDetails_SaslMechanism_ScramSha256 = "scram_sha_256"
 	DatabaseDetails_SaslMechanism_ScramSha512 = "scram_sha_512"
 )
@@ -14785,8 +14785,8 @@ type DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems struct {
 func (*WatsonxDataV2) NewDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems(encrypt bool, key string, value string) (_model *DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems, err error) {
 	_model = &DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{
 		Encrypt: core.BoolPtr(encrypt),
-		Key: core.StringPtr(key),
-		Value: core.StringPtr(value),
+		Key:     core.StringPtr(key),
+		Value:   core.StringPtr(value),
 	}
 	err = core.ValidateStruct(_model, "required parameters")
 	if err != nil {
@@ -14982,8 +14982,8 @@ type DatabaseRegistrationPrototypeDatabasePropertiesItems struct {
 func (*WatsonxDataV2) NewDatabaseRegistrationPrototypeDatabasePropertiesItems(encrypt bool, key string, value string) (_model *DatabaseRegistrationPrototypeDatabasePropertiesItems, err error) {
 	_model = &DatabaseRegistrationPrototypeDatabasePropertiesItems{
 		Encrypt: core.BoolPtr(encrypt),
-		Key: core.StringPtr(key),
-		Value: core.StringPtr(value),
+		Key:     core.StringPtr(key),
+		Value:   core.StringPtr(value),
 	}
 	err = core.ValidateStruct(_model, "required parameters")
 	if err != nil {
@@ -15354,11 +15354,11 @@ type DeleteColumnOptions struct {
 // NewDeleteColumnOptions : Instantiate DeleteColumnOptions
 func (*WatsonxDataV2) NewDeleteColumnOptions(engineID string, catalogID string, schemaID string, tableID string, columnID string) *DeleteColumnOptions {
 	return &DeleteColumnOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-		ColumnID: core.StringPtr(columnID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
+		ColumnID:  core.StringPtr(columnID),
 	}
 }
 
@@ -15567,7 +15567,7 @@ type DeleteIngestionJobsOptions struct {
 // NewDeleteIngestionJobsOptions : Instantiate DeleteIngestionJobsOptions
 func (*WatsonxDataV2) NewDeleteIngestionJobsOptions(jobID string, authInstanceID string) *DeleteIngestionJobsOptions {
 	return &DeleteIngestionJobsOptions{
-		JobID: core.StringPtr(jobID),
+		JobID:          core.StringPtr(jobID),
 		AuthInstanceID: core.StringPtr(authInstanceID),
 	}
 }
@@ -15756,7 +15756,7 @@ type DeletePrestissimoEngineCatalogsOptions struct {
 // NewDeletePrestissimoEngineCatalogsOptions : Instantiate DeletePrestissimoEngineCatalogsOptions
 func (*WatsonxDataV2) NewDeletePrestissimoEngineCatalogsOptions(engineID string, catalogNames string) *DeletePrestissimoEngineCatalogsOptions {
 	return &DeletePrestissimoEngineCatalogsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:     core.StringPtr(engineID),
 		CatalogNames: core.StringPtr(catalogNames),
 	}
 }
@@ -15840,7 +15840,7 @@ type DeletePrestoEngineCatalogsOptions struct {
 // NewDeletePrestoEngineCatalogsOptions : Instantiate DeletePrestoEngineCatalogsOptions
 func (*WatsonxDataV2) NewDeletePrestoEngineCatalogsOptions(engineID string, catalogNames string) *DeletePrestoEngineCatalogsOptions {
 	return &DeletePrestoEngineCatalogsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:     core.StringPtr(engineID),
 		CatalogNames: core.StringPtr(catalogNames),
 	}
 }
@@ -15908,9 +15908,9 @@ type DeleteSchemaOptions struct {
 // NewDeleteSchemaOptions : Instantiate DeleteSchemaOptions
 func (*WatsonxDataV2) NewDeleteSchemaOptions(engineID string, catalogID string, schemaID string) *DeleteSchemaOptions {
 	return &DeleteSchemaOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
+		SchemaID:  core.StringPtr(schemaID),
 	}
 }
 
@@ -15965,7 +15965,7 @@ type DeleteSparkEngineApplicationsOptions struct {
 // NewDeleteSparkEngineApplicationsOptions : Instantiate DeleteSparkEngineApplicationsOptions
 func (*WatsonxDataV2) NewDeleteSparkEngineApplicationsOptions(engineID string, applicationID string) *DeleteSparkEngineApplicationsOptions {
 	return &DeleteSparkEngineApplicationsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:      core.StringPtr(engineID),
 		ApplicationID: core.StringPtr(applicationID),
 	}
 }
@@ -16018,7 +16018,7 @@ type DeleteSparkEngineCatalogsOptions struct {
 // NewDeleteSparkEngineCatalogsOptions : Instantiate DeleteSparkEngineCatalogsOptions
 func (*WatsonxDataV2) NewDeleteSparkEngineCatalogsOptions(engineID string, catalogNames string) *DeleteSparkEngineCatalogsOptions {
 	return &DeleteSparkEngineCatalogsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:     core.StringPtr(engineID),
 		CatalogNames: core.StringPtr(catalogNames),
 	}
 }
@@ -16149,9 +16149,9 @@ type DeleteTableOptions struct {
 func (*WatsonxDataV2) NewDeleteTableOptions(catalogID string, schemaID string, tableID string, engineID string) *DeleteTableOptions {
 	return &DeleteTableOptions{
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-		EngineID: core.StringPtr(engineID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
+		EngineID:  core.StringPtr(engineID),
 	}
 }
 
@@ -16328,13 +16328,13 @@ type EngineDetailsBody struct {
 // Constants associated with the EngineDetailsBody.SizeConfig property.
 // Size config.
 const (
-	EngineDetailsBody_SizeConfig_CacheOptimized = "cache_optimized"
+	EngineDetailsBody_SizeConfig_CacheOptimized   = "cache_optimized"
 	EngineDetailsBody_SizeConfig_ComputeOptimized = "compute_optimized"
-	EngineDetailsBody_SizeConfig_Custom = "custom"
-	EngineDetailsBody_SizeConfig_Large = "large"
-	EngineDetailsBody_SizeConfig_Medium = "medium"
-	EngineDetailsBody_SizeConfig_Small = "small"
-	EngineDetailsBody_SizeConfig_Starter = "starter"
+	EngineDetailsBody_SizeConfig_Custom           = "custom"
+	EngineDetailsBody_SizeConfig_Large            = "large"
+	EngineDetailsBody_SizeConfig_Medium           = "medium"
+	EngineDetailsBody_SizeConfig_Small            = "small"
+	EngineDetailsBody_SizeConfig_Starter          = "starter"
 )
 
 // UnmarshalEngineDetailsBody unmarshals an instance of EngineDetailsBody from the specified map of raw messages.
@@ -16603,9 +16603,9 @@ type EnrichmentObj struct {
 // NewEnrichmentObj : Instantiate EnrichmentObj (Generic Model Constructor)
 func (*WatsonxDataV2) NewEnrichmentObj(catalog string, operation string, schema string) (_model *EnrichmentObj, err error) {
 	_model = &EnrichmentObj{
-		Catalog: core.StringPtr(catalog),
+		Catalog:   core.StringPtr(catalog),
 		Operation: core.StringPtr(operation),
-		Schema: core.StringPtr(schema),
+		Schema:    core.StringPtr(schema),
 	}
 	err = core.ValidateStruct(_model, "required parameters")
 	if err != nil {
@@ -16936,7 +16936,7 @@ type GetIngestionJobOptions struct {
 // NewGetIngestionJobOptions : Instantiate GetIngestionJobOptions
 func (*WatsonxDataV2) NewGetIngestionJobOptions(jobID string, authInstanceID string) *GetIngestionJobOptions {
 	return &GetIngestionJobOptions{
-		JobID: core.StringPtr(jobID),
+		JobID:          core.StringPtr(jobID),
 		AuthInstanceID: core.StringPtr(authInstanceID),
 	}
 }
@@ -17060,7 +17060,7 @@ type GetPrestissimoEngineCatalogOptions struct {
 // NewGetPrestissimoEngineCatalogOptions : Instantiate GetPrestissimoEngineCatalogOptions
 func (*WatsonxDataV2) NewGetPrestissimoEngineCatalogOptions(engineID string, catalogID string) *GetPrestissimoEngineCatalogOptions {
 	return &GetPrestissimoEngineCatalogOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
 	}
 }
@@ -17144,7 +17144,7 @@ type GetPrestoEngineCatalogOptions struct {
 // NewGetPrestoEngineCatalogOptions : Instantiate GetPrestoEngineCatalogOptions
 func (*WatsonxDataV2) NewGetPrestoEngineCatalogOptions(engineID string, catalogID string) *GetPrestoEngineCatalogOptions {
 	return &GetPrestoEngineCatalogOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
 	}
 }
@@ -17527,7 +17527,7 @@ type GetSalIntegrationMappingsOptions struct {
 func (*WatsonxDataV2) NewGetSalIntegrationMappingsOptions(catalogName string, schemaName string) *GetSalIntegrationMappingsOptions {
 	return &GetSalIntegrationMappingsOptions{
 		CatalogName: core.StringPtr(catalogName),
-		SchemaName: core.StringPtr(schemaName),
+		SchemaName:  core.StringPtr(schemaName),
 	}
 }
 
@@ -17680,7 +17680,7 @@ type GetSparkEngineApplicationStatusOptions struct {
 // NewGetSparkEngineApplicationStatusOptions : Instantiate GetSparkEngineApplicationStatusOptions
 func (*WatsonxDataV2) NewGetSparkEngineApplicationStatusOptions(engineID string, applicationID string) *GetSparkEngineApplicationStatusOptions {
 	return &GetSparkEngineApplicationStatusOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:      core.StringPtr(engineID),
 		ApplicationID: core.StringPtr(applicationID),
 	}
 }
@@ -17727,7 +17727,7 @@ type GetSparkEngineCatalogOptions struct {
 // NewGetSparkEngineCatalogOptions : Instantiate GetSparkEngineCatalogOptions
 func (*WatsonxDataV2) NewGetSparkEngineCatalogOptions(engineID string, catalogID string) *GetSparkEngineCatalogOptions {
 	return &GetSparkEngineCatalogOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
 	}
 }
@@ -17913,9 +17913,9 @@ type GetTableOptions struct {
 func (*WatsonxDataV2) NewGetTableOptions(catalogID string, schemaID string, tableID string, engineID string) *GetTableOptions {
 	return &GetTableOptions{
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-		EngineID: core.StringPtr(engineID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
+		EngineID:  core.StringPtr(engineID),
 	}
 }
 
@@ -18038,7 +18038,7 @@ const (
 // Constants associated with the HdfsStorageRegistration.State property.
 // mark hdfs active or inactive.
 const (
-	HdfsStorageRegistration_State_Active = "active"
+	HdfsStorageRegistration_State_Active   = "active"
 	HdfsStorageRegistration_State_Inactive = "inactive"
 )
 
@@ -18164,7 +18164,7 @@ type IngestionJob struct {
 // Constants associated with the IngestionJob.SourceFileType property.
 // Source file types (parquet or csv).
 const (
-	IngestionJob_SourceFileType_Csv = "csv"
+	IngestionJob_SourceFileType_Csv     = "csv"
 	IngestionJob_SourceFileType_Parquet = "parquet"
 )
 
@@ -19020,10 +19020,10 @@ type ListColumnsOptions struct {
 // NewListColumnsOptions : Instantiate ListColumnsOptions
 func (*WatsonxDataV2) NewListColumnsOptions(engineID string, catalogID string, schemaID string, tableID string) *ListColumnsOptions {
 	return &ListColumnsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
 	}
 }
 
@@ -19179,7 +19179,7 @@ type ListMilvusDatabaseCollectionsOptions struct {
 // NewListMilvusDatabaseCollectionsOptions : Instantiate ListMilvusDatabaseCollectionsOptions
 func (*WatsonxDataV2) NewListMilvusDatabaseCollectionsOptions(serviceID string, databaseID string) *ListMilvusDatabaseCollectionsOptions {
 	return &ListMilvusDatabaseCollectionsOptions{
-		ServiceID: core.StringPtr(serviceID),
+		ServiceID:  core.StringPtr(serviceID),
 		DatabaseID: core.StringPtr(databaseID),
 	}
 }
@@ -19493,7 +19493,7 @@ type ListSchemasOptions struct {
 // NewListSchemasOptions : Instantiate ListSchemasOptions
 func (*WatsonxDataV2) NewListSchemasOptions(engineID string, catalogID string) *ListSchemasOptions {
 	return &ListSchemasOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
 	}
 }
@@ -19707,10 +19707,10 @@ type ListTableSnapshotsOptions struct {
 // NewListTableSnapshotsOptions : Instantiate ListTableSnapshotsOptions
 func (*WatsonxDataV2) NewListTableSnapshotsOptions(engineID string, catalogID string, schemaID string, tableID string) *ListTableSnapshotsOptions {
 	return &ListTableSnapshotsOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
 	}
 }
 
@@ -19772,8 +19772,8 @@ type ListTablesOptions struct {
 func (*WatsonxDataV2) NewListTablesOptions(catalogID string, schemaID string, engineID string) *ListTablesOptions {
 	return &ListTablesOptions{
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		EngineID: core.StringPtr(engineID),
+		SchemaID:  core.StringPtr(schemaID),
+		EngineID:  core.StringPtr(engineID),
 	}
 }
 
@@ -20633,7 +20633,7 @@ type OtherEngineDetailsBody struct {
 func (*WatsonxDataV2) NewOtherEngineDetailsBody(connectionString string, engineType string) (_model *OtherEngineDetailsBody, err error) {
 	_model = &OtherEngineDetailsBody{
 		ConnectionString: core.StringPtr(connectionString),
-		EngineType: core.StringPtr(engineType),
+		EngineType:       core.StringPtr(engineType),
 	}
 	err = core.ValidateStruct(_model, "required parameters")
 	if err != nil {
@@ -20956,7 +20956,7 @@ const (
 const (
 	PrestissimoEngine_Origin_Discover = "discover"
 	PrestissimoEngine_Origin_External = "external"
-	PrestissimoEngine_Origin_Native = "native"
+	PrestissimoEngine_Origin_Native   = "native"
 )
 
 // Constants associated with the PrestissimoEngine.Status property.
@@ -21155,13 +21155,13 @@ type PrestissimoEngineDetails struct {
 // Constants associated with the PrestissimoEngineDetails.SizeConfig property.
 // Size config.
 const (
-	PrestissimoEngineDetails_SizeConfig_CacheOptimized = "cache_optimized"
+	PrestissimoEngineDetails_SizeConfig_CacheOptimized   = "cache_optimized"
 	PrestissimoEngineDetails_SizeConfig_ComputeOptimized = "compute_optimized"
-	PrestissimoEngineDetails_SizeConfig_Custom = "custom"
-	PrestissimoEngineDetails_SizeConfig_Large = "large"
-	PrestissimoEngineDetails_SizeConfig_Medium = "medium"
-	PrestissimoEngineDetails_SizeConfig_Small = "small"
-	PrestissimoEngineDetails_SizeConfig_Starter = "starter"
+	PrestissimoEngineDetails_SizeConfig_Custom           = "custom"
+	PrestissimoEngineDetails_SizeConfig_Large            = "large"
+	PrestissimoEngineDetails_SizeConfig_Medium           = "medium"
+	PrestissimoEngineDetails_SizeConfig_Small            = "small"
+	PrestissimoEngineDetails_SizeConfig_Starter          = "starter"
 )
 
 // UnmarshalPrestissimoEngineDetails unmarshals an instance of PrestissimoEngineDetails from the specified map of raw messages.
@@ -21625,7 +21625,7 @@ const (
 const (
 	PrestoEngine_Origin_Discover = "discover"
 	PrestoEngine_Origin_External = "external"
-	PrestoEngine_Origin_Native = "native"
+	PrestoEngine_Origin_Native   = "native"
 )
 
 // Constants associated with the PrestoEngine.Status property.
@@ -22786,10 +22786,10 @@ type RollbackTableOptions struct {
 // NewRollbackTableOptions : Instantiate RollbackTableOptions
 func (*WatsonxDataV2) NewRollbackTableOptions(engineID string, catalogID string, schemaID string, tableID string) *RollbackTableOptions {
 	return &RollbackTableOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
 	}
 }
 
@@ -22882,7 +22882,7 @@ type RunExplainAnalyzeStatementOptions struct {
 // NewRunExplainAnalyzeStatementOptions : Instantiate RunExplainAnalyzeStatementOptions
 func (*WatsonxDataV2) NewRunExplainAnalyzeStatementOptions(engineID string, statement string) *RunExplainAnalyzeStatementOptions {
 	return &RunExplainAnalyzeStatementOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		Statement: core.StringPtr(statement),
 	}
 }
@@ -22968,23 +22968,23 @@ type RunExplainStatementOptions struct {
 // Format.
 const (
 	RunExplainStatementOptions_Format_Graphviz = "graphviz"
-	RunExplainStatementOptions_Format_JSON = "json"
-	RunExplainStatementOptions_Format_Text = "text"
+	RunExplainStatementOptions_Format_JSON     = "json"
+	RunExplainStatementOptions_Format_Text     = "text"
 )
 
 // Constants associated with the RunExplainStatementOptions.Type property.
 // Type.
 const (
 	RunExplainStatementOptions_Type_Distributed = "distributed"
-	RunExplainStatementOptions_Type_Io = "io"
-	RunExplainStatementOptions_Type_Logical = "logical"
-	RunExplainStatementOptions_Type_Validate = "validate"
+	RunExplainStatementOptions_Type_Io          = "io"
+	RunExplainStatementOptions_Type_Logical     = "logical"
+	RunExplainStatementOptions_Type_Validate    = "validate"
 )
 
 // NewRunExplainStatementOptions : Instantiate RunExplainStatementOptions
 func (*WatsonxDataV2) NewRunExplainStatementOptions(engineID string, statement string) *RunExplainStatementOptions {
 	return &RunExplainStatementOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		Statement: core.StringPtr(statement),
 	}
 }
@@ -23046,7 +23046,7 @@ type RunPrestissimoExplainAnalyzeStatementOptions struct {
 // NewRunPrestissimoExplainAnalyzeStatementOptions : Instantiate RunPrestissimoExplainAnalyzeStatementOptions
 func (*WatsonxDataV2) NewRunPrestissimoExplainAnalyzeStatementOptions(engineID string, statement string) *RunPrestissimoExplainAnalyzeStatementOptions {
 	return &RunPrestissimoExplainAnalyzeStatementOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		Statement: core.StringPtr(statement),
 	}
 }
@@ -23106,23 +23106,23 @@ type RunPrestissimoExplainStatementOptions struct {
 // Format.
 const (
 	RunPrestissimoExplainStatementOptions_Format_Graphviz = "graphviz"
-	RunPrestissimoExplainStatementOptions_Format_JSON = "json"
-	RunPrestissimoExplainStatementOptions_Format_Text = "text"
+	RunPrestissimoExplainStatementOptions_Format_JSON     = "json"
+	RunPrestissimoExplainStatementOptions_Format_Text     = "text"
 )
 
 // Constants associated with the RunPrestissimoExplainStatementOptions.Type property.
 // Type.
 const (
 	RunPrestissimoExplainStatementOptions_Type_Distributed = "distributed"
-	RunPrestissimoExplainStatementOptions_Type_Io = "io"
-	RunPrestissimoExplainStatementOptions_Type_Logical = "logical"
-	RunPrestissimoExplainStatementOptions_Type_Validate = "validate"
+	RunPrestissimoExplainStatementOptions_Type_Io          = "io"
+	RunPrestissimoExplainStatementOptions_Type_Logical     = "logical"
+	RunPrestissimoExplainStatementOptions_Type_Validate    = "validate"
 )
 
 // NewRunPrestissimoExplainStatementOptions : Instantiate RunPrestissimoExplainStatementOptions
 func (*WatsonxDataV2) NewRunPrestissimoExplainStatementOptions(engineID string, statement string) *RunPrestissimoExplainStatementOptions {
 	return &RunPrestissimoExplainStatementOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		Statement: core.StringPtr(statement),
 	}
 }
@@ -24624,7 +24624,7 @@ type SparkEngine struct {
 const (
 	SparkEngine_Origin_Discover = "discover"
 	SparkEngine_Origin_External = "external"
-	SparkEngine_Origin_Native = "native"
+	SparkEngine_Origin_Native   = "native"
 )
 
 // Constants associated with the SparkEngine.Type property.
@@ -25555,9 +25555,9 @@ type StorageDetails struct {
 // NewStorageDetails : Instantiate StorageDetails (Generic Model Constructor)
 func (*WatsonxDataV2) NewStorageDetails(authMode string, containerName string, endpoint string, storageAccountName string) (_model *StorageDetails, err error) {
 	_model = &StorageDetails{
-		AuthMode: core.StringPtr(authMode),
-		ContainerName: core.StringPtr(containerName),
-		Endpoint: core.StringPtr(endpoint),
+		AuthMode:           core.StringPtr(authMode),
+		ContainerName:      core.StringPtr(containerName),
+		Endpoint:           core.StringPtr(endpoint),
 		StorageAccountName: core.StringPtr(storageAccountName),
 	}
 	err = core.ValidateStruct(_model, "required parameters")
@@ -26059,7 +26059,7 @@ type UpdateBucketRegistrationOptions struct {
 func (*WatsonxDataV2) NewUpdateBucketRegistrationOptions(bucketID string, body map[string]interface{}) *UpdateBucketRegistrationOptions {
 	return &UpdateBucketRegistrationOptions{
 		BucketID: core.StringPtr(bucketID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26117,12 +26117,12 @@ type UpdateColumnOptions struct {
 // NewUpdateColumnOptions : Instantiate UpdateColumnOptions
 func (*WatsonxDataV2) NewUpdateColumnOptions(engineID string, catalogID string, schemaID string, tableID string, columnID string, body map[string]interface{}) *UpdateColumnOptions {
 	return &UpdateColumnOptions{
-		EngineID: core.StringPtr(engineID),
+		EngineID:  core.StringPtr(engineID),
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-		ColumnID: core.StringPtr(columnID),
-		Body: body,
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
+		ColumnID:  core.StringPtr(columnID),
+		Body:      body,
 	}
 }
 
@@ -26193,7 +26193,7 @@ type UpdateDatabaseOptions struct {
 func (*WatsonxDataV2) NewUpdateDatabaseOptions(databaseID string, body map[string]interface{}) *UpdateDatabaseOptions {
 	return &UpdateDatabaseOptions{
 		DatabaseID: core.StringPtr(databaseID),
-		Body: body,
+		Body:       body,
 	}
 }
 
@@ -26240,7 +26240,7 @@ type UpdateDb2EngineOptions struct {
 func (*WatsonxDataV2) NewUpdateDb2EngineOptions(engineID string, body map[string]interface{}) *UpdateDb2EngineOptions {
 	return &UpdateDb2EngineOptions{
 		EngineID: core.StringPtr(engineID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26286,7 +26286,7 @@ type UpdateIntegrationOptions struct {
 // NewUpdateIntegrationOptions : Instantiate UpdateIntegrationOptions
 func (*WatsonxDataV2) NewUpdateIntegrationOptions(integrationID string, integrationPatch map[string]interface{}) *UpdateIntegrationOptions {
 	return &UpdateIntegrationOptions{
-		IntegrationID: core.StringPtr(integrationID),
+		IntegrationID:    core.StringPtr(integrationID),
 		IntegrationPatch: integrationPatch,
 	}
 }
@@ -26334,7 +26334,7 @@ type UpdateMilvusServiceOptions struct {
 func (*WatsonxDataV2) NewUpdateMilvusServiceOptions(serviceID string, body map[string]interface{}) *UpdateMilvusServiceOptions {
 	return &UpdateMilvusServiceOptions{
 		ServiceID: core.StringPtr(serviceID),
-		Body: body,
+		Body:      body,
 	}
 }
 
@@ -26381,7 +26381,7 @@ type UpdateNetezzaEngineOptions struct {
 func (*WatsonxDataV2) NewUpdateNetezzaEngineOptions(engineID string, body map[string]interface{}) *UpdateNetezzaEngineOptions {
 	return &UpdateNetezzaEngineOptions{
 		EngineID: core.StringPtr(engineID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26428,7 +26428,7 @@ type UpdatePrestissimoEngineOptions struct {
 func (*WatsonxDataV2) NewUpdatePrestissimoEngineOptions(engineID string, body map[string]interface{}) *UpdatePrestissimoEngineOptions {
 	return &UpdatePrestissimoEngineOptions{
 		EngineID: core.StringPtr(engineID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26475,7 +26475,7 @@ type UpdatePrestoEngineOptions struct {
 func (*WatsonxDataV2) NewUpdatePrestoEngineOptions(engineID string, body map[string]interface{}) *UpdatePrestoEngineOptions {
 	return &UpdatePrestoEngineOptions{
 		EngineID: core.StringPtr(engineID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26692,7 +26692,7 @@ type UpdateSparkEngineOptions struct {
 func (*WatsonxDataV2) NewUpdateSparkEngineOptions(engineID string, body map[string]interface{}) *UpdateSparkEngineOptions {
 	return &UpdateSparkEngineOptions{
 		EngineID: core.StringPtr(engineID),
-		Body: body,
+		Body:     body,
 	}
 }
 
@@ -26757,7 +26757,7 @@ type UpdateSyncCatalogOptions struct {
 func (*WatsonxDataV2) NewUpdateSyncCatalogOptions(catalogID string, body map[string]interface{}) *UpdateSyncCatalogOptions {
 	return &UpdateSyncCatalogOptions{
 		CatalogID: core.StringPtr(catalogID),
-		Body: body,
+		Body:      body,
 	}
 }
 
@@ -26816,10 +26816,10 @@ type UpdateTableOptions struct {
 func (*WatsonxDataV2) NewUpdateTableOptions(catalogID string, schemaID string, tableID string, engineID string, body map[string]interface{}) *UpdateTableOptions {
 	return &UpdateTableOptions{
 		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-		EngineID: core.StringPtr(engineID),
-		Body: body,
+		SchemaID:  core.StringPtr(schemaID),
+		TableID:   core.StringPtr(tableID),
+		EngineID:  core.StringPtr(engineID),
+		Body:      body,
 	}
 }
 
@@ -26871,13 +26871,11 @@ func (options *UpdateTableOptions) SetHeaders(param map[string]string) *UpdateTa
 	return options
 }
 
-//
 // IngestionJobsPager can be used to simplify the use of the "ListIngestionJobs" method.
-//
 type IngestionJobsPager struct {
-	hasNext bool
-	options *ListIngestionJobsOptions
-	client  *WatsonxDataV2
+	hasNext     bool
+	options     *ListIngestionJobsOptions
+	client      *WatsonxDataV2
 	pageContext struct {
 		next *string
 	}
