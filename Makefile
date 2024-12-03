@@ -1,6 +1,6 @@
 # Makefile to build the project
 GO=go
-LINT=golangci-lint run
+LINT=golangci-lint
 GOSEC=gosec
 
 COVERAGE = -coverprofile=coverage.txt -covermode=atomic
