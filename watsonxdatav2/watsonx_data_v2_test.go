@@ -36638,7 +36638,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			Expect(result).To(Equal(model))
 		})
 		It(`Invoke UnmarshalPrestoEnginePatchRemoveEngineProperties successfully`, func() {
-			// Construct an instance of the model .
+			// Construct an instance of the model.
 			model := new(watsonxdatav2.PrestoEnginePatchRemoveEngineProperties)
 			model.Catalog = nil
 			model.Configuration = nil
