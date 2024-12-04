@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.3.0...v0.4.0) (2024-12-04)
+
+
+### Features
+
+* **sdk:** update SDK to include 2.0.3 SaaS changes ([669785d](https://github.com/IBM/watsonxdata-go-sdk/commit/669785d7ad76e58b24d8e58338f3b4e00054238f))
+
 # [0.3.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.2.0...v0.3.0) (2024-01-31)
 
 
