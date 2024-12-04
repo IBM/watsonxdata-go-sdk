@@ -5,7 +5,7 @@ go 1.22
 toolchain go1.22.5
 
 require (
-	github.com/IBM/go-sdk-core/v5 v5.18.1
+	github.com/IBM/go-sdk-core/v5 v5.18.1 //updated version
 	github.com/go-openapi/strfmt v0.23.0
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.36.0
