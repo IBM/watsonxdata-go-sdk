@@ -1,3 +1,15 @@
+# [0.5.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.4.0...v0.5.0) (2025-02-12)
+
+
+### Features
+
+* **sdk:** update SDK to include 2.0.3 SaaS changes ([f690b7c](https://github.com/IBM/watsonxdata-go-sdk/commit/f690b7ca5bfe4df67cce8ad087968d2b9dd97d64))
+
+
+### Reverts
+
+* Revert "feat(v2 SDK with new v2 API definition" ([5783a55](https://github.com/IBM/watsonxdata-go-sdk/commit/5783a5549e2efe6c1332b1754c5ff18556a8cde5))
+
 # [0.4.0](https://github.com/IBM/watsonxdata-go-sdk/compare/v0.3.0...v0.4.0) (2024-12-04)
 
 
