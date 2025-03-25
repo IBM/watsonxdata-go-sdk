@@ -33,7 +33,6 @@ import (
 
 	"github.com/IBM/go-sdk-core/v5/core"
 	common "github.com/IBM/watsonxdata-go-sdk/common"
-	"github.com/go-openapi/strfmt"
 )
 
 // WatsonxDataV2 : This is the Public API for IBM watsonx.data
@@ -280,9 +279,6 @@ func (watsonxData *WatsonxDataV2) CreateBucketRegistrationWithContext(ctx contex
 	}
 
 	body := make(map[string]interface{})
-	if createBucketRegistrationOptions.BucketDisplayName != nil {
-		body["bucket_display_name"] = createBucketRegistrationOptions.BucketDisplayName
-	}
 	if createBucketRegistrationOptions.BucketType != nil {
 		body["bucket_type"] = createBucketRegistrationOptions.BucketType
 	}
@@ -297,6 +293,9 @@ func (watsonxData *WatsonxDataV2) CreateBucketRegistrationWithContext(ctx contex
 	}
 	if createBucketRegistrationOptions.BucketDetails != nil {
 		body["bucket_details"] = createBucketRegistrationOptions.BucketDetails
+	}
+	if createBucketRegistrationOptions.BucketDisplayName != nil {
+		body["bucket_display_name"] = createBucketRegistrationOptions.BucketDisplayName
 	}
 	if createBucketRegistrationOptions.Region != nil {
 		body["region"] = createBucketRegistrationOptions.Region
@@ -844,160 +843,6 @@ func (watsonxData *WatsonxDataV2) GetBucketObjectPropertiesWithContext(ctx conte
 	return
 }
 
-// GenerateBenchmarkReport : Generate generate_benchmark_report specific to storage
-// Generate generate_benchmark_report specific to storage.
-func (watsonxData *WatsonxDataV2) GenerateBenchmarkReport(generateBenchmarkReportOptions *GenerateBenchmarkReportOptions) (result *GenerateBenchmarkReportOKBody, response *core.DetailedResponse, err error) {
-	result, response, err = watsonxData.GenerateBenchmarkReportWithContext(context.Background(), generateBenchmarkReportOptions)
-	err = core.RepurposeSDKProblem(err, "")
-	return
-}
-
-// GenerateBenchmarkReportWithContext is an alternate form of the GenerateBenchmarkReport method which supports a Context parameter
-func (watsonxData *WatsonxDataV2) GenerateBenchmarkReportWithContext(ctx context.Context, generateBenchmarkReportOptions *GenerateBenchmarkReportOptions) (result *GenerateBenchmarkReportOKBody, response *core.DetailedResponse, err error) {
-	err = core.ValidateNotNil(generateBenchmarkReportOptions, "generateBenchmarkReportOptions cannot be nil")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
-		return
-	}
-	err = core.ValidateStruct(generateBenchmarkReportOptions, "generateBenchmarkReportOptions")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
-		return
-	}
-
-	builder := core.NewRequestBuilder(core.GET)
-	builder = builder.WithContext(ctx)
-	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
-	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/generate_benchmark_report`, nil)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
-		return
-	}
-
-	for headerName, headerValue := range generateBenchmarkReportOptions.Headers {
-		builder.AddHeader(headerName, headerValue)
-	}
-
-	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "GenerateBenchmarkReport")
-	for headerName, headerValue := range sdkHeaders {
-		builder.AddHeader(headerName, headerValue)
-	}
-	builder.AddHeader("Accept", "application/json")
-	if generateBenchmarkReportOptions.AuthInstanceID != nil {
-		builder.AddHeader("AuthInstanceId", fmt.Sprint(*generateBenchmarkReportOptions.AuthInstanceID))
-	}
-
-	builder.AddQuery("bucket_name", fmt.Sprint(*generateBenchmarkReportOptions.BucketName))
-	builder.AddQuery("engine_id", fmt.Sprint(*generateBenchmarkReportOptions.EngineID))
-	builder.AddQuery("pod_name", fmt.Sprint(*generateBenchmarkReportOptions.PodName))
-	if generateBenchmarkReportOptions.FileCount != nil {
-		builder.AddQuery("file_count", fmt.Sprint(*generateBenchmarkReportOptions.FileCount))
-	}
-	if generateBenchmarkReportOptions.FileSize != nil {
-		builder.AddQuery("file_size", fmt.Sprint(*generateBenchmarkReportOptions.FileSize))
-	}
-
-	request, err := builder.Build()
-	if err != nil {
-		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
-		return
-	}
-
-	var rawResponse map[string]json.RawMessage
-	response, err = watsonxData.Service.Request(request, &rawResponse)
-	if err != nil {
-		core.EnrichHTTPProblem(err, "generate_benchmark_report", getServiceComponentInfo())
-		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
-		return
-	}
-	if rawResponse != nil {
-		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalGenerateBenchmarkReportOKBody)
-		if err != nil {
-			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
-			return
-		}
-		response.Result = result
-	}
-
-	return
-}
-
-// GenerateBenchmarkReportStatus : Get generate_benchmark_report status
-// Generate generate_benchmark_report status.
-func (watsonxData *WatsonxDataV2) GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptions *GenerateBenchmarkReportStatusOptions) (result *BenchmarkStatusResponse, response *core.DetailedResponse, err error) {
-	result, response, err = watsonxData.GenerateBenchmarkReportStatusWithContext(context.Background(), generateBenchmarkReportStatusOptions)
-	err = core.RepurposeSDKProblem(err, "")
-	return
-}
-
-// GenerateBenchmarkReportStatusWithContext is an alternate form of the GenerateBenchmarkReportStatus method which supports a Context parameter
-func (watsonxData *WatsonxDataV2) GenerateBenchmarkReportStatusWithContext(ctx context.Context, generateBenchmarkReportStatusOptions *GenerateBenchmarkReportStatusOptions) (result *BenchmarkStatusResponse, response *core.DetailedResponse, err error) {
-	err = core.ValidateNotNil(generateBenchmarkReportStatusOptions, "generateBenchmarkReportStatusOptions cannot be nil")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
-		return
-	}
-	err = core.ValidateStruct(generateBenchmarkReportStatusOptions, "generateBenchmarkReportStatusOptions")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
-		return
-	}
-
-	pathParamsMap := map[string]string{
-		"req_id": *generateBenchmarkReportStatusOptions.ReqID,
-	}
-
-	builder := core.NewRequestBuilder(core.GET)
-	builder = builder.WithContext(ctx)
-	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
-	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/generate_benchmark_report/status/{req_id}`, pathParamsMap)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
-		return
-	}
-
-	for headerName, headerValue := range generateBenchmarkReportStatusOptions.Headers {
-		builder.AddHeader(headerName, headerValue)
-	}
-
-	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "GenerateBenchmarkReportStatus")
-	for headerName, headerValue := range sdkHeaders {
-		builder.AddHeader(headerName, headerValue)
-	}
-	builder.AddHeader("Accept", "application/json")
-	if generateBenchmarkReportStatusOptions.AuthInstanceID != nil {
-		builder.AddHeader("AuthInstanceId", fmt.Sprint(*generateBenchmarkReportStatusOptions.AuthInstanceID))
-	}
-
-	builder.AddQuery("engine_id", fmt.Sprint(*generateBenchmarkReportStatusOptions.EngineID))
-	builder.AddQuery("bucket_name", fmt.Sprint(*generateBenchmarkReportStatusOptions.BucketName))
-	builder.AddQuery("pod_name", fmt.Sprint(*generateBenchmarkReportStatusOptions.PodName))
-
-	request, err := builder.Build()
-	if err != nil {
-		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
-		return
-	}
-
-	var rawResponse map[string]json.RawMessage
-	response, err = watsonxData.Service.Request(request, &rawResponse)
-	if err != nil {
-		core.EnrichHTTPProblem(err, "generate_benchmark_report_status", getServiceComponentInfo())
-		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
-		return
-	}
-	if rawResponse != nil {
-		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalBenchmarkStatusResponse)
-		if err != nil {
-			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
-			return
-		}
-		response.Result = result
-	}
-
-	return
-}
-
 // CreateHdfsStorage : Add/Create HDFS storage
 // Add or create a new HDFS database.
 func (watsonxData *WatsonxDataV2) CreateHdfsStorage(createHdfsStorageOptions *CreateHdfsStorageOptions) (result *HdfsStorageRegistration, response *core.DetailedResponse, err error) {
@@ -1478,22 +1323,85 @@ func (watsonxData *WatsonxDataV2) UpdateDatabaseWithContext(ctx context.Context,
 	return
 }
 
-// GenerateEngineDump : Generate heat or thread dump specific to presto worker or coordinator
-// Generate heat or thread dump specific to presto worker or coordinator.
-func (watsonxData *WatsonxDataV2) GenerateEngineDump(generateEngineDumpOptions *GenerateEngineDumpOptions) (result *GenerateEngineDumpOKBody, response *core.DetailedResponse, err error) {
-	result, response, err = watsonxData.GenerateEngineDumpWithContext(context.Background(), generateEngineDumpOptions)
+// ListDriverRegistration : Get drivers
+// Get all driver details.
+func (watsonxData *WatsonxDataV2) ListDriverRegistration(listDriverRegistrationOptions *ListDriverRegistrationOptions) (result *DriverRegistrationCollection, response *core.DetailedResponse, err error) {
+	result, response, err = watsonxData.ListDriverRegistrationWithContext(context.Background(), listDriverRegistrationOptions)
 	err = core.RepurposeSDKProblem(err, "")
 	return
 }
 
-// GenerateEngineDumpWithContext is an alternate form of the GenerateEngineDump method which supports a Context parameter
-func (watsonxData *WatsonxDataV2) GenerateEngineDumpWithContext(ctx context.Context, generateEngineDumpOptions *GenerateEngineDumpOptions) (result *GenerateEngineDumpOKBody, response *core.DetailedResponse, err error) {
-	err = core.ValidateNotNil(generateEngineDumpOptions, "generateEngineDumpOptions cannot be nil")
+// ListDriverRegistrationWithContext is an alternate form of the ListDriverRegistration method which supports a Context parameter
+func (watsonxData *WatsonxDataV2) ListDriverRegistrationWithContext(ctx context.Context, listDriverRegistrationOptions *ListDriverRegistrationOptions) (result *DriverRegistrationCollection, response *core.DetailedResponse, err error) {
+	err = core.ValidateStruct(listDriverRegistrationOptions, "listDriverRegistrationOptions")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
+		return
+	}
+
+	builder := core.NewRequestBuilder(core.GET)
+	builder = builder.WithContext(ctx)
+	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
+	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/driver_registrations`, nil)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
+		return
+	}
+
+	for headerName, headerValue := range listDriverRegistrationOptions.Headers {
+		builder.AddHeader(headerName, headerValue)
+	}
+
+	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "ListDriverRegistration")
+	for headerName, headerValue := range sdkHeaders {
+		builder.AddHeader(headerName, headerValue)
+	}
+	builder.AddHeader("Accept", "application/json")
+	if listDriverRegistrationOptions.AuthInstanceID != nil {
+		builder.AddHeader("AuthInstanceId", fmt.Sprint(*listDriverRegistrationOptions.AuthInstanceID))
+	}
+
+	request, err := builder.Build()
+	if err != nil {
+		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
+		return
+	}
+
+	var rawResponse map[string]json.RawMessage
+	response, err = watsonxData.Service.Request(request, &rawResponse)
+	if err != nil {
+		core.EnrichHTTPProblem(err, "list_driver_registration", getServiceComponentInfo())
+		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
+		return
+	}
+	if rawResponse != nil {
+		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalDriverRegistrationCollection)
+		if err != nil {
+			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
+			return
+		}
+		response.Result = result
+	}
+
+	return
+}
+
+// CreateDriverRegistration : Register driver
+// Register a new driver.
+func (watsonxData *WatsonxDataV2) CreateDriverRegistration(createDriverRegistrationOptions *CreateDriverRegistrationOptions) (result *DriverRegistration, response *core.DetailedResponse, err error) {
+	result, response, err = watsonxData.CreateDriverRegistrationWithContext(context.Background(), createDriverRegistrationOptions)
+	err = core.RepurposeSDKProblem(err, "")
+	return
+}
+
+// CreateDriverRegistrationWithContext is an alternate form of the CreateDriverRegistration method which supports a Context parameter
+func (watsonxData *WatsonxDataV2) CreateDriverRegistrationWithContext(ctx context.Context, createDriverRegistrationOptions *CreateDriverRegistrationOptions) (result *DriverRegistration, response *core.DetailedResponse, err error) {
+	err = core.ValidateNotNil(createDriverRegistrationOptions, "createDriverRegistrationOptions cannot be nil")
 	if err != nil {
 		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
 		return
 	}
-	err = core.ValidateStruct(generateEngineDumpOptions, "generateEngineDumpOptions")
+	err = core.ValidateStruct(createDriverRegistrationOptions, "createDriverRegistrationOptions")
 	if err != nil {
 		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
 		return
@@ -1502,40 +1410,233 @@ func (watsonxData *WatsonxDataV2) GenerateEngineDumpWithContext(ctx context.Cont
 	builder := core.NewRequestBuilder(core.POST)
 	builder = builder.WithContext(ctx)
 	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
-	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/generate_engine_dump`, nil)
+	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/driver_registrations`, nil)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
 		return
 	}
 
-	for headerName, headerValue := range generateEngineDumpOptions.Headers {
+	for headerName, headerValue := range createDriverRegistrationOptions.Headers {
 		builder.AddHeader(headerName, headerValue)
 	}
 
-	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "GenerateEngineDump")
+	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "CreateDriverRegistration")
 	for headerName, headerValue := range sdkHeaders {
 		builder.AddHeader(headerName, headerValue)
 	}
 	builder.AddHeader("Accept", "application/json")
-	builder.AddHeader("Content-Type", "application/json")
-	if generateEngineDumpOptions.AuthInstanceID != nil {
-		builder.AddHeader("AuthInstanceId", fmt.Sprint(*generateEngineDumpOptions.AuthInstanceID))
+	if createDriverRegistrationOptions.AuthInstanceID != nil {
+		builder.AddHeader("AuthInstanceId", fmt.Sprint(*createDriverRegistrationOptions.AuthInstanceID))
 	}
 
-	body := make(map[string]interface{})
-	if generateEngineDumpOptions.DumpFileName != nil {
-		body["dump_file_name"] = generateEngineDumpOptions.DumpFileName
+	builder.AddFormData("driver", "filename",
+		core.StringNilMapper(createDriverRegistrationOptions.DriverContentType), createDriverRegistrationOptions.Driver)
+	builder.AddFormData("driver_name", "", "", fmt.Sprint(*createDriverRegistrationOptions.DriverName))
+	builder.AddFormData("connection_type", "", "", fmt.Sprint(*createDriverRegistrationOptions.ConnectionType))
+	if createDriverRegistrationOptions.Version != nil {
+		builder.AddFormData("version", "", "", fmt.Sprint(*createDriverRegistrationOptions.Version))
 	}
-	if generateEngineDumpOptions.DumpType != nil {
-		body["dump_type"] = generateEngineDumpOptions.DumpType
+
+	request, err := builder.Build()
+	if err != nil {
+		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
+		return
 	}
-	if generateEngineDumpOptions.EngineID != nil {
-		body["engine_id"] = generateEngineDumpOptions.EngineID
+
+	var rawResponse map[string]json.RawMessage
+	response, err = watsonxData.Service.Request(request, &rawResponse)
+	if err != nil {
+		core.EnrichHTTPProblem(err, "create_driver_registration", getServiceComponentInfo())
+		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
+		return
 	}
-	if generateEngineDumpOptions.PodName != nil {
-		body["pod_name"] = generateEngineDumpOptions.PodName
+	if rawResponse != nil {
+		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalDriverRegistration)
+		if err != nil {
+			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
+			return
+		}
+		response.Result = result
 	}
-	_, err = builder.SetBodyContentJSON(body)
+
+	return
+}
+
+// DeleteDriverRegistration : Delete driver
+// Delete a driver.
+func (watsonxData *WatsonxDataV2) DeleteDriverRegistration(deleteDriverRegistrationOptions *DeleteDriverRegistrationOptions) (response *core.DetailedResponse, err error) {
+	response, err = watsonxData.DeleteDriverRegistrationWithContext(context.Background(), deleteDriverRegistrationOptions)
+	err = core.RepurposeSDKProblem(err, "")
+	return
+}
+
+// DeleteDriverRegistrationWithContext is an alternate form of the DeleteDriverRegistration method which supports a Context parameter
+func (watsonxData *WatsonxDataV2) DeleteDriverRegistrationWithContext(ctx context.Context, deleteDriverRegistrationOptions *DeleteDriverRegistrationOptions) (response *core.DetailedResponse, err error) {
+	err = core.ValidateNotNil(deleteDriverRegistrationOptions, "deleteDriverRegistrationOptions cannot be nil")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
+		return
+	}
+	err = core.ValidateStruct(deleteDriverRegistrationOptions, "deleteDriverRegistrationOptions")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
+		return
+	}
+
+	pathParamsMap := map[string]string{
+		"driver_id": *deleteDriverRegistrationOptions.DriverID,
+	}
+
+	builder := core.NewRequestBuilder(core.DELETE)
+	builder = builder.WithContext(ctx)
+	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
+	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/driver_registrations/{driver_id}`, pathParamsMap)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
+		return
+	}
+
+	for headerName, headerValue := range deleteDriverRegistrationOptions.Headers {
+		builder.AddHeader(headerName, headerValue)
+	}
+
+	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "DeleteDriverRegistration")
+	for headerName, headerValue := range sdkHeaders {
+		builder.AddHeader(headerName, headerValue)
+	}
+	if deleteDriverRegistrationOptions.AuthInstanceID != nil {
+		builder.AddHeader("AuthInstanceId", fmt.Sprint(*deleteDriverRegistrationOptions.AuthInstanceID))
+	}
+
+	request, err := builder.Build()
+	if err != nil {
+		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
+		return
+	}
+
+	response, err = watsonxData.Service.Request(request, nil)
+	if err != nil {
+		core.EnrichHTTPProblem(err, "delete_driver_registration", getServiceComponentInfo())
+		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
+		return
+	}
+
+	return
+}
+
+// DeleteDriverEngines : Disassociate engines from driver
+// Disassociate one or more engines from a driver.
+func (watsonxData *WatsonxDataV2) DeleteDriverEngines(deleteDriverEnginesOptions *DeleteDriverEnginesOptions) (response *core.DetailedResponse, err error) {
+	response, err = watsonxData.DeleteDriverEnginesWithContext(context.Background(), deleteDriverEnginesOptions)
+	err = core.RepurposeSDKProblem(err, "")
+	return
+}
+
+// DeleteDriverEnginesWithContext is an alternate form of the DeleteDriverEngines method which supports a Context parameter
+func (watsonxData *WatsonxDataV2) DeleteDriverEnginesWithContext(ctx context.Context, deleteDriverEnginesOptions *DeleteDriverEnginesOptions) (response *core.DetailedResponse, err error) {
+	err = core.ValidateNotNil(deleteDriverEnginesOptions, "deleteDriverEnginesOptions cannot be nil")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
+		return
+	}
+	err = core.ValidateStruct(deleteDriverEnginesOptions, "deleteDriverEnginesOptions")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
+		return
+	}
+
+	pathParamsMap := map[string]string{
+		"driver_id": *deleteDriverEnginesOptions.DriverID,
+	}
+
+	builder := core.NewRequestBuilder(core.DELETE)
+	builder = builder.WithContext(ctx)
+	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
+	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/driver_registrations/{driver_id}/engines`, pathParamsMap)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
+		return
+	}
+
+	for headerName, headerValue := range deleteDriverEnginesOptions.Headers {
+		builder.AddHeader(headerName, headerValue)
+	}
+
+	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "DeleteDriverEngines")
+	for headerName, headerValue := range sdkHeaders {
+		builder.AddHeader(headerName, headerValue)
+	}
+	if deleteDriverEnginesOptions.AuthInstanceID != nil {
+		builder.AddHeader("AuthInstanceId", fmt.Sprint(*deleteDriverEnginesOptions.AuthInstanceID))
+	}
+
+	builder.AddQuery("engine_ids", fmt.Sprint(*deleteDriverEnginesOptions.EngineIds))
+
+	request, err := builder.Build()
+	if err != nil {
+		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
+		return
+	}
+
+	response, err = watsonxData.Service.Request(request, nil)
+	if err != nil {
+		core.EnrichHTTPProblem(err, "delete_driver_engines", getServiceComponentInfo())
+		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
+		return
+	}
+
+	return
+}
+
+// UpdateDriverEngines : Associate engines to driver
+// Associate one or more engines to a driver.
+func (watsonxData *WatsonxDataV2) UpdateDriverEngines(updateDriverEnginesOptions *UpdateDriverEnginesOptions) (result *DriverRegistrationEngine, response *core.DetailedResponse, err error) {
+	result, response, err = watsonxData.UpdateDriverEnginesWithContext(context.Background(), updateDriverEnginesOptions)
+	err = core.RepurposeSDKProblem(err, "")
+	return
+}
+
+// UpdateDriverEnginesWithContext is an alternate form of the UpdateDriverEngines method which supports a Context parameter
+func (watsonxData *WatsonxDataV2) UpdateDriverEnginesWithContext(ctx context.Context, updateDriverEnginesOptions *UpdateDriverEnginesOptions) (result *DriverRegistrationEngine, response *core.DetailedResponse, err error) {
+	err = core.ValidateNotNil(updateDriverEnginesOptions, "updateDriverEnginesOptions cannot be nil")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
+		return
+	}
+	err = core.ValidateStruct(updateDriverEnginesOptions, "updateDriverEnginesOptions")
+	if err != nil {
+		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
+		return
+	}
+
+	pathParamsMap := map[string]string{
+		"driver_id": *updateDriverEnginesOptions.DriverID,
+	}
+
+	builder := core.NewRequestBuilder(core.PATCH)
+	builder = builder.WithContext(ctx)
+	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
+	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/driver_registrations/{driver_id}/engines`, pathParamsMap)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
+		return
+	}
+
+	for headerName, headerValue := range updateDriverEnginesOptions.Headers {
+		builder.AddHeader(headerName, headerValue)
+	}
+
+	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "UpdateDriverEngines")
+	for headerName, headerValue := range sdkHeaders {
+		builder.AddHeader(headerName, headerValue)
+	}
+	builder.AddHeader("Accept", "application/json")
+	builder.AddHeader("Content-Type", "application/merge-patch+json")
+	if updateDriverEnginesOptions.AuthInstanceID != nil {
+		builder.AddHeader("AuthInstanceId", fmt.Sprint(*updateDriverEnginesOptions.AuthInstanceID))
+	}
+
+	_, err = builder.SetBodyContentJSON(updateDriverEnginesOptions.Body)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "set-json-body-error", common.GetComponentInfo())
 		return
@@ -1550,12 +1651,12 @@ func (watsonxData *WatsonxDataV2) GenerateEngineDumpWithContext(ctx context.Cont
 	var rawResponse map[string]json.RawMessage
 	response, err = watsonxData.Service.Request(request, &rawResponse)
 	if err != nil {
-		core.EnrichHTTPProblem(err, "generate_engine_dump", getServiceComponentInfo())
+		core.EnrichHTTPProblem(err, "update_driver_engines", getServiceComponentInfo())
 		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
 		return
 	}
 	if rawResponse != nil {
-		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalGenerateEngineDumpOKBody)
+		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalDriverRegistrationEngine)
 		if err != nil {
 			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
 			return
@@ -2771,7 +2872,7 @@ func (watsonxData *WatsonxDataV2) UpdateNetezzaEngineWithContext(ctx context.Con
 }
 
 // CreateExecuteQuery : Execute a query
-// Execute query.Not applicable for production queries.
+// Execute a query.
 func (watsonxData *WatsonxDataV2) CreateExecuteQuery(createExecuteQueryOptions *CreateExecuteQueryOptions) (result *ExecuteQueryCreatedBody, response *core.DetailedResponse, err error) {
 	result, response, err = watsonxData.CreateExecuteQueryWithContext(context.Background(), createExecuteQueryOptions)
 	err = core.RepurposeSDKProblem(err, "")
@@ -3650,8 +3751,8 @@ func (watsonxData *WatsonxDataV2) CreatePrestissimoEngineCatalogsWithContext(ctx
 	}
 
 	body := make(map[string]interface{})
-	if createPrestissimoEngineCatalogsOptions.CatalogNames != nil {
-		body["catalog_names"] = createPrestissimoEngineCatalogsOptions.CatalogNames
+	if createPrestissimoEngineCatalogsOptions.CatalogName != nil {
+		body["catalog_name"] = createPrestissimoEngineCatalogsOptions.CatalogName
 	}
 	_, err = builder.SetBodyContentJSON(body)
 	if err != nil {
@@ -4795,8 +4896,8 @@ func (watsonxData *WatsonxDataV2) CreatePrestoEngineCatalogsWithContext(ctx cont
 	}
 
 	body := make(map[string]interface{})
-	if createPrestoEngineCatalogsOptions.CatalogNames != nil {
-		body["catalog_names"] = createPrestoEngineCatalogsOptions.CatalogNames
+	if createPrestoEngineCatalogsOptions.CatalogName != nil {
+		body["catalog_name"] = createPrestoEngineCatalogsOptions.CatalogName
 	}
 	_, err = builder.SetBodyContentJSON(body)
 	if err != nil {
@@ -7510,8 +7611,8 @@ func (watsonxData *WatsonxDataV2) CreateSparkEngineCatalogsWithContext(ctx conte
 	}
 
 	body := make(map[string]interface{})
-	if createSparkEngineCatalogsOptions.CatalogNames != nil {
-		body["catalog_names"] = createSparkEngineCatalogsOptions.CatalogNames
+	if createSparkEngineCatalogsOptions.CatalogName != nil {
+		body["catalog_name"] = createSparkEngineCatalogsOptions.CatalogName
 	}
 	_, err = builder.SetBodyContentJSON(body)
 	if err != nil {
@@ -9564,38 +9665,11 @@ func (watsonxData *WatsonxDataV2) CreateMilvusServiceWithContext(ctx context.Con
 	if createMilvusServiceOptions.Description != nil {
 		body["description"] = createMilvusServiceOptions.Description
 	}
-	if createMilvusServiceOptions.IndexType != nil {
-		body["index_type"] = createMilvusServiceOptions.IndexType
-	}
-	if createMilvusServiceOptions.IwCpu != nil {
-		body["iw_cpu"] = createMilvusServiceOptions.IwCpu
-	}
-	if createMilvusServiceOptions.IwMemory != nil {
-		body["iw_memory"] = createMilvusServiceOptions.IwMemory
-	}
-	if createMilvusServiceOptions.IwReplicas != nil {
-		body["iw_replicas"] = createMilvusServiceOptions.IwReplicas
-	}
-	if createMilvusServiceOptions.ManagedBy != nil {
-		body["managed_by"] = createMilvusServiceOptions.ManagedBy
-	}
-	if createMilvusServiceOptions.QwCpu != nil {
-		body["qw_cpu"] = createMilvusServiceOptions.QwCpu
-	}
-	if createMilvusServiceOptions.QwMemory != nil {
-		body["qw_memory"] = createMilvusServiceOptions.QwMemory
-	}
-	if createMilvusServiceOptions.QwReplicas != nil {
-		body["qw_replicas"] = createMilvusServiceOptions.QwReplicas
-	}
 	if createMilvusServiceOptions.Tags != nil {
 		body["tags"] = createMilvusServiceOptions.Tags
 	}
 	if createMilvusServiceOptions.TshirtSize != nil {
 		body["tshirt_size"] = createMilvusServiceOptions.TshirtSize
-	}
-	if createMilvusServiceOptions.VectorDimension != nil {
-		body["vector_dimension"] = createMilvusServiceOptions.VectorDimension
 	}
 	_, err = builder.SetBodyContentJSON(body)
 	if err != nil {
@@ -9842,7 +9916,7 @@ func (watsonxData *WatsonxDataV2) UpdateMilvusServiceWithContext(ctx context.Con
 }
 
 // UpdateMilvusServiceBucket : Update milvus service bucket
-// Update details of milvus service bucket.
+// Update details of milvus service bucket. Note that the improper use of the API could result in potential data loss.
 func (watsonxData *WatsonxDataV2) UpdateMilvusServiceBucket(updateMilvusServiceBucketOptions *UpdateMilvusServiceBucketOptions) (result *MilvusService, response *core.DetailedResponse, err error) {
 	result, response, err = watsonxData.UpdateMilvusServiceBucketWithContext(context.Background(), updateMilvusServiceBucketOptions)
 	err = core.RepurposeSDKProblem(err, "")
@@ -10260,33 +10334,6 @@ func (watsonxData *WatsonxDataV2) CreateMilvusServiceScaleWithContext(ctx contex
 	body := make(map[string]interface{})
 	if createMilvusServiceScaleOptions.TshirtSize != nil {
 		body["tshirt_size"] = createMilvusServiceScaleOptions.TshirtSize
-	}
-	if createMilvusServiceScaleOptions.IndexType != nil {
-		body["index_type"] = createMilvusServiceScaleOptions.IndexType
-	}
-	if createMilvusServiceScaleOptions.IwCpu != nil {
-		body["iw_cpu"] = createMilvusServiceScaleOptions.IwCpu
-	}
-	if createMilvusServiceScaleOptions.IwMemory != nil {
-		body["iw_memory"] = createMilvusServiceScaleOptions.IwMemory
-	}
-	if createMilvusServiceScaleOptions.IwReplicas != nil {
-		body["iw_replicas"] = createMilvusServiceScaleOptions.IwReplicas
-	}
-	if createMilvusServiceScaleOptions.MilvusName != nil {
-		body["milvus_name"] = createMilvusServiceScaleOptions.MilvusName
-	}
-	if createMilvusServiceScaleOptions.QwCpu != nil {
-		body["qw_cpu"] = createMilvusServiceScaleOptions.QwCpu
-	}
-	if createMilvusServiceScaleOptions.QwMemory != nil {
-		body["qw_memory"] = createMilvusServiceScaleOptions.QwMemory
-	}
-	if createMilvusServiceScaleOptions.QwReplicas != nil {
-		body["qw_replicas"] = createMilvusServiceScaleOptions.QwReplicas
-	}
-	if createMilvusServiceScaleOptions.VectorDimension != nil {
-		body["vector_dimension"] = createMilvusServiceScaleOptions.VectorDimension
 	}
 	_, err = builder.SetBodyContentJSON(body)
 	if err != nil {
@@ -10817,8 +10864,8 @@ func (watsonxData *WatsonxDataV2) CreatePreviewIngestionFileWithContext(ctx cont
 	return
 }
 
-// GetEndpoints : Get CPG and CAS endpoints
-// Get Common policy gateway (CPG) and  Data Access Service(CAS) endpoints.
+// GetEndpoints : Get CPG and DAS endpoints
+// Get Common policy gateway (CPG) and  Data Access Service(DAS) endpoints.
 func (watsonxData *WatsonxDataV2) GetEndpoints(getEndpointsOptions *GetEndpointsOptions) (result *EndpointCollection, response *core.DetailedResponse, err error) {
 	result, response, err = watsonxData.GetEndpointsWithContext(context.Background(), getEndpointsOptions)
 	err = core.RepurposeSDKProblem(err, "")
@@ -10870,167 +10917,6 @@ func (watsonxData *WatsonxDataV2) GetEndpointsWithContext(ctx context.Context, g
 	}
 	if rawResponse != nil {
 		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalEndpointCollection)
-		if err != nil {
-			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
-			return
-		}
-		response.Result = result
-	}
-
-	return
-}
-
-// RegisterTable : Register table
-// Register table.
-func (watsonxData *WatsonxDataV2) RegisterTable(registerTableOptions *RegisterTableOptions) (result *RegisterTableCreatedBody, response *core.DetailedResponse, err error) {
-	result, response, err = watsonxData.RegisterTableWithContext(context.Background(), registerTableOptions)
-	err = core.RepurposeSDKProblem(err, "")
-	return
-}
-
-// RegisterTableWithContext is an alternate form of the RegisterTable method which supports a Context parameter
-func (watsonxData *WatsonxDataV2) RegisterTableWithContext(ctx context.Context, registerTableOptions *RegisterTableOptions) (result *RegisterTableCreatedBody, response *core.DetailedResponse, err error) {
-	err = core.ValidateNotNil(registerTableOptions, "registerTableOptions cannot be nil")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
-		return
-	}
-	err = core.ValidateStruct(registerTableOptions, "registerTableOptions")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
-		return
-	}
-
-	pathParamsMap := map[string]string{
-		"catalog_id": *registerTableOptions.CatalogID,
-		"schema_id": *registerTableOptions.SchemaID,
-	}
-
-	builder := core.NewRequestBuilder(core.POST)
-	builder = builder.WithContext(ctx)
-	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
-	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/catalogs/{catalog_id}/schemas/{schema_id}/register`, pathParamsMap)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
-		return
-	}
-
-	for headerName, headerValue := range registerTableOptions.Headers {
-		builder.AddHeader(headerName, headerValue)
-	}
-
-	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "RegisterTable")
-	for headerName, headerValue := range sdkHeaders {
-		builder.AddHeader(headerName, headerValue)
-	}
-	builder.AddHeader("Accept", "application/json")
-	builder.AddHeader("Content-Type", "application/json")
-	if registerTableOptions.AuthInstanceID != nil {
-		builder.AddHeader("AuthInstanceId", fmt.Sprint(*registerTableOptions.AuthInstanceID))
-	}
-
-	body := make(map[string]interface{})
-	if registerTableOptions.MetadataLocation != nil {
-		body["metadata_location"] = registerTableOptions.MetadataLocation
-	}
-	if registerTableOptions.TableName != nil {
-		body["table_name"] = registerTableOptions.TableName
-	}
-	_, err = builder.SetBodyContentJSON(body)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "set-json-body-error", common.GetComponentInfo())
-		return
-	}
-
-	request, err := builder.Build()
-	if err != nil {
-		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
-		return
-	}
-
-	var rawResponse map[string]json.RawMessage
-	response, err = watsonxData.Service.Request(request, &rawResponse)
-	if err != nil {
-		core.EnrichHTTPProblem(err, "register_table", getServiceComponentInfo())
-		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
-		return
-	}
-	if rawResponse != nil {
-		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalRegisterTableCreatedBody)
-		if err != nil {
-			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
-			return
-		}
-		response.Result = result
-	}
-
-	return
-}
-
-// LoadTable : Load table metadata
-// Load table metadata.
-func (watsonxData *WatsonxDataV2) LoadTable(loadTableOptions *LoadTableOptions) (result *LoadTableResponse, response *core.DetailedResponse, err error) {
-	result, response, err = watsonxData.LoadTableWithContext(context.Background(), loadTableOptions)
-	err = core.RepurposeSDKProblem(err, "")
-	return
-}
-
-// LoadTableWithContext is an alternate form of the LoadTable method which supports a Context parameter
-func (watsonxData *WatsonxDataV2) LoadTableWithContext(ctx context.Context, loadTableOptions *LoadTableOptions) (result *LoadTableResponse, response *core.DetailedResponse, err error) {
-	err = core.ValidateNotNil(loadTableOptions, "loadTableOptions cannot be nil")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "unexpected-nil-param", common.GetComponentInfo())
-		return
-	}
-	err = core.ValidateStruct(loadTableOptions, "loadTableOptions")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "struct-validation-error", common.GetComponentInfo())
-		return
-	}
-
-	pathParamsMap := map[string]string{
-		"catalog_id": *loadTableOptions.CatalogID,
-		"schema_id": *loadTableOptions.SchemaID,
-		"table_id": *loadTableOptions.TableID,
-	}
-
-	builder := core.NewRequestBuilder(core.GET)
-	builder = builder.WithContext(ctx)
-	builder.EnableGzipCompression = watsonxData.GetEnableGzipCompression()
-	_, err = builder.ResolveRequestURL(watsonxData.Service.Options.URL, `/catalogs/{catalog_id}/schemas/{schema_id}/tables/{table_id}/metadata`, pathParamsMap)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "url-resolve-error", common.GetComponentInfo())
-		return
-	}
-
-	for headerName, headerValue := range loadTableOptions.Headers {
-		builder.AddHeader(headerName, headerValue)
-	}
-
-	sdkHeaders := common.GetSdkHeaders("watsonx_data", "V2", "LoadTable")
-	for headerName, headerValue := range sdkHeaders {
-		builder.AddHeader(headerName, headerValue)
-	}
-	builder.AddHeader("Accept", "application/json")
-	if loadTableOptions.AuthInstanceID != nil {
-		builder.AddHeader("AuthInstanceId", fmt.Sprint(*loadTableOptions.AuthInstanceID))
-	}
-
-	request, err := builder.Build()
-	if err != nil {
-		err = core.SDKErrorf(err, "", "build-error", common.GetComponentInfo())
-		return
-	}
-
-	var rawResponse map[string]json.RawMessage
-	response, err = watsonxData.Service.Request(request, &rawResponse)
-	if err != nil {
-		core.EnrichHTTPProblem(err, "load_table", getServiceComponentInfo())
-		err = core.SDKErrorf(err, "", "http-request-err", common.GetComponentInfo())
-		return
-	}
-	if rawResponse != nil {
-		err = core.UnmarshalModel(rawResponse, "", &result, UnmarshalLoadTableResponse)
 		if err != nil {
 			err = core.SDKErrorf(err, "", "unmarshal-resp-error", common.GetComponentInfo())
 			return
@@ -11409,129 +11295,6 @@ func getServiceComponentInfo() *core.ProblemComponent {
 	return core.NewProblemComponent(DefaultServiceName, "2.0.0")
 }
 
-// Bandwidth : Bandwidth struct
-type Bandwidth struct {
-	// Download bandwidth in Mbps.
-	DownloadBandwidthMbps *string `json:"download_bandwidth_mbps,omitempty"`
-
-	// Upload bandwidth in Mbps.
-	UploadBandwidthMbps *string `json:"upload_bandwidth_mbps,omitempty"`
-}
-
-// UnmarshalBandwidth unmarshals an instance of Bandwidth from the specified map of raw messages.
-func UnmarshalBandwidth(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(Bandwidth)
-	err = core.UnmarshalPrimitive(m, "download_bandwidth_mbps", &obj.DownloadBandwidthMbps)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "download_bandwidth_mbps-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "upload_bandwidth_mbps", &obj.UploadBandwidthMbps)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "upload_bandwidth_mbps-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// BenchmarkData : BenchmarkData struct
-type BenchmarkData struct {
-	Bandwidth *Bandwidth `json:"bandwidth,omitempty"`
-
-	// Date of the benchmark (YYYY-MM-DD).
-	Date *strfmt.Date `json:"date,omitempty"`
-
-	// Number of files used in the benchmark.
-	NumFiles *int64 `json:"num_files,omitempty"`
-
-	Results *Results `json:"results,omitempty"`
-
-	// Size of files in bytes. Maximum supported 1TB.
-	SizeFiles *int64 `json:"size_files,omitempty"`
-
-	// Time of the benchmark (HH:mm:ss).
-	Time *string `json:"time,omitempty"`
-}
-
-// UnmarshalBenchmarkData unmarshals an instance of BenchmarkData from the specified map of raw messages.
-func UnmarshalBenchmarkData(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(BenchmarkData)
-	err = core.UnmarshalModel(m, "bandwidth", &obj.Bandwidth, UnmarshalBandwidth)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "bandwidth-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "date", &obj.Date)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "date-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "num_files", &obj.NumFiles)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "num_files-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalModel(m, "results", &obj.Results, UnmarshalResults)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "results-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "size_files", &obj.SizeFiles)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "size_files-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "time", &obj.Time)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "time-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// BenchmarkStatusResponse : BenchmarkStatusResponse struct
-type BenchmarkStatusResponse struct {
-	Data *BenchmarkData `json:"data,omitempty"`
-
-	// error encountered.
-	Error *string `json:"error,omitempty"`
-
-	// Status message for the benchmark.
-	Message *string `json:"message,omitempty"`
-
-	// Overall benchmark status.
-	Status *string `json:"status,omitempty"`
-}
-
-// UnmarshalBenchmarkStatusResponse unmarshals an instance of BenchmarkStatusResponse from the specified map of raw messages.
-func UnmarshalBenchmarkStatusResponse(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(BenchmarkStatusResponse)
-	err = core.UnmarshalModel(m, "data", &obj.Data, UnmarshalBenchmarkData)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "data-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "error", &obj.Error)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "error-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "message", &obj.Message)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "message-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "status", &obj.Status)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "status-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
 // BucketCatalog : bucket catalog.
 type BucketCatalog struct {
 	// catalog name.
@@ -11690,28 +11453,10 @@ func UnmarshalBucketObjectProperties(m map[string]json.RawMessage, result interf
 	return
 }
 
-// BucketObjectSizePathsItems : Bucket object size.
-type BucketObjectSizePathsItems struct {
-	// object path.
-	Path *string `json:"path,omitempty"`
-}
-
-// UnmarshalBucketObjectSizePathsItems unmarshals an instance of BucketObjectSizePathsItems from the specified map of raw messages.
-func UnmarshalBucketObjectSizePathsItems(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(BucketObjectSizePathsItems)
-	err = core.UnmarshalPrimitive(m, "path", &obj.Path)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "path-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
 // BucketRegistration : Bucket.
 type BucketRegistration struct {
 	// Actions.
-	Actions []string `json:"actions" validate:"required"`
+	Actions []string `json:"actions,omitempty"`
 
 	// bucket catalog.
 	AssociatedCatalog *BucketCatalog `json:"associated_catalog" validate:"required"`
@@ -11719,8 +11464,8 @@ type BucketRegistration struct {
 	// bucket details.
 	BucketDetails *BucketDetails `json:"bucket_details,omitempty"`
 
-	// Bucket display name.
-	BucketDisplayName *string `json:"bucket_display_name" validate:"required"`
+	// bucket display name.
+	BucketDisplayName *string `json:"bucket_display_name,omitempty"`
 
 	// bucket ID auto generated during bucket registration.
 	BucketID *string `json:"bucket_id,omitempty"`
@@ -11728,7 +11473,7 @@ type BucketRegistration struct {
 	// bucket type.
 	BucketType *string `json:"bucket_type" validate:"required"`
 
-	// Username of the user who created the bucket.
+	// Username who created the bucket.
 	CreatedBy *string `json:"created_by" validate:"required"`
 
 	// Creation date.
@@ -11743,17 +11488,14 @@ type BucketRegistration struct {
 	// Region where the bucket is located.
 	Region *string `json:"region,omitempty"`
 
-	// Mark bucket as active or inactive.
+	// mark bucket active or inactive.
 	State *string `json:"state" validate:"required"`
 
 	// storage details.
 	StorageDetails *StorageDetails `json:"storage_details,omitempty"`
 
-	// Boolean value to specify whether updating HMAC credentials for internal system bucket.
-	SystemBucketUpdateCredentials *bool `json:"system_bucket_update_credentials,omitempty"`
-
 	// tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 }
 
 // Constants associated with the BucketRegistration.BucketType property.
@@ -11766,9 +11508,7 @@ const (
 	BucketRegistration_BucketType_GoogleCs = "google_cs"
 	BucketRegistration_BucketType_IbmCeph = "ibm_ceph"
 	BucketRegistration_BucketType_IbmCos = "ibm_cos"
-	BucketRegistration_BucketType_IbmStorageScale = "ibm_storage_scale"
 	BucketRegistration_BucketType_Minio = "minio"
-	BucketRegistration_BucketType_Ozone = "ozone"
 )
 
 // Constants associated with the BucketRegistration.ManagedBy property.
@@ -11779,7 +11519,7 @@ const (
 )
 
 // Constants associated with the BucketRegistration.State property.
-// Mark bucket as active or inactive.
+// mark bucket active or inactive.
 const (
 	BucketRegistration_State_Active = "active"
 	BucketRegistration_State_Inactive = "inactive"
@@ -11853,11 +11593,6 @@ func UnmarshalBucketRegistration(m map[string]json.RawMessage, result interface{
 		err = core.SDKErrorf(err, "", "storage_details-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "system_bucket_update_credentials", &obj.SystemBucketUpdateCredentials)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "system_bucket_update_credentials-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "tags", &obj.Tags)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "tags-error", common.GetComponentInfo())
@@ -11870,7 +11605,7 @@ func UnmarshalBucketRegistration(m map[string]json.RawMessage, result interface{
 // BucketRegistrationCollection : List bucket registrations.
 type BucketRegistrationCollection struct {
 	// Buckets.
-	BucketRegistrations []BucketRegistration `json:"bucket_registrations" validate:"required"`
+	BucketRegistrations []BucketRegistration `json:"bucket_registrations,omitempty"`
 }
 
 // UnmarshalBucketRegistrationCollection unmarshals an instance of BucketRegistrationCollection from the specified map of raw messages.
@@ -11966,14 +11701,11 @@ type BucketRegistrationPatch struct {
 	// bucket details.
 	BucketDetails *BucketDetails `json:"bucket_details,omitempty"`
 
-	// Bucket display name.
+	// bucket display name.
 	BucketDisplayName *string `json:"bucket_display_name,omitempty"`
 
-	// Modified description.
+	// modified description.
 	Description *string `json:"description,omitempty"`
-
-	// Boolean value to specify whether the patch is for updating HMAC credentials for internal system bucket.
-	SystemBucketUpdateCredentials *bool `json:"system_bucket_update_credentials,omitempty"`
 
 	// Tags.
 	Tags []string `json:"tags,omitempty"`
@@ -11997,11 +11729,6 @@ func UnmarshalBucketRegistrationPatch(m map[string]json.RawMessage, result inter
 		err = core.SDKErrorf(err, "", "description-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "system_bucket_update_credentials", &obj.SystemBucketUpdateCredentials)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "system_bucket_update_credentials-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "tags", &obj.Tags)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "tags-error", common.GetComponentInfo())
@@ -12023,9 +11750,6 @@ func (bucketRegistrationPatch *BucketRegistrationPatch) AsPatch() (_patch map[st
 	if !core.IsNil(bucketRegistrationPatch.Description) {
 		_patch["description"] = bucketRegistrationPatch.Description
 	}
-	if !core.IsNil(bucketRegistrationPatch.SystemBucketUpdateCredentials) {
-		_patch["system_bucket_update_credentials"] = bucketRegistrationPatch.SystemBucketUpdateCredentials
-	}
 	if !core.IsNil(bucketRegistrationPatch.Tags) {
 		_patch["tags"] = bucketRegistrationPatch.Tags
 	}
@@ -12035,19 +11759,19 @@ func (bucketRegistrationPatch *BucketRegistrationPatch) AsPatch() (_patch map[st
 
 // Catalog : Define the catalog details.
 type Catalog struct {
-	// List of allowed actions.
-	Actions []string `json:"actions" validate:"required"`
+	// list of allowed actions.
+	Actions []string `json:"actions,omitempty"`
 
 	// Associated buckets items.
-	AssociatedBuckets []string `json:"associated_buckets" validate:"required"`
+	AssociatedBuckets []string `json:"associated_buckets,omitempty"`
 
 	// Associated databases items.
-	AssociatedDatabases []string `json:"associated_databases" validate:"required"`
+	AssociatedDatabases []string `json:"associated_databases,omitempty"`
 
 	// Associated engines items.
-	AssociatedEngines []string `json:"associated_engines" validate:"required"`
+	AssociatedEngines []string `json:"associated_engines,omitempty"`
 
-	// Name of the catalog.
+	// Name for the catalog.
 	CatalogName *string `json:"catalog_name,omitempty"`
 
 	// Table type.
@@ -12059,9 +11783,6 @@ type Catalog struct {
 	// Created on.
 	CreatedOn *string `json:"created_on,omitempty"`
 
-	// Days left for catalog dissociation in case of vulnerability.
-	DaysLeft *string `json:"days_left,omitempty"`
-
 	// Description.
 	Description *string `json:"description,omitempty"`
 
@@ -12072,7 +11793,7 @@ type Catalog struct {
 	LastSyncAt *string `json:"last_sync_at,omitempty"`
 
 	// Managed by.
-	ManagedBy *string `json:"managed_by" validate:"required"`
+	ManagedBy *string `json:"managed_by,omitempty"`
 
 	// Catalog name.
 	Metastore *string `json:"metastore,omitempty"`
@@ -12080,23 +11801,20 @@ type Catalog struct {
 	// IBM thrift uri port.
 	Port *string `json:"port,omitempty"`
 
-	// Https rest uri.
-	RestURI *string `json:"rest_uri,omitempty"`
-
 	// Catalog status.
 	Status *string `json:"status,omitempty"`
 
 	// Sync description.
 	SyncDescription *string `json:"sync_description,omitempty"`
 
-	// Tables cannot be synchronized because the data is corrupted.
-	SyncException []string `json:"sync_exception" validate:"required"`
+	// Tables not sync because data is corrupted.
+	SyncException []string `json:"sync_exception,omitempty"`
 
 	// Sync status.
 	SyncStatus *string `json:"sync_status,omitempty"`
 
 	// Tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 
 	// Customer thrift uri.
 	ThriftURI *string `json:"thrift_uri,omitempty"`
@@ -12152,11 +11870,6 @@ func UnmarshalCatalog(m map[string]json.RawMessage, result interface{}) (err err
 		err = core.SDKErrorf(err, "", "created_on-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "days_left", &obj.DaysLeft)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "days_left-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "description", &obj.Description)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "description-error", common.GetComponentInfo())
@@ -12185,11 +11898,6 @@ func UnmarshalCatalog(m map[string]json.RawMessage, result interface{}) (err err
 	err = core.UnmarshalPrimitive(m, "port", &obj.Port)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "port-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "rest_uri", &obj.RestURI)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "rest_uri-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "status", &obj.Status)
@@ -12229,7 +11937,7 @@ func UnmarshalCatalog(m map[string]json.RawMessage, result interface{}) (err err
 // CatalogCollection : GetCatalogs OK.
 type CatalogCollection struct {
 	// Catalogs.
-	Catalogs []Catalog `json:"catalogs" validate:"required"`
+	Catalogs []Catalog `json:"catalogs,omitempty"`
 }
 
 // UnmarshalCatalogCollection unmarshals an instance of CatalogCollection from the specified map of raw messages.
@@ -12258,11 +11966,11 @@ type Column struct {
 	// length.
 	Length *string `json:"length,omitempty"`
 
-	// precision.
-	Precision *string `json:"precision,omitempty"`
-
 	// scale.
 	Scale *string `json:"scale,omitempty"`
+
+	// precision.
+	Precision *string `json:"precision,omitempty"`
 
 	// Data type.
 	Type *string `json:"type,omitempty"`
@@ -12291,14 +11999,14 @@ func UnmarshalColumn(m map[string]json.RawMessage, result interface{}) (err erro
 		err = core.SDKErrorf(err, "", "length-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "precision", &obj.Precision)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "precision-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "scale", &obj.Scale)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "scale-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "precision", &obj.Precision)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "precision-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "type", &obj.Type)
@@ -12313,7 +12021,7 @@ func UnmarshalColumn(m map[string]json.RawMessage, result interface{}) (err erro
 // ColumnCollection : list of columns in a table.
 type ColumnCollection struct {
 	// List of the columns present in the table.
-	Columns []Column `json:"columns" validate:"required"`
+	Columns []Column `json:"columns,omitempty"`
 }
 
 // UnmarshalColumnCollection unmarshals an instance of ColumnCollection from the specified map of raw messages.
@@ -12330,7 +12038,7 @@ func UnmarshalColumnCollection(m map[string]json.RawMessage, result interface{})
 
 // ColumnPatch : list of columns to be added to a table.
 type ColumnPatch struct {
-	// Url encoded and base 64 encoded to add special character like ?.
+	// Column name.
 	ColumnName *string `json:"column_name,omitempty"`
 }
 
@@ -12356,10 +12064,10 @@ func (columnPatch *ColumnPatch) AsPatch() (_patch map[string]interface{}, err er
 	return
 }
 
-// ColumnsResponse : ColumnsResponse struct
+// ColumnsResponse : Column details.
 type ColumnsResponse struct {
-	// A list of all tables.
-	Columns []TableColumDetail `json:"columns" validate:"required"`
+	// A list of all tables with columns.
+	Columns []TableColumDetail `json:"columns,omitempty"`
 
 	// Response message string.
 	Message *string `json:"message,omitempty"`
@@ -12533,9 +12241,6 @@ func (options *CreateActivateBucketOptions) SetHeaders(param map[string]string) 
 
 // CreateBucketRegistrationOptions : The CreateBucketRegistration options.
 type CreateBucketRegistrationOptions struct {
-	// Bucket display name.
-	BucketDisplayName *string `json:"bucket_display_name" validate:"required"`
-
 	// bucket type.
 	BucketType *string `json:"bucket_type" validate:"required"`
 
@@ -12551,7 +12256,10 @@ type CreateBucketRegistrationOptions struct {
 	// bucket details.
 	BucketDetails *BucketDetails `json:"bucket_details,omitempty"`
 
-	// Region where the bucket is located.
+	// bucket display name.
+	BucketDisplayName *string `json:"bucket_display_name,omitempty"`
+
+	// region where the bucket is located.
 	Region *string `json:"region,omitempty"`
 
 	// storage details.
@@ -12576,9 +12284,7 @@ const (
 	CreateBucketRegistrationOptions_BucketType_GoogleCs = "google_cs"
 	CreateBucketRegistrationOptions_BucketType_IbmCeph = "ibm_ceph"
 	CreateBucketRegistrationOptions_BucketType_IbmCos = "ibm_cos"
-	CreateBucketRegistrationOptions_BucketType_IbmStorageScale = "ibm_storage_scale"
 	CreateBucketRegistrationOptions_BucketType_Minio = "minio"
-	CreateBucketRegistrationOptions_BucketType_Ozone = "ozone"
 )
 
 // Constants associated with the CreateBucketRegistrationOptions.ManagedBy property.
@@ -12589,19 +12295,12 @@ const (
 )
 
 // NewCreateBucketRegistrationOptions : Instantiate CreateBucketRegistrationOptions
-func (*WatsonxDataV2) NewCreateBucketRegistrationOptions(bucketDisplayName string, bucketType string, description string, managedBy string) *CreateBucketRegistrationOptions {
+func (*WatsonxDataV2) NewCreateBucketRegistrationOptions(bucketType string, description string, managedBy string) *CreateBucketRegistrationOptions {
 	return &CreateBucketRegistrationOptions{
-		BucketDisplayName: core.StringPtr(bucketDisplayName),
 		BucketType: core.StringPtr(bucketType),
 		Description: core.StringPtr(description),
 		ManagedBy: core.StringPtr(managedBy),
 	}
-}
-
-// SetBucketDisplayName : Allow user to set BucketDisplayName
-func (_options *CreateBucketRegistrationOptions) SetBucketDisplayName(bucketDisplayName string) *CreateBucketRegistrationOptions {
-	_options.BucketDisplayName = core.StringPtr(bucketDisplayName)
-	return _options
 }
 
 // SetBucketType : Allow user to set BucketType
@@ -12631,6 +12330,12 @@ func (_options *CreateBucketRegistrationOptions) SetAssociatedCatalog(associated
 // SetBucketDetails : Allow user to set BucketDetails
 func (_options *CreateBucketRegistrationOptions) SetBucketDetails(bucketDetails *BucketDetails) *CreateBucketRegistrationOptions {
 	_options.BucketDetails = bucketDetails
+	return _options
+}
+
+// SetBucketDisplayName : Allow user to set BucketDisplayName
+func (_options *CreateBucketRegistrationOptions) SetBucketDisplayName(bucketDisplayName string) *CreateBucketRegistrationOptions {
+	_options.BucketDisplayName = core.StringPtr(bucketDisplayName)
 	return _options
 }
 
@@ -12749,7 +12454,7 @@ type CreateDatabaseRegistrationOptions struct {
 	DatabaseType *string `json:"database_type" validate:"required"`
 
 	// database catalog.
-	AssociatedCatalog *DatabaseCatalogPrototype `json:"associated_catalog,omitempty"`
+	AssociatedCatalog *DatabaseCatalog `json:"associated_catalog,omitempty"`
 
 	// Created on.
 	CreatedOn *string `json:"created_on,omitempty"`
@@ -12794,7 +12499,7 @@ func (_options *CreateDatabaseRegistrationOptions) SetDatabaseType(databaseType 
 }
 
 // SetAssociatedCatalog : Allow user to set AssociatedCatalog
-func (_options *CreateDatabaseRegistrationOptions) SetAssociatedCatalog(associatedCatalog *DatabaseCatalogPrototype) *CreateDatabaseRegistrationOptions {
+func (_options *CreateDatabaseRegistrationOptions) SetAssociatedCatalog(associatedCatalog *DatabaseCatalog) *CreateDatabaseRegistrationOptions {
 	_options.AssociatedCatalog = associatedCatalog
 	return _options
 }
@@ -12868,7 +12573,9 @@ type CreateDb2EngineOptions struct {
 // Constants associated with the CreateDb2EngineOptions.Origin property.
 // Origin - created or registered.
 const (
+	CreateDb2EngineOptions_Origin_Discover = "discover"
 	CreateDb2EngineOptions_Origin_External = "external"
+	CreateDb2EngineOptions_Origin_Native = "native"
 )
 
 // NewCreateDb2EngineOptions : Instantiate CreateDb2EngineOptions
@@ -12916,6 +12623,81 @@ func (_options *CreateDb2EngineOptions) SetAuthInstanceID(authInstanceID string)
 
 // SetHeaders : Allow user to set Headers
 func (options *CreateDb2EngineOptions) SetHeaders(param map[string]string) *CreateDb2EngineOptions {
+	options.Headers = param
+	return options
+}
+
+// CreateDriverRegistrationOptions : The CreateDriverRegistration options.
+type CreateDriverRegistrationOptions struct {
+	// Driver file to upload.
+	Driver io.ReadCloser `json:"driver" validate:"required"`
+
+	// Driver name.
+	DriverName *string `json:"driver_name" validate:"required"`
+
+	// Driver connection type.
+	ConnectionType *string `json:"connection_type" validate:"required"`
+
+	// The content type of driver.
+	DriverContentType *string `json:"driver_content_type,omitempty"`
+
+	// Driver status.
+	Version *string `json:"version,omitempty"`
+
+	// CRN.
+	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
+
+	// Allows users to set headers on API requests.
+	Headers map[string]string
+}
+
+// NewCreateDriverRegistrationOptions : Instantiate CreateDriverRegistrationOptions
+func (*WatsonxDataV2) NewCreateDriverRegistrationOptions(driver io.ReadCloser, driverName string, connectionType string) *CreateDriverRegistrationOptions {
+	return &CreateDriverRegistrationOptions{
+		Driver: driver,
+		DriverName: core.StringPtr(driverName),
+		ConnectionType: core.StringPtr(connectionType),
+	}
+}
+
+// SetDriver : Allow user to set Driver
+func (_options *CreateDriverRegistrationOptions) SetDriver(driver io.ReadCloser) *CreateDriverRegistrationOptions {
+	_options.Driver = driver
+	return _options
+}
+
+// SetDriverName : Allow user to set DriverName
+func (_options *CreateDriverRegistrationOptions) SetDriverName(driverName string) *CreateDriverRegistrationOptions {
+	_options.DriverName = core.StringPtr(driverName)
+	return _options
+}
+
+// SetConnectionType : Allow user to set ConnectionType
+func (_options *CreateDriverRegistrationOptions) SetConnectionType(connectionType string) *CreateDriverRegistrationOptions {
+	_options.ConnectionType = core.StringPtr(connectionType)
+	return _options
+}
+
+// SetDriverContentType : Allow user to set DriverContentType
+func (_options *CreateDriverRegistrationOptions) SetDriverContentType(driverContentType string) *CreateDriverRegistrationOptions {
+	_options.DriverContentType = core.StringPtr(driverContentType)
+	return _options
+}
+
+// SetVersion : Allow user to set Version
+func (_options *CreateDriverRegistrationOptions) SetVersion(version string) *CreateDriverRegistrationOptions {
+	_options.Version = core.StringPtr(version)
+	return _options
+}
+
+// SetAuthInstanceID : Allow user to set AuthInstanceID
+func (_options *CreateDriverRegistrationOptions) SetAuthInstanceID(authInstanceID string) *CreateDriverRegistrationOptions {
+	_options.AuthInstanceID = core.StringPtr(authInstanceID)
+	return _options
+}
+
+// SetHeaders : Allow user to set Headers
+func (options *CreateDriverRegistrationOptions) SetHeaders(param map[string]string) *CreateDriverRegistrationOptions {
 	options.Headers = param
 	return options
 }
@@ -13553,25 +13335,25 @@ func (options *CreateIngestionJobsOptions) SetHeaders(param map[string]string) *
 
 // CreateIntegrationOptions : The CreateIntegration options.
 type CreateIntegrationOptions struct {
-	// Token for databand.
+	// token for databand.
 	AccessToken *string `json:"access_token,omitempty"`
 
-	// Integration apikey for IKC and Manta.
+	// Integration APIKEY.
 	Apikey *string `json:"apikey,omitempty"`
 
-	// Cross account integration enabler/disabler for ikc, specfic to saas.
+	// cross account integration enabler/disabler.
 	CrossAccountIntegration *bool `json:"cross_account_integration,omitempty"`
 
-	// Data policy enabler with wxd for ranger.
+	// data policy enabler with wxd for ranger.
 	EnableDataPolicyWithinWxd *bool `json:"enable_data_policy_within_wxd,omitempty"`
 
-	// Account id of the cross account user for ikc, specfic to Saas.
+	// token for ikc.
 	IkcUserAccountID *string `json:"ikc_user_account_id,omitempty"`
 
-	// Ranger password.
+	// Integration password.
 	Password *string `json:"password,omitempty"`
 
-	// Resouce for ranger.
+	// resouce for ranger.
 	Resource *string `json:"resource,omitempty"`
 
 	// Integration type.
@@ -13580,10 +13362,10 @@ type CreateIntegrationOptions struct {
 	// Comma separated list of bucket catalogs which have ikc enabled.
 	StorageCatalogs []string `json:"storage_catalogs,omitempty"`
 
-	// Integration Connection URL for IKC, Ranger, Databand and Manta.
+	// Integration Connection URL.
 	URL *string `json:"url,omitempty"`
 
-	// Username for Ranger.
+	// Integration username.
 	Username *string `json:"username,omitempty"`
 
 	// CRN.
@@ -13696,38 +13478,11 @@ type CreateMilvusServiceOptions struct {
 	// Service description.
 	Description *string `json:"description,omitempty"`
 
-	// index type.
-	IndexType *string `json:"index_type,omitempty"`
-
-	// index worker cpu.
-	IwCpu *int64 `json:"iw_cpu,omitempty"`
-
-	// index worker memory.
-	IwMemory *int64 `json:"iw_memory,omitempty"`
-
-	// index worker replicas.
-	IwReplicas *int64 `json:"iw_replicas,omitempty"`
-
-	// How is the Milvus instance managed.
-	ManagedBy *string `json:"managed_by,omitempty"`
-
-	// query worker cpu.
-	QwCpu *int64 `json:"qw_cpu,omitempty"`
-
-	// query worker memory.
-	QwMemory *int64 `json:"qw_memory,omitempty"`
-
-	// query worker replicas.
-	QwReplicas *int64 `json:"qw_replicas,omitempty"`
-
 	// Tags.
 	Tags []string `json:"tags,omitempty"`
 
 	// tshirt size.
 	TshirtSize *string `json:"tshirt_size,omitempty"`
-
-	// vector dimension.
-	VectorDimension *int64 `json:"vector_dimension,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -13735,21 +13490,6 @@ type CreateMilvusServiceOptions struct {
 	// Allows users to set headers on API requests.
 	Headers map[string]string
 }
-
-// Constants associated with the CreateMilvusServiceOptions.IndexType property.
-// index type.
-const (
-	CreateMilvusServiceOptions_IndexType_Flat = "FLAT"
-	CreateMilvusServiceOptions_IndexType_GpuBruteForce = "GPU_BRUTE_FORCE"
-	CreateMilvusServiceOptions_IndexType_GpuCagra = "GPU_CAGRA"
-	CreateMilvusServiceOptions_IndexType_GpuIvfFlat = "GPU_IVF_FLAT"
-	CreateMilvusServiceOptions_IndexType_GpuIvfPq = "GPU_IVF_PQ"
-	CreateMilvusServiceOptions_IndexType_Hnsw = "HNSW"
-	CreateMilvusServiceOptions_IndexType_IvfFlat = "IVF_FLAT"
-	CreateMilvusServiceOptions_IndexType_IvfPq = "IVF_PQ"
-	CreateMilvusServiceOptions_IndexType_IvfSq8 = "IVF_SQ8"
-	CreateMilvusServiceOptions_IndexType_Scann = "SCANN"
-)
 
 // NewCreateMilvusServiceOptions : Instantiate CreateMilvusServiceOptions
 func (*WatsonxDataV2) NewCreateMilvusServiceOptions(bucketName string, origin string, rootPath string, serviceDisplayName string) *CreateMilvusServiceOptions {
@@ -13797,54 +13537,6 @@ func (_options *CreateMilvusServiceOptions) SetDescription(description string) *
 	return _options
 }
 
-// SetIndexType : Allow user to set IndexType
-func (_options *CreateMilvusServiceOptions) SetIndexType(indexType string) *CreateMilvusServiceOptions {
-	_options.IndexType = core.StringPtr(indexType)
-	return _options
-}
-
-// SetIwCpu : Allow user to set IwCpu
-func (_options *CreateMilvusServiceOptions) SetIwCpu(iwCpu int64) *CreateMilvusServiceOptions {
-	_options.IwCpu = core.Int64Ptr(iwCpu)
-	return _options
-}
-
-// SetIwMemory : Allow user to set IwMemory
-func (_options *CreateMilvusServiceOptions) SetIwMemory(iwMemory int64) *CreateMilvusServiceOptions {
-	_options.IwMemory = core.Int64Ptr(iwMemory)
-	return _options
-}
-
-// SetIwReplicas : Allow user to set IwReplicas
-func (_options *CreateMilvusServiceOptions) SetIwReplicas(iwReplicas int64) *CreateMilvusServiceOptions {
-	_options.IwReplicas = core.Int64Ptr(iwReplicas)
-	return _options
-}
-
-// SetManagedBy : Allow user to set ManagedBy
-func (_options *CreateMilvusServiceOptions) SetManagedBy(managedBy string) *CreateMilvusServiceOptions {
-	_options.ManagedBy = core.StringPtr(managedBy)
-	return _options
-}
-
-// SetQwCpu : Allow user to set QwCpu
-func (_options *CreateMilvusServiceOptions) SetQwCpu(qwCpu int64) *CreateMilvusServiceOptions {
-	_options.QwCpu = core.Int64Ptr(qwCpu)
-	return _options
-}
-
-// SetQwMemory : Allow user to set QwMemory
-func (_options *CreateMilvusServiceOptions) SetQwMemory(qwMemory int64) *CreateMilvusServiceOptions {
-	_options.QwMemory = core.Int64Ptr(qwMemory)
-	return _options
-}
-
-// SetQwReplicas : Allow user to set QwReplicas
-func (_options *CreateMilvusServiceOptions) SetQwReplicas(qwReplicas int64) *CreateMilvusServiceOptions {
-	_options.QwReplicas = core.Int64Ptr(qwReplicas)
-	return _options
-}
-
 // SetTags : Allow user to set Tags
 func (_options *CreateMilvusServiceOptions) SetTags(tags []string) *CreateMilvusServiceOptions {
 	_options.Tags = tags
@@ -13854,12 +13546,6 @@ func (_options *CreateMilvusServiceOptions) SetTags(tags []string) *CreateMilvus
 // SetTshirtSize : Allow user to set TshirtSize
 func (_options *CreateMilvusServiceOptions) SetTshirtSize(tshirtSize string) *CreateMilvusServiceOptions {
 	_options.TshirtSize = core.StringPtr(tshirtSize)
-	return _options
-}
-
-// SetVectorDimension : Allow user to set VectorDimension
-func (_options *CreateMilvusServiceOptions) SetVectorDimension(vectorDimension int64) *CreateMilvusServiceOptions {
-	_options.VectorDimension = core.Int64Ptr(vectorDimension)
 	return _options
 }
 
@@ -13955,34 +13641,7 @@ type CreateMilvusServiceScaleOptions struct {
 	ServiceID *string `json:"service_id" validate:"required,ne="`
 
 	// tshirt size.
-	TshirtSize *string `json:"tshirt_size" validate:"required"`
-
-	// index type.
-	IndexType *string `json:"index_type,omitempty"`
-
-	// index worker cpus.
-	IwCpu *int64 `json:"iw_cpu,omitempty"`
-
-	// index worker memory.
-	IwMemory *int64 `json:"iw_memory,omitempty"`
-
-	// index worker replicas.
-	IwReplicas *int64 `json:"iw_replicas,omitempty"`
-
-	// milvus engine id.
-	MilvusName *string `json:"milvus_name,omitempty"`
-
-	// query worker cpus.
-	QwCpu *int64 `json:"qw_cpu,omitempty"`
-
-	// query worker memory.
-	QwMemory *int64 `json:"qw_memory,omitempty"`
-
-	// query worker replicas.
-	QwReplicas *int64 `json:"qw_replicas,omitempty"`
-
-	// vector dimension.
-	VectorDimension *int64 `json:"vector_dimension,omitempty"`
+	TshirtSize *string `json:"tshirt_size,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -13991,26 +13650,10 @@ type CreateMilvusServiceScaleOptions struct {
 	Headers map[string]string
 }
 
-// Constants associated with the CreateMilvusServiceScaleOptions.IndexType property.
-// index type.
-const (
-	CreateMilvusServiceScaleOptions_IndexType_Flat = "FLAT"
-	CreateMilvusServiceScaleOptions_IndexType_GpuBruteForce = "GPU_BRUTE_FORCE"
-	CreateMilvusServiceScaleOptions_IndexType_GpuCagra = "GPU_CAGRA"
-	CreateMilvusServiceScaleOptions_IndexType_GpuIvfFlat = "GPU_IVF_FLAT"
-	CreateMilvusServiceScaleOptions_IndexType_GpuIvfPq = "GPU_IVF_PQ"
-	CreateMilvusServiceScaleOptions_IndexType_Hnsw = "HNSW"
-	CreateMilvusServiceScaleOptions_IndexType_IvfFlat = "IVF_FLAT"
-	CreateMilvusServiceScaleOptions_IndexType_IvfPq = "IVF_PQ"
-	CreateMilvusServiceScaleOptions_IndexType_IvfSq8 = "IVF_SQ8"
-	CreateMilvusServiceScaleOptions_IndexType_Scann = "SCANN"
-)
-
 // NewCreateMilvusServiceScaleOptions : Instantiate CreateMilvusServiceScaleOptions
-func (*WatsonxDataV2) NewCreateMilvusServiceScaleOptions(serviceID string, tshirtSize string) *CreateMilvusServiceScaleOptions {
+func (*WatsonxDataV2) NewCreateMilvusServiceScaleOptions(serviceID string) *CreateMilvusServiceScaleOptions {
 	return &CreateMilvusServiceScaleOptions{
 		ServiceID: core.StringPtr(serviceID),
-		TshirtSize: core.StringPtr(tshirtSize),
 	}
 }
 
@@ -14023,60 +13666,6 @@ func (_options *CreateMilvusServiceScaleOptions) SetServiceID(serviceID string) 
 // SetTshirtSize : Allow user to set TshirtSize
 func (_options *CreateMilvusServiceScaleOptions) SetTshirtSize(tshirtSize string) *CreateMilvusServiceScaleOptions {
 	_options.TshirtSize = core.StringPtr(tshirtSize)
-	return _options
-}
-
-// SetIndexType : Allow user to set IndexType
-func (_options *CreateMilvusServiceScaleOptions) SetIndexType(indexType string) *CreateMilvusServiceScaleOptions {
-	_options.IndexType = core.StringPtr(indexType)
-	return _options
-}
-
-// SetIwCpu : Allow user to set IwCpu
-func (_options *CreateMilvusServiceScaleOptions) SetIwCpu(iwCpu int64) *CreateMilvusServiceScaleOptions {
-	_options.IwCpu = core.Int64Ptr(iwCpu)
-	return _options
-}
-
-// SetIwMemory : Allow user to set IwMemory
-func (_options *CreateMilvusServiceScaleOptions) SetIwMemory(iwMemory int64) *CreateMilvusServiceScaleOptions {
-	_options.IwMemory = core.Int64Ptr(iwMemory)
-	return _options
-}
-
-// SetIwReplicas : Allow user to set IwReplicas
-func (_options *CreateMilvusServiceScaleOptions) SetIwReplicas(iwReplicas int64) *CreateMilvusServiceScaleOptions {
-	_options.IwReplicas = core.Int64Ptr(iwReplicas)
-	return _options
-}
-
-// SetMilvusName : Allow user to set MilvusName
-func (_options *CreateMilvusServiceScaleOptions) SetMilvusName(milvusName string) *CreateMilvusServiceScaleOptions {
-	_options.MilvusName = core.StringPtr(milvusName)
-	return _options
-}
-
-// SetQwCpu : Allow user to set QwCpu
-func (_options *CreateMilvusServiceScaleOptions) SetQwCpu(qwCpu int64) *CreateMilvusServiceScaleOptions {
-	_options.QwCpu = core.Int64Ptr(qwCpu)
-	return _options
-}
-
-// SetQwMemory : Allow user to set QwMemory
-func (_options *CreateMilvusServiceScaleOptions) SetQwMemory(qwMemory int64) *CreateMilvusServiceScaleOptions {
-	_options.QwMemory = core.Int64Ptr(qwMemory)
-	return _options
-}
-
-// SetQwReplicas : Allow user to set QwReplicas
-func (_options *CreateMilvusServiceScaleOptions) SetQwReplicas(qwReplicas int64) *CreateMilvusServiceScaleOptions {
-	_options.QwReplicas = core.Int64Ptr(qwReplicas)
-	return _options
-}
-
-// SetVectorDimension : Allow user to set VectorDimension
-func (_options *CreateMilvusServiceScaleOptions) SetVectorDimension(vectorDimension int64) *CreateMilvusServiceScaleOptions {
-	_options.VectorDimension = core.Int64Ptr(vectorDimension)
 	return _options
 }
 
@@ -14119,7 +13708,9 @@ type CreateNetezzaEngineOptions struct {
 // Constants associated with the CreateNetezzaEngineOptions.Origin property.
 // Origin - created or registered.
 const (
+	CreateNetezzaEngineOptions_Origin_Discover = "discover"
 	CreateNetezzaEngineOptions_Origin_External = "external"
+	CreateNetezzaEngineOptions_Origin_Native = "native"
 )
 
 // NewCreateNetezzaEngineOptions : Instantiate CreateNetezzaEngineOptions
@@ -14259,7 +13850,7 @@ type CreatePrestissimoEngineCatalogsOptions struct {
 	EngineID *string `json:"engine_id" validate:"required,ne="`
 
 	// catalog names.
-	CatalogNames *string `json:"catalog_names,omitempty"`
+	CatalogName *string `json:"catalog_name,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -14281,9 +13872,9 @@ func (_options *CreatePrestissimoEngineCatalogsOptions) SetEngineID(engineID str
 	return _options
 }
 
-// SetCatalogNames : Allow user to set CatalogNames
-func (_options *CreatePrestissimoEngineCatalogsOptions) SetCatalogNames(catalogNames string) *CreatePrestissimoEngineCatalogsOptions {
-	_options.CatalogNames = core.StringPtr(catalogNames)
+// SetCatalogName : Allow user to set CatalogName
+func (_options *CreatePrestissimoEngineCatalogsOptions) SetCatalogName(catalogName string) *CreatePrestissimoEngineCatalogsOptions {
+	_options.CatalogName = core.StringPtr(catalogName)
 	return _options
 }
 
@@ -14413,7 +14004,7 @@ type CreatePrestoEngineCatalogsOptions struct {
 	EngineID *string `json:"engine_id" validate:"required,ne="`
 
 	// catalog names.
-	CatalogNames *string `json:"catalog_names,omitempty"`
+	CatalogName *string `json:"catalog_name,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -14435,9 +14026,9 @@ func (_options *CreatePrestoEngineCatalogsOptions) SetEngineID(engineID string) 
 	return _options
 }
 
-// SetCatalogNames : Allow user to set CatalogNames
-func (_options *CreatePrestoEngineCatalogsOptions) SetCatalogNames(catalogNames string) *CreatePrestoEngineCatalogsOptions {
-	_options.CatalogNames = core.StringPtr(catalogNames)
+// SetCatalogName : Allow user to set CatalogName
+func (_options *CreatePrestoEngineCatalogsOptions) SetCatalogName(catalogName string) *CreatePrestoEngineCatalogsOptions {
+	_options.CatalogName = core.StringPtr(catalogName)
 	return _options
 }
 
@@ -15111,7 +14702,7 @@ type CreateSparkEngineCatalogsOptions struct {
 	EngineID *string `json:"engine_id" validate:"required,ne="`
 
 	// catalog names.
-	CatalogNames *string `json:"catalog_names,omitempty"`
+	CatalogName *string `json:"catalog_name,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -15133,9 +14724,9 @@ func (_options *CreateSparkEngineCatalogsOptions) SetEngineID(engineID string) *
 	return _options
 }
 
-// SetCatalogNames : Allow user to set CatalogNames
-func (_options *CreateSparkEngineCatalogsOptions) SetCatalogNames(catalogNames string) *CreateSparkEngineCatalogsOptions {
-	_options.CatalogNames = core.StringPtr(catalogNames)
+// SetCatalogName : Allow user to set CatalogName
+func (_options *CreateSparkEngineCatalogsOptions) SetCatalogName(catalogName string) *CreateSparkEngineCatalogsOptions {
+	_options.CatalogName = core.StringPtr(catalogName)
 	return _options
 }
 
@@ -15256,7 +14847,7 @@ type DatabaseCatalog struct {
 	CatalogName *string `json:"catalog_name,omitempty"`
 
 	// catalog tags.
-	CatalogTags []string `json:"catalog_tags" validate:"required"`
+	CatalogTags []string `json:"catalog_tags,omitempty"`
 
 	// catalog type.
 	CatalogType *string `json:"catalog_type,omitempty"`
@@ -15284,39 +14875,10 @@ func UnmarshalDatabaseCatalog(m map[string]json.RawMessage, result interface{}) 
 	return
 }
 
-// DatabaseCatalogPrototype : database catalog.
-type DatabaseCatalogPrototype struct {
-	// catalog name.
-	CatalogName *string `json:"catalog_name,omitempty"`
-
-	// catalog type.
-	CatalogType *string `json:"catalog_type,omitempty"`
-}
-
-// UnmarshalDatabaseCatalogPrototype unmarshals an instance of DatabaseCatalogPrototype from the specified map of raw messages.
-func UnmarshalDatabaseCatalogPrototype(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(DatabaseCatalogPrototype)
-	err = core.UnmarshalPrimitive(m, "catalog_name", &obj.CatalogName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "catalog_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "catalog_type", &obj.CatalogType)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "catalog_type-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
 // DatabaseDetails : database details.
 type DatabaseDetails struct {
 	// Authentication method.
 	AuthenticationType *string `json:"authentication_type,omitempty"`
-
-	// Authentication method.
-	AuthenticationValue *string `json:"authentication_value,omitempty"`
 
 	// Broker authentication password.
 	BrokerAuthenticationPassword *string `json:"broker_authentication_password,omitempty"`
@@ -15326,12 +14888,6 @@ type DatabaseDetails struct {
 
 	// Broker authentication user.
 	BrokerAuthenticationUser *string `json:"broker_authentication_user,omitempty"`
-
-	// Broker host.
-	BrokerHost *string `json:"broker_host,omitempty"`
-
-	// Broker port.
-	BrokerPort *int64 `json:"broker_port,omitempty"`
 
 	// contents of a pem/crt file.
 	Certificate *string `json:"certificate,omitempty"`
@@ -15359,12 +14915,6 @@ type DatabaseDetails struct {
 
 	// Controller authentication user.
 	ControllerAuthenticationUser *string `json:"controller_authentication_user,omitempty"`
-
-	// Coordinator host.
-	CoordinatorHost *string `json:"coordinator_host,omitempty"`
-
-	// Coordinator port.
-	CoordinatorPort *int64 `json:"coordinator_port,omitempty"`
 
 	// CPD Hostname.
 	CpdHostname *string `json:"cpd_hostname,omitempty"`
@@ -15399,15 +14949,6 @@ type DatabaseDetails struct {
 	// SASL Mode.
 	Sasl *bool `json:"sasl,omitempty"`
 
-	// sasl mechanism for kafka.
-	SaslMechanism *string `json:"sasl_mechanism,omitempty"`
-
-	// Schema name.
-	SchemaName *string `json:"schema_name,omitempty"`
-
-	// Add tables.
-	Schemas *string `json:"schemas,omitempty"`
-
 	// service api key.
 	ServiceApiKey *string `json:"service_api_key,omitempty"`
 
@@ -15432,7 +14973,7 @@ type DatabaseDetails struct {
 	// SSL Mode.
 	Ssl *bool `json:"ssl,omitempty"`
 
-	// Add tables.
+	// Only for Kafka - Add kafka tables.
 	Tables *string `json:"tables,omitempty"`
 
 	// Username.
@@ -15443,18 +14984,7 @@ type DatabaseDetails struct {
 
 	// Verify host name.
 	VerifyHostName *bool `json:"verify_host_name,omitempty"`
-
-	// Warehouse name.
-	WarehouseName *string `json:"warehouse_name,omitempty"`
 }
-
-// Constants associated with the DatabaseDetails.SaslMechanism property.
-// sasl mechanism for kafka.
-const (
-	DatabaseDetails_SaslMechanism_Plain = "plain"
-	DatabaseDetails_SaslMechanism_ScramSha256 = "scram_sha_256"
-	DatabaseDetails_SaslMechanism_ScramSha512 = "scram_sha_512"
-)
 
 // UnmarshalDatabaseDetails unmarshals an instance of DatabaseDetails from the specified map of raw messages.
 func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) (err error) {
@@ -15462,11 +14992,6 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 	err = core.UnmarshalPrimitive(m, "authentication_type", &obj.AuthenticationType)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "authentication_type-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "authentication_value", &obj.AuthenticationValue)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "authentication_value-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "broker_authentication_password", &obj.BrokerAuthenticationPassword)
@@ -15482,16 +15007,6 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 	err = core.UnmarshalPrimitive(m, "broker_authentication_user", &obj.BrokerAuthenticationUser)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "broker_authentication_user-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "broker_host", &obj.BrokerHost)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "broker_host-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "broker_port", &obj.BrokerPort)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "broker_port-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "certificate", &obj.Certificate)
@@ -15537,16 +15052,6 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 	err = core.UnmarshalPrimitive(m, "controller_authentication_user", &obj.ControllerAuthenticationUser)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "controller_authentication_user-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "coordinator_host", &obj.CoordinatorHost)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "coordinator_host-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "coordinator_port", &obj.CoordinatorPort)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "coordinator_port-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "cpd_hostname", &obj.CpdHostname)
@@ -15602,21 +15107,6 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 	err = core.UnmarshalPrimitive(m, "sasl", &obj.Sasl)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "sasl-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "sasl_mechanism", &obj.SaslMechanism)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "sasl_mechanism-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "schema_name", &obj.SchemaName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "schema_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "schemas", &obj.Schemas)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "schemas-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "service_api_key", &obj.ServiceApiKey)
@@ -15679,11 +15169,6 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 		err = core.SDKErrorf(err, "", "verify_host_name-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "warehouse_name", &obj.WarehouseName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "warehouse_name-error", common.GetComponentInfo())
-		return
-	}
 	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
 	return
 }
@@ -15691,7 +15176,7 @@ func UnmarshalDatabaseDetails(m map[string]json.RawMessage, result interface{}) 
 // DatabaseRegistration : database registration object.
 type DatabaseRegistration struct {
 	// actions.
-	Actions []string `json:"actions" validate:"required"`
+	Actions []string `json:"actions,omitempty"`
 
 	// database catalog.
 	AssociatedCatalog *DatabaseCatalog `json:"associated_catalog,omitempty"`
@@ -15715,7 +15200,7 @@ type DatabaseRegistration struct {
 	DatabaseID *string `json:"database_id,omitempty"`
 
 	// This will hold all the properties for a custom database.
-	DatabaseProperties []DatabaseRegistrationDatabasePropertiesItems `json:"database_properties" validate:"required"`
+	DatabaseProperties []DatabaseRegistrationDatabasePropertiesItems `json:"database_properties,omitempty"`
 
 	// Connector type.
 	DatabaseType *string `json:"database_type" validate:"required"`
@@ -15723,14 +15208,11 @@ type DatabaseRegistration struct {
 	// Database description.
 	Description *string `json:"description,omitempty"`
 
-	// List of tables.
-	Tables []DatabaseRegistrationTablesItems `json:"tables" validate:"required"`
-
 	// tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 
 	// List of topics.
-	Topics []DatabaseRegistrationTopicsItems `json:"topics" validate:"required"`
+	Topics []DatabaseRegistrationTopicsItems `json:"topics,omitempty"`
 }
 
 // UnmarshalDatabaseRegistration unmarshals an instance of DatabaseRegistration from the specified map of raw messages.
@@ -15791,11 +15273,6 @@ func UnmarshalDatabaseRegistration(m map[string]json.RawMessage, result interfac
 		err = core.SDKErrorf(err, "", "description-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalModel(m, "tables", &obj.Tables, UnmarshalDatabaseRegistrationTablesItems)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "tables-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "tags", &obj.Tags)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "tags-error", common.GetComponentInfo())
@@ -15813,7 +15290,7 @@ func UnmarshalDatabaseRegistration(m map[string]json.RawMessage, result interfac
 // DatabaseRegistrationCollection : list database registrations.
 type DatabaseRegistrationCollection struct {
 	// Database body.
-	DatabaseRegistrations []DatabaseRegistration `json:"database_registrations" validate:"required"`
+	DatabaseRegistrations []DatabaseRegistration `json:"database_registrations,omitempty"`
 }
 
 // UnmarshalDatabaseRegistrationCollection unmarshals an instance of DatabaseRegistrationCollection from the specified map of raw messages.
@@ -15830,7 +15307,7 @@ func UnmarshalDatabaseRegistrationCollection(m map[string]json.RawMessage, resul
 
 // DatabaseRegistrationDatabasePropertiesItems : Key value object.
 type DatabaseRegistrationDatabasePropertiesItems struct {
-	// Indicates if the value must be encrypted before storing.
+	// Wether the value is to be encrypted before storing.
 	Encrypt *bool `json:"encrypt" validate:"required"`
 
 	// Key of the database property.
@@ -15873,9 +15350,6 @@ type DatabaseRegistrationPatch struct {
 	// New database description.
 	Description *string `json:"description,omitempty"`
 
-	// List of tables.
-	Tables []DatabaseRegistrationPatchTablesItems `json:"tables,omitempty"`
-
 	// New tags.
 	Tags []string `json:"tags,omitempty"`
 
@@ -15899,11 +15373,6 @@ func UnmarshalDatabaseRegistrationPatch(m map[string]json.RawMessage, result int
 	err = core.UnmarshalPrimitive(m, "description", &obj.Description)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "description-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalModel(m, "tables", &obj.Tables, UnmarshalDatabaseRegistrationPatchTablesItems)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "tables-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "tags", &obj.Tags)
@@ -15932,13 +15401,6 @@ func (databaseRegistrationPatch *DatabaseRegistrationPatch) AsPatch() (_patch ma
 	if !core.IsNil(databaseRegistrationPatch.Description) {
 		_patch["description"] = databaseRegistrationPatch.Description
 	}
-	if !core.IsNil(databaseRegistrationPatch.Tables) {
-		var tablesPatches []map[string]interface{}
-		for _, tables := range databaseRegistrationPatch.Tables {
-			tablesPatches = append(tablesPatches, tables.asPatch())
-		}
-		_patch["tables"] = tablesPatches
-	}
 	if !core.IsNil(databaseRegistrationPatch.Tags) {
 		_patch["tags"] = databaseRegistrationPatch.Tags
 	}
@@ -15955,33 +15417,6 @@ func (databaseRegistrationPatch *DatabaseRegistrationPatch) AsPatch() (_patch ma
 
 // DatabaseRegistrationPatchDatabaseDetails : New database details.
 type DatabaseRegistrationPatchDatabaseDetails struct {
-	// Authentication method.
-	AuthenticationValue *string `json:"authentication_value,omitempty"`
-
-	// Broker authentication password.
-	BrokerAuthenticationPassword *string `json:"broker_authentication_password,omitempty"`
-
-	// Broker authentication type.
-	BrokerAuthenticationType *string `json:"broker_authentication_type,omitempty"`
-
-	// Broker authentication user.
-	BrokerAuthenticationUser *string `json:"broker_authentication_user,omitempty"`
-
-	// Controller authentication password.
-	ControllerAuthenticationPassword *string `json:"controller_authentication_password,omitempty"`
-
-	// Controller authentication type.
-	ControllerAuthenticationType *string `json:"controller_authentication_type,omitempty"`
-
-	// Controller authentication user.
-	ControllerAuthenticationUser *string `json:"controller_authentication_user,omitempty"`
-
-	// Base 64 encoded json file.
-	CredentialsKey *string `json:"credentials_key,omitempty"`
-
-	// This will hold all the properties for a custom database.
-	DatabaseProperties []DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems `json:"database_properties,omitempty"`
-
 	// New password.
 	Password *string `json:"password,omitempty"`
 
@@ -15992,51 +15427,6 @@ type DatabaseRegistrationPatchDatabaseDetails struct {
 // UnmarshalDatabaseRegistrationPatchDatabaseDetails unmarshals an instance of DatabaseRegistrationPatchDatabaseDetails from the specified map of raw messages.
 func UnmarshalDatabaseRegistrationPatchDatabaseDetails(m map[string]json.RawMessage, result interface{}) (err error) {
 	obj := new(DatabaseRegistrationPatchDatabaseDetails)
-	err = core.UnmarshalPrimitive(m, "authentication_value", &obj.AuthenticationValue)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "authentication_value-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "broker_authentication_password", &obj.BrokerAuthenticationPassword)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "broker_authentication_password-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "broker_authentication_type", &obj.BrokerAuthenticationType)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "broker_authentication_type-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "broker_authentication_user", &obj.BrokerAuthenticationUser)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "broker_authentication_user-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "controller_authentication_password", &obj.ControllerAuthenticationPassword)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "controller_authentication_password-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "controller_authentication_type", &obj.ControllerAuthenticationType)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "controller_authentication_type-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "controller_authentication_user", &obj.ControllerAuthenticationUser)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "controller_authentication_user-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "credentials_key", &obj.CredentialsKey)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "credentials_key-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalModel(m, "database_properties", &obj.DatabaseProperties, UnmarshalDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "database_properties-error", common.GetComponentInfo())
-		return
-	}
 	err = core.UnmarshalPrimitive(m, "password", &obj.Password)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "password-error", common.GetComponentInfo())
@@ -16054,178 +15444,11 @@ func UnmarshalDatabaseRegistrationPatchDatabaseDetails(m map[string]json.RawMess
 // asPatch returns a generic map representation of the DatabaseRegistrationPatchDatabaseDetails
 func (databaseRegistrationPatchDatabaseDetails *DatabaseRegistrationPatchDatabaseDetails) asPatch() (_patch map[string]interface{}) {
 	_patch = map[string]interface{}{}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.AuthenticationValue) {
-		_patch["authentication_value"] = databaseRegistrationPatchDatabaseDetails.AuthenticationValue
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationPassword) {
-		_patch["broker_authentication_password"] = databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationPassword
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationType) {
-		_patch["broker_authentication_type"] = databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationType
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationUser) {
-		_patch["broker_authentication_user"] = databaseRegistrationPatchDatabaseDetails.BrokerAuthenticationUser
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationPassword) {
-		_patch["controller_authentication_password"] = databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationPassword
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationType) {
-		_patch["controller_authentication_type"] = databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationType
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationUser) {
-		_patch["controller_authentication_user"] = databaseRegistrationPatchDatabaseDetails.ControllerAuthenticationUser
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.CredentialsKey) {
-		_patch["credentials_key"] = databaseRegistrationPatchDatabaseDetails.CredentialsKey
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.DatabaseProperties) {
-		var databasePropertiesPatches []map[string]interface{}
-		for _, databaseProperties := range databaseRegistrationPatchDatabaseDetails.DatabaseProperties {
-			databasePropertiesPatches = append(databasePropertiesPatches, databaseProperties.asPatch())
-		}
-		_patch["database_properties"] = databasePropertiesPatches
-	}
 	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.Password) {
 		_patch["password"] = databaseRegistrationPatchDatabaseDetails.Password
 	}
 	if !core.IsNil(databaseRegistrationPatchDatabaseDetails.Username) {
 		_patch["username"] = databaseRegistrationPatchDatabaseDetails.Username
-	}
-
-	return
-}
-
-// DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems : Key value object.
-type DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems struct {
-	// Indicates if the value must be encrypted before storing.
-	Encrypt *bool `json:"encrypt" validate:"required"`
-
-	// Key of the database property.
-	Key *string `json:"key" validate:"required"`
-
-	// Value of the database property.
-	Value *string `json:"value" validate:"required"`
-}
-
-// NewDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems : Instantiate DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems (Generic Model Constructor)
-func (*WatsonxDataV2) NewDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems(encrypt bool, key string, value string) (_model *DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems, err error) {
-	_model = &DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{
-		Encrypt: core.BoolPtr(encrypt),
-		Key: core.StringPtr(key),
-		Value: core.StringPtr(value),
-	}
-	err = core.ValidateStruct(_model, "required parameters")
-	if err != nil {
-		err = core.SDKErrorf(err, "", "model-missing-required", common.GetComponentInfo())
-	}
-	return
-}
-
-// UnmarshalDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems unmarshals an instance of DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems from the specified map of raw messages.
-func UnmarshalDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-	err = core.UnmarshalPrimitive(m, "encrypt", &obj.Encrypt)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "encrypt-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "key", &obj.Key)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "key-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "value", &obj.Value)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "value-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// asPatch returns a generic map representation of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems
-func (databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems *DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems) asPatch() (_patch map[string]interface{}) {
-	_patch = map[string]interface{}{}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Encrypt) {
-		_patch["encrypt"] = databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Encrypt
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Key) {
-		_patch["key"] = databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Key
-	}
-	if !core.IsNil(databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Value) {
-		_patch["value"] = databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems.Value
-	}
-
-	return
-}
-
-// DatabaseRegistrationPatchTablesItems : Table.
-type DatabaseRegistrationPatchTablesItems struct {
-	// Created on.
-	CreatedOn *string `json:"created_on,omitempty"`
-
-	// file content.
-	FileContents *string `json:"file_contents,omitempty"`
-
-	// file name.
-	FileName *string `json:"file_name,omitempty"`
-
-	// schema name.
-	SchemaName *string `json:"schema_name,omitempty"`
-
-	// table name.
-	TableName *string `json:"table_name,omitempty"`
-}
-
-// UnmarshalDatabaseRegistrationPatchTablesItems unmarshals an instance of DatabaseRegistrationPatchTablesItems from the specified map of raw messages.
-func UnmarshalDatabaseRegistrationPatchTablesItems(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(DatabaseRegistrationPatchTablesItems)
-	err = core.UnmarshalPrimitive(m, "created_on", &obj.CreatedOn)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "created_on-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "file_contents", &obj.FileContents)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "file_contents-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "file_name", &obj.FileName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "file_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "schema_name", &obj.SchemaName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "schema_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "table_name", &obj.TableName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "table_name-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// asPatch returns a generic map representation of the DatabaseRegistrationPatchTablesItems
-func (databaseRegistrationPatchTablesItems *DatabaseRegistrationPatchTablesItems) asPatch() (_patch map[string]interface{}) {
-	_patch = map[string]interface{}{}
-	if !core.IsNil(databaseRegistrationPatchTablesItems.CreatedOn) {
-		_patch["created_on"] = databaseRegistrationPatchTablesItems.CreatedOn
-	}
-	if !core.IsNil(databaseRegistrationPatchTablesItems.FileContents) {
-		_patch["file_contents"] = databaseRegistrationPatchTablesItems.FileContents
-	}
-	if !core.IsNil(databaseRegistrationPatchTablesItems.FileName) {
-		_patch["file_name"] = databaseRegistrationPatchTablesItems.FileName
-	}
-	if !core.IsNil(databaseRegistrationPatchTablesItems.SchemaName) {
-		_patch["schema_name"] = databaseRegistrationPatchTablesItems.SchemaName
-	}
-	if !core.IsNil(databaseRegistrationPatchTablesItems.TableName) {
-		_patch["table_name"] = databaseRegistrationPatchTablesItems.TableName
 	}
 
 	return
@@ -16294,7 +15517,7 @@ func (databaseRegistrationPatchTopicsItems *DatabaseRegistrationPatchTopicsItems
 
 // DatabaseRegistrationPrototypeDatabasePropertiesItems : Key value object.
 type DatabaseRegistrationPrototypeDatabasePropertiesItems struct {
-	// Indicates if the value must be encrypted before storing.
+	// Wether the value is to be encrypted before storing.
 	Encrypt *bool `json:"encrypt" validate:"required"`
 
 	// Key of the database property.
@@ -16334,56 +15557,6 @@ func UnmarshalDatabaseRegistrationPrototypeDatabasePropertiesItems(m map[string]
 	err = core.UnmarshalPrimitive(m, "value", &obj.Value)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "value-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// DatabaseRegistrationTablesItems : Table.
-type DatabaseRegistrationTablesItems struct {
-	// Created on.
-	CreatedOn *string `json:"created_on,omitempty"`
-
-	// file content.
-	FileContents *string `json:"file_contents,omitempty"`
-
-	// file name.
-	FileName *string `json:"file_name,omitempty"`
-
-	// schema name.
-	SchemaName *string `json:"schema_name,omitempty"`
-
-	// table name.
-	TableName *string `json:"table_name,omitempty"`
-}
-
-// UnmarshalDatabaseRegistrationTablesItems unmarshals an instance of DatabaseRegistrationTablesItems from the specified map of raw messages.
-func UnmarshalDatabaseRegistrationTablesItems(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(DatabaseRegistrationTablesItems)
-	err = core.UnmarshalPrimitive(m, "created_on", &obj.CreatedOn)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "created_on-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "file_contents", &obj.FileContents)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "file_contents-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "file_name", &obj.FileName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "file_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "schema_name", &obj.SchemaName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "schema_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "table_name", &obj.TableName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "table_name-error", common.GetComponentInfo())
 		return
 	}
 	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
@@ -16435,12 +15608,12 @@ func UnmarshalDatabaseRegistrationTopicsItems(m map[string]json.RawMessage, resu
 // Db2Engine : Db2 engine details.
 type Db2Engine struct {
 	// Actions.
-	Actions []string `json:"actions" validate:"required"`
+	Actions []string `json:"actions,omitempty"`
 
 	// watsonx.data build version.
 	BuildVersion *string `json:"build_version,omitempty"`
 
-	// Username of the user who created the watsonx.data instance.
+	// Created user name.
 	CreatedBy *string `json:"created_by,omitempty"`
 
 	// Created time in epoch format.
@@ -16471,7 +15644,7 @@ type Db2Engine struct {
 	Status *string `json:"status,omitempty"`
 
 	// Tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 
 	// Engine type.
 	Type *string `json:"type,omitempty"`
@@ -16557,7 +15730,7 @@ func UnmarshalDb2Engine(m map[string]json.RawMessage, result interface{}) (err e
 // Db2EngineCollection : list db2 engines.
 type Db2EngineCollection struct {
 	// list db2 engines.
-	Db2Engines []Db2Engine `json:"db2_engines" validate:"required"`
+	Db2Engines []Db2Engine `json:"db2_engines,omitempty"`
 }
 
 // UnmarshalDb2EngineCollection unmarshals an instance of Db2EngineCollection from the specified map of raw messages.
@@ -16887,6 +16060,90 @@ func (_options *DeleteDeactivateBucketOptions) SetAuthInstanceID(authInstanceID 
 
 // SetHeaders : Allow user to set Headers
 func (options *DeleteDeactivateBucketOptions) SetHeaders(param map[string]string) *DeleteDeactivateBucketOptions {
+	options.Headers = param
+	return options
+}
+
+// DeleteDriverEnginesOptions : The DeleteDriverEngines options.
+type DeleteDriverEnginesOptions struct {
+	// driver id.
+	DriverID *string `json:"driver_id" validate:"required,ne="`
+
+	// Engine id(s) to be disassociated from the driver, comma separated.
+	EngineIds *string `json:"engine_ids" validate:"required"`
+
+	// CRN.
+	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
+
+	// Allows users to set headers on API requests.
+	Headers map[string]string
+}
+
+// NewDeleteDriverEnginesOptions : Instantiate DeleteDriverEnginesOptions
+func (*WatsonxDataV2) NewDeleteDriverEnginesOptions(driverID string, engineIds string) *DeleteDriverEnginesOptions {
+	return &DeleteDriverEnginesOptions{
+		DriverID: core.StringPtr(driverID),
+		EngineIds: core.StringPtr(engineIds),
+	}
+}
+
+// SetDriverID : Allow user to set DriverID
+func (_options *DeleteDriverEnginesOptions) SetDriverID(driverID string) *DeleteDriverEnginesOptions {
+	_options.DriverID = core.StringPtr(driverID)
+	return _options
+}
+
+// SetEngineIds : Allow user to set EngineIds
+func (_options *DeleteDriverEnginesOptions) SetEngineIds(engineIds string) *DeleteDriverEnginesOptions {
+	_options.EngineIds = core.StringPtr(engineIds)
+	return _options
+}
+
+// SetAuthInstanceID : Allow user to set AuthInstanceID
+func (_options *DeleteDriverEnginesOptions) SetAuthInstanceID(authInstanceID string) *DeleteDriverEnginesOptions {
+	_options.AuthInstanceID = core.StringPtr(authInstanceID)
+	return _options
+}
+
+// SetHeaders : Allow user to set Headers
+func (options *DeleteDriverEnginesOptions) SetHeaders(param map[string]string) *DeleteDriverEnginesOptions {
+	options.Headers = param
+	return options
+}
+
+// DeleteDriverRegistrationOptions : The DeleteDriverRegistration options.
+type DeleteDriverRegistrationOptions struct {
+	// Driver ID.
+	DriverID *string `json:"driver_id" validate:"required,ne="`
+
+	// CRN.
+	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
+
+	// Allows users to set headers on API requests.
+	Headers map[string]string
+}
+
+// NewDeleteDriverRegistrationOptions : Instantiate DeleteDriverRegistrationOptions
+func (*WatsonxDataV2) NewDeleteDriverRegistrationOptions(driverID string) *DeleteDriverRegistrationOptions {
+	return &DeleteDriverRegistrationOptions{
+		DriverID: core.StringPtr(driverID),
+	}
+}
+
+// SetDriverID : Allow user to set DriverID
+func (_options *DeleteDriverRegistrationOptions) SetDriverID(driverID string) *DeleteDriverRegistrationOptions {
+	_options.DriverID = core.StringPtr(driverID)
+	return _options
+}
+
+// SetAuthInstanceID : Allow user to set AuthInstanceID
+func (_options *DeleteDriverRegistrationOptions) SetAuthInstanceID(authInstanceID string) *DeleteDriverRegistrationOptions {
+	_options.AuthInstanceID = core.StringPtr(authInstanceID)
+	return _options
+}
+
+// SetHeaders : Allow user to set Headers
+func (options *DeleteDriverRegistrationOptions) SetHeaders(param map[string]string) *DeleteDriverRegistrationOptions {
 	options.Headers = param
 	return options
 }
@@ -17735,6 +16992,24 @@ func UnmarshalDetails(m map[string]json.RawMessage, result interface{}) (err err
 	return
 }
 
+// DisplayNameInfoResponse : DisplayNameInfoResponse.
+type DisplayNameInfoResponse struct {
+	// Display name.
+	DisplayName *string `json:"display_name" validate:"required"`
+}
+
+// UnmarshalDisplayNameInfoResponse unmarshals an instance of DisplayNameInfoResponse from the specified map of raw messages.
+func UnmarshalDisplayNameInfoResponse(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(DisplayNameInfoResponse)
+	err = core.UnmarshalPrimitive(m, "display_name", &obj.DisplayName)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "display_name-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
 // Driver : Driver struct
 type Driver struct {
 	// Connection type.
@@ -17777,6 +17052,144 @@ func UnmarshalDriver(m map[string]json.RawMessage, result interface{}) (err erro
 	return
 }
 
+// DriverRegistration : Driver registration.
+type DriverRegistration struct {
+	// Associated engines.
+	AssociatedEngines []string `json:"associated_engines,omitempty"`
+
+	// Driver connection type.
+	ConnectionType *string `json:"connection_type,omitempty"`
+
+	// Driver ID auto generated during driver registration.
+	DriverID *string `json:"driver_id,omitempty"`
+
+	// Driver name.
+	DriverName *string `json:"driver_name,omitempty"`
+
+	// Created on.
+	ModifiedAt *string `json:"modified_at,omitempty"`
+
+	// Created by.
+	ModifiedBy *string `json:"modified_by,omitempty"`
+
+	// Driver status.
+	Status *string `json:"status,omitempty"`
+
+	// Driver version.
+	Version *string `json:"version,omitempty"`
+}
+
+// UnmarshalDriverRegistration unmarshals an instance of DriverRegistration from the specified map of raw messages.
+func UnmarshalDriverRegistration(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(DriverRegistration)
+	err = core.UnmarshalPrimitive(m, "associated_engines", &obj.AssociatedEngines)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "associated_engines-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "connection_type", &obj.ConnectionType)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "connection_type-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "driver_id", &obj.DriverID)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "driver_id-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "driver_name", &obj.DriverName)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "driver_name-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "modified_at", &obj.ModifiedAt)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "modified_at-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "modified_by", &obj.ModifiedBy)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "modified_by-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "status", &obj.Status)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "status-error", common.GetComponentInfo())
+		return
+	}
+	err = core.UnmarshalPrimitive(m, "version", &obj.Version)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "version-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
+// DriverRegistrationCollection : list driver registrations.
+type DriverRegistrationCollection struct {
+	// Driver collection body.
+	DriverRegistrations []DriverRegistration `json:"driver_registrations,omitempty"`
+}
+
+// UnmarshalDriverRegistrationCollection unmarshals an instance of DriverRegistrationCollection from the specified map of raw messages.
+func UnmarshalDriverRegistrationCollection(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(DriverRegistrationCollection)
+	err = core.UnmarshalModel(m, "driver_registrations", &obj.DriverRegistrations, UnmarshalDriverRegistration)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "driver_registrations-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
+// DriverRegistrationEngine : Engines associated to the driver.
+type DriverRegistrationEngine struct {
+	// List of engine IDs.
+	Engines []string `json:"engines,omitempty"`
+}
+
+// UnmarshalDriverRegistrationEngine unmarshals an instance of DriverRegistrationEngine from the specified map of raw messages.
+func UnmarshalDriverRegistrationEngine(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(DriverRegistrationEngine)
+	err = core.UnmarshalPrimitive(m, "engines", &obj.Engines)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "engines-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
+// DriverRegistrationEnginePrototype : Engines associated to the driver.
+type DriverRegistrationEnginePrototype struct {
+	// List of engine IDs.
+	Engines []string `json:"engines,omitempty"`
+}
+
+// UnmarshalDriverRegistrationEnginePrototype unmarshals an instance of DriverRegistrationEnginePrototype from the specified map of raw messages.
+func UnmarshalDriverRegistrationEnginePrototype(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(DriverRegistrationEnginePrototype)
+	err = core.UnmarshalPrimitive(m, "engines", &obj.Engines)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "engines-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
+// AsPatch returns a generic map representation of the DriverRegistrationEnginePrototype
+func (driverRegistrationEnginePrototype *DriverRegistrationEnginePrototype) AsPatch() (_patch map[string]interface{}, err error) {
+	_patch = map[string]interface{}{}
+	if !core.IsNil(driverRegistrationEnginePrototype.Engines) {
+		_patch["engines"] = driverRegistrationEnginePrototype.Engines
+	}
+
+	return
+}
+
 // Endpoint : The service endpoint.
 type Endpoint struct {
 	// The external host of the service.
@@ -17805,7 +17218,7 @@ func UnmarshalEndpoint(m map[string]json.RawMessage, result interface{}) (err er
 
 // EndpointCollection : List endpoints.
 type EndpointCollection struct {
-	// List of the endpoints CPG and CAS.
+	// List of the endpoints CPG and DAS.
 	Endpoints []Endpoint `json:"endpoints,omitempty"`
 }
 
@@ -17838,7 +17251,9 @@ type EngineDetailsBody struct {
 	// How is the spark instance managed.
 	ManagedBy *string `json:"managed_by,omitempty"`
 
-	// Size config.
+	// For presto and prestissimo engines, CPD supported sizes are: custom, starter, small, medium, large, xlarge, and
+	// xxlarge. IBM cloud supported sizes are: custom, starter, small, medium, large, cache_optimized, compute_optimized
+	// and lite.
 	SizeConfig *string `json:"size_config,omitempty"`
 
 	// Coordinator/ worker properties.
@@ -17846,7 +17261,9 @@ type EngineDetailsBody struct {
 }
 
 // Constants associated with the EngineDetailsBody.SizeConfig property.
-// Size config.
+// For presto and prestissimo engines, CPD supported sizes are: custom, starter, small, medium, large, xlarge, and
+// xxlarge. IBM cloud supported sizes are: custom, starter, small, medium, large, cache_optimized, compute_optimized and
+// lite.
 const (
 	EngineDetailsBody_SizeConfig_CacheOptimized = "cache_optimized"
 	EngineDetailsBody_SizeConfig_ComputeOptimized = "compute_optimized"
@@ -18274,313 +17691,6 @@ func UnmarshalExternalDetails(m map[string]json.RawMessage, result interface{}) 
 	return
 }
 
-// GenerateBenchmarkReportOKBody : Generate benchmark report.
-type GenerateBenchmarkReportOKBody struct {
-	// Response of success.
-	Response *GenerateBenchmarkReportOKBodyResponse `json:"response" validate:"required"`
-}
-
-// UnmarshalGenerateBenchmarkReportOKBody unmarshals an instance of GenerateBenchmarkReportOKBody from the specified map of raw messages.
-func UnmarshalGenerateBenchmarkReportOKBody(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(GenerateBenchmarkReportOKBody)
-	err = core.UnmarshalModel(m, "response", &obj.Response, UnmarshalGenerateBenchmarkReportOKBodyResponse)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "response-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// GenerateBenchmarkReportOKBodyResponse : Response of success.
-type GenerateBenchmarkReportOKBodyResponse struct {
-	// Message.
-	Message *string `json:"message,omitempty"`
-
-	// request id of the benchmarking process.
-	ReqID *string `json:"req_id,omitempty"`
-
-	// status.
-	Status *string `json:"status,omitempty"`
-}
-
-// UnmarshalGenerateBenchmarkReportOKBodyResponse unmarshals an instance of GenerateBenchmarkReportOKBodyResponse from the specified map of raw messages.
-func UnmarshalGenerateBenchmarkReportOKBodyResponse(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(GenerateBenchmarkReportOKBodyResponse)
-	err = core.UnmarshalPrimitive(m, "message", &obj.Message)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "message-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "req_id", &obj.ReqID)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "req_id-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "status", &obj.Status)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "status-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// GenerateBenchmarkReportOptions : The GenerateBenchmarkReport options.
-type GenerateBenchmarkReportOptions struct {
-	// bucket name.
-	BucketName *string `json:"bucket_name" validate:"required"`
-
-	// engine id.
-	EngineID *string `json:"engine_id" validate:"required"`
-
-	// specify the pod name of the respective presto pod like coordinator(single node),
-	// coordinator-blue-0,worker-0(multinode).
-	PodName *string `json:"pod_name" validate:"required"`
-
-	// configure file_count and file_size for benchmarking.
-	FileCount *string `json:"file_count,omitempty"`
-
-	// configure file_count and file_size for benchmarking.
-	FileSize *string `json:"file_size,omitempty"`
-
-	// watsonx.data instance ID.
-	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
-
-	// Allows users to set headers on API requests.
-	Headers map[string]string
-}
-
-// NewGenerateBenchmarkReportOptions : Instantiate GenerateBenchmarkReportOptions
-func (*WatsonxDataV2) NewGenerateBenchmarkReportOptions(bucketName string, engineID string, podName string) *GenerateBenchmarkReportOptions {
-	return &GenerateBenchmarkReportOptions{
-		BucketName: core.StringPtr(bucketName),
-		EngineID: core.StringPtr(engineID),
-		PodName: core.StringPtr(podName),
-	}
-}
-
-// SetBucketName : Allow user to set BucketName
-func (_options *GenerateBenchmarkReportOptions) SetBucketName(bucketName string) *GenerateBenchmarkReportOptions {
-	_options.BucketName = core.StringPtr(bucketName)
-	return _options
-}
-
-// SetEngineID : Allow user to set EngineID
-func (_options *GenerateBenchmarkReportOptions) SetEngineID(engineID string) *GenerateBenchmarkReportOptions {
-	_options.EngineID = core.StringPtr(engineID)
-	return _options
-}
-
-// SetPodName : Allow user to set PodName
-func (_options *GenerateBenchmarkReportOptions) SetPodName(podName string) *GenerateBenchmarkReportOptions {
-	_options.PodName = core.StringPtr(podName)
-	return _options
-}
-
-// SetFileCount : Allow user to set FileCount
-func (_options *GenerateBenchmarkReportOptions) SetFileCount(fileCount string) *GenerateBenchmarkReportOptions {
-	_options.FileCount = core.StringPtr(fileCount)
-	return _options
-}
-
-// SetFileSize : Allow user to set FileSize
-func (_options *GenerateBenchmarkReportOptions) SetFileSize(fileSize string) *GenerateBenchmarkReportOptions {
-	_options.FileSize = core.StringPtr(fileSize)
-	return _options
-}
-
-// SetAuthInstanceID : Allow user to set AuthInstanceID
-func (_options *GenerateBenchmarkReportOptions) SetAuthInstanceID(authInstanceID string) *GenerateBenchmarkReportOptions {
-	_options.AuthInstanceID = core.StringPtr(authInstanceID)
-	return _options
-}
-
-// SetHeaders : Allow user to set Headers
-func (options *GenerateBenchmarkReportOptions) SetHeaders(param map[string]string) *GenerateBenchmarkReportOptions {
-	options.Headers = param
-	return options
-}
-
-// GenerateBenchmarkReportStatusOptions : The GenerateBenchmarkReportStatus options.
-type GenerateBenchmarkReportStatusOptions struct {
-	// request_id.
-	ReqID *string `json:"req_id" validate:"required,ne="`
-
-	// engine id.
-	EngineID *string `json:"engine_id" validate:"required"`
-
-	// bucket name.
-	BucketName *string `json:"bucket_name" validate:"required"`
-
-	// specify the pod name of the respective presto pod like coordinator(single node),
-	// coordinator-blue-0,worker-0(multinode).
-	PodName *string `json:"pod_name" validate:"required"`
-
-	// watsonx.data instance ID.
-	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
-
-	// Allows users to set headers on API requests.
-	Headers map[string]string
-}
-
-// NewGenerateBenchmarkReportStatusOptions : Instantiate GenerateBenchmarkReportStatusOptions
-func (*WatsonxDataV2) NewGenerateBenchmarkReportStatusOptions(reqID string, engineID string, bucketName string, podName string) *GenerateBenchmarkReportStatusOptions {
-	return &GenerateBenchmarkReportStatusOptions{
-		ReqID: core.StringPtr(reqID),
-		EngineID: core.StringPtr(engineID),
-		BucketName: core.StringPtr(bucketName),
-		PodName: core.StringPtr(podName),
-	}
-}
-
-// SetReqID : Allow user to set ReqID
-func (_options *GenerateBenchmarkReportStatusOptions) SetReqID(reqID string) *GenerateBenchmarkReportStatusOptions {
-	_options.ReqID = core.StringPtr(reqID)
-	return _options
-}
-
-// SetEngineID : Allow user to set EngineID
-func (_options *GenerateBenchmarkReportStatusOptions) SetEngineID(engineID string) *GenerateBenchmarkReportStatusOptions {
-	_options.EngineID = core.StringPtr(engineID)
-	return _options
-}
-
-// SetBucketName : Allow user to set BucketName
-func (_options *GenerateBenchmarkReportStatusOptions) SetBucketName(bucketName string) *GenerateBenchmarkReportStatusOptions {
-	_options.BucketName = core.StringPtr(bucketName)
-	return _options
-}
-
-// SetPodName : Allow user to set PodName
-func (_options *GenerateBenchmarkReportStatusOptions) SetPodName(podName string) *GenerateBenchmarkReportStatusOptions {
-	_options.PodName = core.StringPtr(podName)
-	return _options
-}
-
-// SetAuthInstanceID : Allow user to set AuthInstanceID
-func (_options *GenerateBenchmarkReportStatusOptions) SetAuthInstanceID(authInstanceID string) *GenerateBenchmarkReportStatusOptions {
-	_options.AuthInstanceID = core.StringPtr(authInstanceID)
-	return _options
-}
-
-// SetHeaders : Allow user to set Headers
-func (options *GenerateBenchmarkReportStatusOptions) SetHeaders(param map[string]string) *GenerateBenchmarkReportStatusOptions {
-	options.Headers = param
-	return options
-}
-
-// GenerateEngineDumpOKBody : Generate dump creation.
-type GenerateEngineDumpOKBody struct {
-	// Response of success.
-	Response *GenerateEngineDumpOKBodyResponse `json:"response" validate:"required"`
-}
-
-// UnmarshalGenerateEngineDumpOKBody unmarshals an instance of GenerateEngineDumpOKBody from the specified map of raw messages.
-func UnmarshalGenerateEngineDumpOKBody(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(GenerateEngineDumpOKBody)
-	err = core.UnmarshalModel(m, "response", &obj.Response, UnmarshalGenerateEngineDumpOKBodyResponse)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "response-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// GenerateEngineDumpOKBodyResponse : Response of success.
-type GenerateEngineDumpOKBodyResponse struct {
-	// Message.
-	Message *string `json:"message,omitempty"`
-
-	// status.
-	Status *string `json:"status,omitempty"`
-}
-
-// UnmarshalGenerateEngineDumpOKBodyResponse unmarshals an instance of GenerateEngineDumpOKBodyResponse from the specified map of raw messages.
-func UnmarshalGenerateEngineDumpOKBodyResponse(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(GenerateEngineDumpOKBodyResponse)
-	err = core.UnmarshalPrimitive(m, "message", &obj.Message)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "message-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "status", &obj.Status)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "status-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// GenerateEngineDumpOptions : The GenerateEngineDump options.
-type GenerateEngineDumpOptions struct {
-	// Dump file name.
-	DumpFileName *string `json:"dump_file_name" validate:"required"`
-
-	// Dump type.
-	DumpType *string `json:"dump_type" validate:"required"`
-
-	// Engine ID.
-	EngineID *string `json:"engine_id" validate:"required"`
-
-	// specify the pod name like worker-0 or cordinator-0 etc.
-	PodName *string `json:"pod_name" validate:"required"`
-
-	// watsonx.data instance ID.
-	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
-
-	// Allows users to set headers on API requests.
-	Headers map[string]string
-}
-
-// NewGenerateEngineDumpOptions : Instantiate GenerateEngineDumpOptions
-func (*WatsonxDataV2) NewGenerateEngineDumpOptions(dumpFileName string, dumpType string, engineID string, podName string) *GenerateEngineDumpOptions {
-	return &GenerateEngineDumpOptions{
-		DumpFileName: core.StringPtr(dumpFileName),
-		DumpType: core.StringPtr(dumpType),
-		EngineID: core.StringPtr(engineID),
-		PodName: core.StringPtr(podName),
-	}
-}
-
-// SetDumpFileName : Allow user to set DumpFileName
-func (_options *GenerateEngineDumpOptions) SetDumpFileName(dumpFileName string) *GenerateEngineDumpOptions {
-	_options.DumpFileName = core.StringPtr(dumpFileName)
-	return _options
-}
-
-// SetDumpType : Allow user to set DumpType
-func (_options *GenerateEngineDumpOptions) SetDumpType(dumpType string) *GenerateEngineDumpOptions {
-	_options.DumpType = core.StringPtr(dumpType)
-	return _options
-}
-
-// SetEngineID : Allow user to set EngineID
-func (_options *GenerateEngineDumpOptions) SetEngineID(engineID string) *GenerateEngineDumpOptions {
-	_options.EngineID = core.StringPtr(engineID)
-	return _options
-}
-
-// SetPodName : Allow user to set PodName
-func (_options *GenerateEngineDumpOptions) SetPodName(podName string) *GenerateEngineDumpOptions {
-	_options.PodName = core.StringPtr(podName)
-	return _options
-}
-
-// SetAuthInstanceID : Allow user to set AuthInstanceID
-func (_options *GenerateEngineDumpOptions) SetAuthInstanceID(authInstanceID string) *GenerateEngineDumpOptions {
-	_options.AuthInstanceID = core.StringPtr(authInstanceID)
-	return _options
-}
-
-// SetHeaders : Allow user to set Headers
-func (options *GenerateEngineDumpOptions) SetHeaders(param map[string]string) *GenerateEngineDumpOptions {
-	options.Headers = param
-	return options
-}
-
 // GetAllColumnsOptions : The GetAllColumns options.
 type GetAllColumnsOptions struct {
 	// Table name.
@@ -18640,7 +17750,7 @@ type GetBucketObjectPropertiesOptions struct {
 	BucketID *string `json:"bucket_id" validate:"required,ne="`
 
 	// bucket object size.
-	Paths []BucketObjectSizePathsItems `json:"paths,omitempty"`
+	Paths []Path `json:"paths,omitempty"`
 
 	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
@@ -18663,7 +17773,7 @@ func (_options *GetBucketObjectPropertiesOptions) SetBucketID(bucketID string) *
 }
 
 // SetPaths : Allow user to set Paths
-func (_options *GetBucketObjectPropertiesOptions) SetPaths(paths []BucketObjectSizePathsItems) *GetBucketObjectPropertiesOptions {
+func (_options *GetBucketObjectPropertiesOptions) SetPaths(paths []Path) *GetBucketObjectPropertiesOptions {
 	_options.Paths = paths
 	return _options
 }
@@ -19644,7 +18754,7 @@ type GetServicesDetailsOptions struct {
 	// Internal host.
 	InternalHost *bool `json:"internal_host,omitempty"`
 
-	// watsonx.data instance ID.
+	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
 
 	// Allows users to set headers on API requests.
@@ -20561,34 +19671,34 @@ func UnmarshalIngestionJobPrototypeExecuteConfig(m map[string]json.RawMessage, r
 
 // Integration : Integration.
 type Integration struct {
-	// Token for databand.
-	AccessToken *string `json:"access_token,omitempty"`
-
-	// Integration apikey for IKC and Manta.
+	// Integration APIKEY.
 	Apikey *string `json:"apikey,omitempty"`
 
-	// Authentication url for manta, specific to saas.
-	AuthURL *string `json:"auth_url,omitempty"`
+	// token for databand.
+	AccessToken *string `json:"access_token,omitempty"`
 
 	// Properties.
 	ConfigProperties *string `json:"config_properties,omitempty"`
 
-	// Cross account integration enabler/disabler for ikc, specfic to saas.
-	CrossAccountIntegration *bool `json:"cross_account_integration,omitempty"`
-
-	// Data policy enabler with wxd for ranger.
-	EnableDataPolicyWithinWxd *bool `json:"enable_data_policy_within_wxd,omitempty"`
-
-	// Properties of ikc.
-	GovernanceProperties *string `json:"governance_properties,omitempty"`
-
-	// Account id of the cross account user for ikc, specfic to Saas.
-	IkcUserAccountID *string `json:"ikc_user_account_id,omitempty"`
+	// auth_url for corresponding manta in saas.
+	AuthURL *string `json:"auth_url,omitempty"`
 
 	// resouce for ranger.
 	IntegrationID *string `json:"integration_id,omitempty"`
 
-	// For manta, specific to saas.
+	// cross account integration enabler/disabler.
+	CrossAccountIntegration *bool `json:"cross_account_integration,omitempty"`
+
+	// data policy enabler with wxd for ranger.
+	EnableDataPolicyWithinWxd *bool `json:"enable_data_policy_within_wxd,omitempty"`
+
+	// Properties.
+	GovernanceProperties *string `json:"governance_properties,omitempty"`
+
+	// ikc_user_account_id for ikc.
+	IkcUserAccountID *string `json:"ikc_user_account_id,omitempty"`
+
+	// manta_url modifeid from url for manta in saas.
 	MantaURL *string `json:"manta_url,omitempty"`
 
 	// modified time in epoch format.
@@ -20597,39 +19707,47 @@ type Integration struct {
 	// modified user name.
 	ModifiedBy *string `json:"modified_by,omitempty"`
 
-	// Ranger password.
+	// Integration password.
 	Password *string `json:"password,omitempty"`
 
-	// Resouce for ranger.
+	// resouce for ranger.
 	Resource *string `json:"resource,omitempty"`
 
 	// Integration type.
 	ServiceType *string `json:"service_type,omitempty"`
 
-	// Current status of the integration.
+	// current state.
 	State *string `json:"state,omitempty"`
 
 	// Comma separated list of storage catalogs for which ikc needs to be enabled.
 	StorageCatalogs []string `json:"storage_catalogs,omitempty"`
 
-	// Integration Connection URL for IKC, Ranger, Databand and Manta.
+	// Integration Connection URL.
 	URL *string `json:"url,omitempty"`
 
-	// Username for Ranger.
+	// Integration Zen API key.
+	ZenApikey *string `json:"zen_apikey,omitempty"`
+
+	// Username.
 	Username *string `json:"username,omitempty"`
 }
 
 // UnmarshalIntegration unmarshals an instance of Integration from the specified map of raw messages.
 func UnmarshalIntegration(m map[string]json.RawMessage, result interface{}) (err error) {
 	obj := new(Integration)
+	err = core.UnmarshalPrimitive(m, "apikey", &obj.Apikey)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "apikey-error", common.GetComponentInfo())
+		return
+	}
 	err = core.UnmarshalPrimitive(m, "access_token", &obj.AccessToken)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "access_token-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "apikey", &obj.Apikey)
+	err = core.UnmarshalPrimitive(m, "config_properties", &obj.ConfigProperties)
 	if err != nil {
-		err = core.SDKErrorf(err, "", "apikey-error", common.GetComponentInfo())
+		err = core.SDKErrorf(err, "", "config_properties-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "auth_url", &obj.AuthURL)
@@ -20637,9 +19755,9 @@ func UnmarshalIntegration(m map[string]json.RawMessage, result interface{}) (err
 		err = core.SDKErrorf(err, "", "auth_url-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalPrimitive(m, "config_properties", &obj.ConfigProperties)
+	err = core.UnmarshalPrimitive(m, "integration_id", &obj.IntegrationID)
 	if err != nil {
-		err = core.SDKErrorf(err, "", "config_properties-error", common.GetComponentInfo())
+		err = core.SDKErrorf(err, "", "integration_id-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "cross_account_integration", &obj.CrossAccountIntegration)
@@ -20660,11 +19778,6 @@ func UnmarshalIntegration(m map[string]json.RawMessage, result interface{}) (err
 	err = core.UnmarshalPrimitive(m, "ikc_user_account_id", &obj.IkcUserAccountID)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "ikc_user_account_id-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "integration_id", &obj.IntegrationID)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "integration_id-error", common.GetComponentInfo())
 		return
 	}
 	err = core.UnmarshalPrimitive(m, "manta_url", &obj.MantaURL)
@@ -20712,6 +19825,11 @@ func UnmarshalIntegration(m map[string]json.RawMessage, result interface{}) (err
 		err = core.SDKErrorf(err, "", "url-error", common.GetComponentInfo())
 		return
 	}
+	err = core.UnmarshalPrimitive(m, "zen_apikey", &obj.ZenApikey)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "zen_apikey-error", common.GetComponentInfo())
+		return
+	}
 	err = core.UnmarshalPrimitive(m, "username", &obj.Username)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "username-error", common.GetComponentInfo())
@@ -20741,37 +19859,37 @@ func UnmarshalIntegrationCollection(m map[string]json.RawMessage, result interfa
 
 // IntegrationPatch : Update an Integration body.
 type IntegrationPatch struct {
-	// Token for databand.
+	// token for databand.
 	AccessToken *string `json:"access_token,omitempty"`
 
-	// Integration apikey for IKC and Manta.
+	// Integration APIKEY.
 	Apikey *string `json:"apikey,omitempty"`
 
-	// Cross account integration enabler/disabler for ikc, specfic to saas.
+	// cross account integration enabler/disabler.
 	CrossAccountIntegration *bool `json:"cross_account_integration,omitempty"`
 
-	// Data policy enabler with wxd for ranger.
+	// data policy enabler with wxd for ranger.
 	EnableDataPolicyWithinWxd *bool `json:"enable_data_policy_within_wxd,omitempty"`
 
-	// Account id of the cross account user for ikc, specfic to Saas.
+	// token for databand.
 	IkcUserAccountID *string `json:"ikc_user_account_id,omitempty"`
 
-	// Ranger password.
+	// Integration password.
 	Password *string `json:"password,omitempty"`
 
-	// Resouce for ranger.
+	// resouce for ranger.
 	Resource *string `json:"resource,omitempty"`
 
-	// Current status of the integration.
+	// current state.
 	State *string `json:"state,omitempty"`
 
 	// Comma separated list of bucket catalogs which have ikc enabled.
 	StorageCatalogs []string `json:"storage_catalogs,omitempty"`
 
-	// Integration Connection URL for IKC, Ranger, Databand and Manta.
+	// Integration Connection URL.
 	URL *string `json:"url,omitempty"`
 
-	// Username for Ranger.
+	// Integration username.
 	Username *string `json:"username,omitempty"`
 }
 
@@ -21276,6 +20394,32 @@ func (options *ListDb2EnginesOptions) SetHeaders(param map[string]string) *ListD
 	return options
 }
 
+// ListDriverRegistrationOptions : The ListDriverRegistration options.
+type ListDriverRegistrationOptions struct {
+	// CRN.
+	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
+
+	// Allows users to set headers on API requests.
+	Headers map[string]string
+}
+
+// NewListDriverRegistrationOptions : Instantiate ListDriverRegistrationOptions
+func (*WatsonxDataV2) NewListDriverRegistrationOptions() *ListDriverRegistrationOptions {
+	return &ListDriverRegistrationOptions{}
+}
+
+// SetAuthInstanceID : Allow user to set AuthInstanceID
+func (_options *ListDriverRegistrationOptions) SetAuthInstanceID(authInstanceID string) *ListDriverRegistrationOptions {
+	_options.AuthInstanceID = core.StringPtr(authInstanceID)
+	return _options
+}
+
+// SetHeaders : Allow user to set Headers
+func (options *ListDriverRegistrationOptions) SetHeaders(param map[string]string) *ListDriverRegistrationOptions {
+	options.Headers = param
+	return options
+}
+
 // ListIngestionJobsOptions : The ListIngestionJobs options.
 type ListIngestionJobsOptions struct {
 	// CRN.
@@ -21356,7 +20500,7 @@ type ListInstanceServiceDetailsOptions struct {
 	// Internal host.
 	InternalHost *bool `json:"internal_host,omitempty"`
 
-	// watsonx.data instance ID.
+	// CRN.
 	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
 
 	// Allows users to set headers on API requests.
@@ -21870,7 +21014,7 @@ type ListSparkVersionsOKBody struct {
 	Response *SuccessResponse `json:"response" validate:"required"`
 
 	// Spark versions list.
-	SparkVersions []SparkVersions `json:"spark_versions" validate:"required"`
+	SparkVersions []DisplayNameInfoResponse `json:"spark_versions" validate:"required"`
 }
 
 // UnmarshalListSparkVersionsOKBody unmarshals an instance of ListSparkVersionsOKBody from the specified map of raw messages.
@@ -21881,7 +21025,7 @@ func UnmarshalListSparkVersionsOKBody(m map[string]json.RawMessage, result inter
 		err = core.SDKErrorf(err, "", "response-error", common.GetComponentInfo())
 		return
 	}
-	err = core.UnmarshalModel(m, "spark_versions", &obj.SparkVersions, UnmarshalSparkVersions)
+	err = core.UnmarshalModel(m, "spark_versions", &obj.SparkVersions, UnmarshalDisplayNameInfoResponse)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "spark_versions-error", common.GetComponentInfo())
 		return
@@ -22040,89 +21184,6 @@ func (options *ListTablesOptions) SetHeaders(param map[string]string) *ListTable
 	return options
 }
 
-// LoadTableOptions : The LoadTable options.
-type LoadTableOptions struct {
-	// catalog id.
-	CatalogID *string `json:"catalog_id" validate:"required,ne="`
-
-	// URL encoded schema name.
-	SchemaID *string `json:"schema_id" validate:"required,ne="`
-
-	// URL encoded table name.
-	TableID *string `json:"table_id" validate:"required,ne="`
-
-	// watsonx.data instance ID.
-	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
-
-	// Allows users to set headers on API requests.
-	Headers map[string]string
-}
-
-// NewLoadTableOptions : Instantiate LoadTableOptions
-func (*WatsonxDataV2) NewLoadTableOptions(catalogID string, schemaID string, tableID string) *LoadTableOptions {
-	return &LoadTableOptions{
-		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		TableID: core.StringPtr(tableID),
-	}
-}
-
-// SetCatalogID : Allow user to set CatalogID
-func (_options *LoadTableOptions) SetCatalogID(catalogID string) *LoadTableOptions {
-	_options.CatalogID = core.StringPtr(catalogID)
-	return _options
-}
-
-// SetSchemaID : Allow user to set SchemaID
-func (_options *LoadTableOptions) SetSchemaID(schemaID string) *LoadTableOptions {
-	_options.SchemaID = core.StringPtr(schemaID)
-	return _options
-}
-
-// SetTableID : Allow user to set TableID
-func (_options *LoadTableOptions) SetTableID(tableID string) *LoadTableOptions {
-	_options.TableID = core.StringPtr(tableID)
-	return _options
-}
-
-// SetAuthInstanceID : Allow user to set AuthInstanceID
-func (_options *LoadTableOptions) SetAuthInstanceID(authInstanceID string) *LoadTableOptions {
-	_options.AuthInstanceID = core.StringPtr(authInstanceID)
-	return _options
-}
-
-// SetHeaders : Allow user to set Headers
-func (options *LoadTableOptions) SetHeaders(param map[string]string) *LoadTableOptions {
-	options.Headers = param
-	return options
-}
-
-// LoadTableResponse : LoadTableResponse struct
-type LoadTableResponse struct {
-	// Metadata location.
-	MetadataLocation *string `json:"metadata_location,omitempty"`
-
-	// Path to the table.
-	TablePath *string `json:"table_path,omitempty"`
-}
-
-// UnmarshalLoadTableResponse unmarshals an instance of LoadTableResponse from the specified map of raw messages.
-func UnmarshalLoadTableResponse(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(LoadTableResponse)
-	err = core.UnmarshalPrimitive(m, "metadata_location", &obj.MetadataLocation)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "metadata_location-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "table_path", &obj.TablePath)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "table_path-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
 // MilvusDatabaseCollections : List milvus collections.
 type MilvusDatabaseCollections struct {
 	// milvus collections.
@@ -22147,7 +21208,7 @@ type MilvusService struct {
 	AccessKey *string `json:"access_key,omitempty"`
 
 	// Actions.
-	Actions []string `json:"actions" validate:"required"`
+	Actions []string `json:"actions,omitempty"`
 
 	// bucket name.
 	BucketName *string `json:"bucket_name,omitempty"`
@@ -22204,7 +21265,7 @@ type MilvusService struct {
 	StatusCode *int64 `json:"status_code" validate:"required"`
 
 	// Tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 
 	// tshirt size.
 	TshirtSize *string `json:"tshirt_size,omitempty"`
@@ -22424,15 +21485,16 @@ func UnmarshalMilvusServiceCollection(m map[string]json.RawMessage, result inter
 
 // MilvusServiceDatabases : List milvus databases.
 type MilvusServiceDatabases struct {
-	MilvusDatabases []string `json:"milvus_databases" validate:"required"`
+	// milvus database body.
+	Databases []string `json:"databases,omitempty"`
 }
 
 // UnmarshalMilvusServiceDatabases unmarshals an instance of MilvusServiceDatabases from the specified map of raw messages.
 func UnmarshalMilvusServiceDatabases(m map[string]json.RawMessage, result interface{}) (err error) {
 	obj := new(MilvusServiceDatabases)
-	err = core.UnmarshalPrimitive(m, "milvus_databases", &obj.MilvusDatabases)
+	err = core.UnmarshalPrimitive(m, "databases", &obj.Databases)
 	if err != nil {
-		err = core.SDKErrorf(err, "", "milvus_databases-error", common.GetComponentInfo())
+		err = core.SDKErrorf(err, "", "databases-error", common.GetComponentInfo())
 		return
 	}
 	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
@@ -22497,9 +21559,11 @@ type Milvusdbcollection struct {
 	// milvus status.
 	CollectionName *string `json:"collection_name,omitempty"`
 
-	PhysicalChannels []string `json:"physical_channels" validate:"required"`
+	// milvus physical channels.
+	PhysicalChannels []string `json:"physical_channels,omitempty"`
 
-	VirtualChannels []string `json:"virtual_channels" validate:"required"`
+	// milvus virtual channels.
+	VirtualChannels []string `json:"virtual_channels,omitempty"`
 }
 
 // UnmarshalMilvusdbcollection unmarshals an instance of Milvusdbcollection from the specified map of raw messages.
@@ -22532,12 +21596,12 @@ func UnmarshalMilvusdbcollection(m map[string]json.RawMessage, result interface{
 // NetezzaEngine : Netezza engine details.
 type NetezzaEngine struct {
 	// Actions.
-	Actions []string `json:"actions" validate:"required"`
+	Actions []string `json:"actions,omitempty"`
 
 	// watsonx.data build version.
 	BuildVersion *string `json:"build_version,omitempty"`
 
-	// Username of the user who created the watsonx.data instance.
+	// Created user name.
 	CreatedBy *string `json:"created_by,omitempty"`
 
 	// Created time in epoch format.
@@ -22568,7 +21632,7 @@ type NetezzaEngine struct {
 	Status *string `json:"status,omitempty"`
 
 	// Tags.
-	Tags []string `json:"tags" validate:"required"`
+	Tags []string `json:"tags,omitempty"`
 
 	// Engine type.
 	Type *string `json:"type,omitempty"`
@@ -22654,7 +21718,7 @@ func UnmarshalNetezzaEngine(m map[string]json.RawMessage, result interface{}) (e
 // NetezzaEngineCollection : list Netezza engines.
 type NetezzaEngineCollection struct {
 	// list Netezza engines.
-	NetezzaEngines []NetezzaEngine `json:"netezza_engines" validate:"required"`
+	NetezzaEngines []NetezzaEngine `json:"netezza_engines,omitempty"`
 }
 
 // UnmarshalNetezzaEngineCollection unmarshals an instance of NetezzaEngineCollection from the specified map of raw messages.
@@ -23033,6 +22097,24 @@ func UnmarshalOtherEngineDetailsBody(m map[string]json.RawMessage, result interf
 	return
 }
 
+// Path : Bucket object size.
+type Path struct {
+	// object path.
+	Path *string `json:"path,omitempty"`
+}
+
+// UnmarshalPath unmarshals an instance of Path from the specified map of raw messages.
+func UnmarshalPath(m map[string]json.RawMessage, result interface{}) (err error) {
+	obj := new(Path)
+	err = core.UnmarshalPrimitive(m, "path", &obj.Path)
+	if err != nil {
+		err = core.SDKErrorf(err, "", "path-error", common.GetComponentInfo())
+		return
+	}
+	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
+	return
+}
+
 // PausePrestissimoEngineOptions : The PausePrestissimoEngine options.
 type PausePrestissimoEngineOptions struct {
 	// engine id.
@@ -23278,7 +22360,8 @@ type PrestissimoEngine struct {
 	// RemoveEngine properties.
 	RemoveEngineProperties *RemoveEngineProperties `json:"remove_engine_properties,omitempty"`
 
-	// Size config.
+	// CPD supported sizes are: custom, starter, small, medium, large, xlarge, and xxlarge. IBM cloud supported sizes are:
+	// custom, starter, small, medium, large, cache_optimized, compute_optimized and lite.
 	SizeConfig *string `json:"size_config,omitempty"`
 
 	// Engine status.
@@ -23501,7 +22584,8 @@ type PrestissimoEngineDetails struct {
 	// Metastore host.
 	MetastoreHost *string `json:"metastore_host,omitempty"`
 
-	// Size config.
+	// CPD supported sizes are: custom, starter, small, medium, large, xlarge, and xxlarge. IBM cloud supported sizes are:
+	// custom, starter, small, medium, large, cache_optimized, compute_optimized and lite.
 	SizeConfig *string `json:"size_config,omitempty"`
 
 	// coordinator/worker property settings.
@@ -23509,7 +22593,8 @@ type PrestissimoEngineDetails struct {
 }
 
 // Constants associated with the PrestissimoEngineDetails.SizeConfig property.
-// Size config.
+// CPD supported sizes are: custom, starter, small, medium, large, xlarge, and xxlarge. IBM cloud supported sizes are:
+// custom, starter, small, medium, large, cache_optimized, compute_optimized and lite.
 const (
 	PrestissimoEngineDetails_SizeConfig_CacheOptimized = "cache_optimized"
 	PrestissimoEngineDetails_SizeConfig_ComputeOptimized = "compute_optimized"
@@ -23908,7 +22993,8 @@ type PrestoEngine struct {
 	// RemoveEngine properties.
 	RemoveEngineProperties *PrestoEnginePatchRemoveEngineProperties `json:"remove_engine_properties,omitempty"`
 
-	// Size config.
+	// CPD supported sizes are: custom, starter, small, medium, large, xlarge, and xxlarge. IBM cloud supported sizes are:
+	// custom, starter, small, medium, large, cache_optimized, compute_optimized and lite.
 	SizeConfig *string `json:"size_config,omitempty"`
 
 	// Engine status.
@@ -24682,91 +23768,6 @@ func UnmarshalPreviewIngestionFileRows(m map[string]json.RawMessage, result inte
 	return
 }
 
-// RegisterTableCreatedBody : success response.
-type RegisterTableCreatedBody struct {
-	// Response of success.
-	Response *SuccessResponse `json:"response,omitempty"`
-}
-
-// UnmarshalRegisterTableCreatedBody unmarshals an instance of RegisterTableCreatedBody from the specified map of raw messages.
-func UnmarshalRegisterTableCreatedBody(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(RegisterTableCreatedBody)
-	err = core.UnmarshalModel(m, "response", &obj.Response, UnmarshalSuccessResponse)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "response-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// RegisterTableOptions : The RegisterTable options.
-type RegisterTableOptions struct {
-	// catalog id.
-	CatalogID *string `json:"catalog_id" validate:"required,ne="`
-
-	// URL encoded schema name.
-	SchemaID *string `json:"schema_id" validate:"required,ne="`
-
-	// Metadata location.
-	MetadataLocation *string `json:"metadata_location" validate:"required"`
-
-	// Table name.
-	TableName *string `json:"table_name" validate:"required"`
-
-	// watsonx.data instance ID.
-	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
-
-	// Allows users to set headers on API requests.
-	Headers map[string]string
-}
-
-// NewRegisterTableOptions : Instantiate RegisterTableOptions
-func (*WatsonxDataV2) NewRegisterTableOptions(catalogID string, schemaID string, metadataLocation string, tableName string) *RegisterTableOptions {
-	return &RegisterTableOptions{
-		CatalogID: core.StringPtr(catalogID),
-		SchemaID: core.StringPtr(schemaID),
-		MetadataLocation: core.StringPtr(metadataLocation),
-		TableName: core.StringPtr(tableName),
-	}
-}
-
-// SetCatalogID : Allow user to set CatalogID
-func (_options *RegisterTableOptions) SetCatalogID(catalogID string) *RegisterTableOptions {
-	_options.CatalogID = core.StringPtr(catalogID)
-	return _options
-}
-
-// SetSchemaID : Allow user to set SchemaID
-func (_options *RegisterTableOptions) SetSchemaID(schemaID string) *RegisterTableOptions {
-	_options.SchemaID = core.StringPtr(schemaID)
-	return _options
-}
-
-// SetMetadataLocation : Allow user to set MetadataLocation
-func (_options *RegisterTableOptions) SetMetadataLocation(metadataLocation string) *RegisterTableOptions {
-	_options.MetadataLocation = core.StringPtr(metadataLocation)
-	return _options
-}
-
-// SetTableName : Allow user to set TableName
-func (_options *RegisterTableOptions) SetTableName(tableName string) *RegisterTableOptions {
-	_options.TableName = core.StringPtr(tableName)
-	return _options
-}
-
-// SetAuthInstanceID : Allow user to set AuthInstanceID
-func (_options *RegisterTableOptions) SetAuthInstanceID(authInstanceID string) *RegisterTableOptions {
-	_options.AuthInstanceID = core.StringPtr(authInstanceID)
-	return _options
-}
-
-// SetHeaders : Allow user to set Headers
-func (options *RegisterTableOptions) SetHeaders(param map[string]string) *RegisterTableOptions {
-	options.Headers = param
-	return options
-}
-
 // RemoveEngineProperties : RemoveEngine properties.
 type RemoveEngineProperties struct {
 	// Catalog settings.
@@ -25152,72 +24153,6 @@ func UnmarshalResultRunPrestissimoExplainAnalyzeStatement(m map[string]json.RawM
 	err = core.UnmarshalPrimitive(m, "result", &obj.Result)
 	if err != nil {
 		err = core.SDKErrorf(err, "", "result-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// Results : Results struct
-type Results struct {
-	// Time taken to create a bucket.
-	CreateBucketTimeSec *string `json:"create_bucket_time_sec,omitempty"`
-
-	// Time taken to download files.
-	DownloadFilesTimeSec *string `json:"download_files_time_sec,omitempty"`
-
-	// Time taken to erase a bucket.
-	EraseBucketTimeSec *string `json:"erase_bucket_time_sec,omitempty"`
-
-	// Time taken to erase objects.
-	EraseObjectsTimeSec *string `json:"erase_objects_time_sec,omitempty"`
-
-	// Time taken to list files.
-	ListFilesTimeSec *string `json:"list_files_time_sec,omitempty"`
-
-	// Total time for all operations.
-	TotalOperationsTimeSec *string `json:"total_operations_time_sec,omitempty"`
-
-	// Time taken to upload files.
-	UploadFilesTimeSec *string `json:"upload_files_time_sec,omitempty"`
-}
-
-// UnmarshalResults unmarshals an instance of Results from the specified map of raw messages.
-func UnmarshalResults(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(Results)
-	err = core.UnmarshalPrimitive(m, "create_bucket_time_sec", &obj.CreateBucketTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "create_bucket_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "download_files_time_sec", &obj.DownloadFilesTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "download_files_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "erase_bucket_time_sec", &obj.EraseBucketTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "erase_bucket_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "erase_objects_time_sec", &obj.EraseObjectsTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "erase_objects_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "list_files_time_sec", &obj.ListFilesTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "list_files_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "total_operations_time_sec", &obj.TotalOperationsTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "total_operations_time_sec-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "upload_files_time_sec", &obj.UploadFilesTimeSec)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "upload_files_time_sec-error", common.GetComponentInfo())
 		return
 	}
 	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
@@ -27993,58 +26928,6 @@ func UnmarshalSparkScaleConfig(m map[string]json.RawMessage, result interface{})
 	return
 }
 
-// SparkVersions : Spark versions list.
-type SparkVersions struct {
-	// List of Cpp Spark versions.
-	Cpp []SparkVersionsInfoResponse `json:"cpp,omitempty"`
-
-	// List of Java Spark versions.
-	Java []SparkVersionsInfoResponse `json:"java,omitempty"`
-}
-
-// UnmarshalSparkVersions unmarshals an instance of SparkVersions from the specified map of raw messages.
-func UnmarshalSparkVersions(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(SparkVersions)
-	err = core.UnmarshalModel(m, "cpp", &obj.Cpp, UnmarshalSparkVersionsInfoResponse)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "cpp-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalModel(m, "java", &obj.Java, UnmarshalSparkVersionsInfoResponse)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "java-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
-// SparkVersionsInfoResponse : SparkVersionsInfoResponse.
-type SparkVersionsInfoResponse struct {
-	// Display name.
-	DisplayName *string `json:"display_name" validate:"required"`
-
-	// Display name.
-	Value *string `json:"value" validate:"required"`
-}
-
-// UnmarshalSparkVersionsInfoResponse unmarshals an instance of SparkVersionsInfoResponse from the specified map of raw messages.
-func UnmarshalSparkVersionsInfoResponse(m map[string]json.RawMessage, result interface{}) (err error) {
-	obj := new(SparkVersionsInfoResponse)
-	err = core.UnmarshalPrimitive(m, "display_name", &obj.DisplayName)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "display_name-error", common.GetComponentInfo())
-		return
-	}
-	err = core.UnmarshalPrimitive(m, "value", &obj.Value)
-	if err != nil {
-		err = core.SDKErrorf(err, "", "value-error", common.GetComponentInfo())
-		return
-	}
-	reflect.ValueOf(result).Elem().Set(reflect.ValueOf(obj))
-	return
-}
-
 // SparkVolumeDetails : Spark application volume.
 type SparkVolumeDetails struct {
 	// Path in the spark cluster for the mounted volume.
@@ -28884,6 +27767,53 @@ func (_options *UpdateDb2EngineOptions) SetAuthInstanceID(authInstanceID string)
 
 // SetHeaders : Allow user to set Headers
 func (options *UpdateDb2EngineOptions) SetHeaders(param map[string]string) *UpdateDb2EngineOptions {
+	options.Headers = param
+	return options
+}
+
+// UpdateDriverEnginesOptions : The UpdateDriverEngines options.
+type UpdateDriverEnginesOptions struct {
+	// driver id.
+	DriverID *string `json:"driver_id" validate:"required,ne="`
+
+	// Engine details.
+	Body map[string]interface{} `json:"body" validate:"required"`
+
+	// CRN.
+	AuthInstanceID *string `json:"AuthInstanceId,omitempty"`
+
+	// Allows users to set headers on API requests.
+	Headers map[string]string
+}
+
+// NewUpdateDriverEnginesOptions : Instantiate UpdateDriverEnginesOptions
+func (*WatsonxDataV2) NewUpdateDriverEnginesOptions(driverID string, body map[string]interface{}) *UpdateDriverEnginesOptions {
+	return &UpdateDriverEnginesOptions{
+		DriverID: core.StringPtr(driverID),
+		Body: body,
+	}
+}
+
+// SetDriverID : Allow user to set DriverID
+func (_options *UpdateDriverEnginesOptions) SetDriverID(driverID string) *UpdateDriverEnginesOptions {
+	_options.DriverID = core.StringPtr(driverID)
+	return _options
+}
+
+// SetBody : Allow user to set Body
+func (_options *UpdateDriverEnginesOptions) SetBody(body map[string]interface{}) *UpdateDriverEnginesOptions {
+	_options.Body = body
+	return _options
+}
+
+// SetAuthInstanceID : Allow user to set AuthInstanceID
+func (_options *UpdateDriverEnginesOptions) SetAuthInstanceID(authInstanceID string) *UpdateDriverEnginesOptions {
+	_options.AuthInstanceID = core.StringPtr(authInstanceID)
+	return _options
+}
+
+// SetHeaders : Allow user to set Headers
+func (options *UpdateDriverEnginesOptions) SetHeaders(param map[string]string) *UpdateDriverEnginesOptions {
 	options.Headers = param
 	return options
 }

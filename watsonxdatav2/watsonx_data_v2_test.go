@@ -231,7 +231,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"bucket_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}]}`)
+					fmt.Fprintf(res, "%s", `{"bucket_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}]}`)
 				}))
 			})
 			It(`Invoke ListBucketRegistrations successfully with retries`, func() {
@@ -287,7 +287,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"bucket_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}]}`)
+					fmt.Fprintf(res, "%s", `{"bucket_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}]}`)
 				}))
 			})
 			It(`Invoke ListBucketRegistrations successfully`, func() {
@@ -409,13 +409,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -431,12 +431,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
 				createBucketRegistrationOptionsModel := new(watsonxdatav2.CreateBucketRegistrationOptions)
-				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.BucketType = core.StringPtr("ibm_cos")
 				createBucketRegistrationOptionsModel.Description = core.StringPtr("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.ManagedBy = core.StringPtr("ibm")
 				createBucketRegistrationOptionsModel.AssociatedCatalog = bucketCatalogModel
 				createBucketRegistrationOptionsModel.BucketDetails = bucketDetailsModel
+				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.Region = core.StringPtr("us-south")
 				createBucketRegistrationOptionsModel.StorageDetails = storageDetailsModel
 				createBucketRegistrationOptionsModel.Tags = []string{"bucket-tag1", "bucket-tag2"}
@@ -495,7 +495,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke CreateBucketRegistration successfully with retries`, func() {
@@ -515,13 +515,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -537,12 +537,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
 				createBucketRegistrationOptionsModel := new(watsonxdatav2.CreateBucketRegistrationOptions)
-				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.BucketType = core.StringPtr("ibm_cos")
 				createBucketRegistrationOptionsModel.Description = core.StringPtr("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.ManagedBy = core.StringPtr("ibm")
 				createBucketRegistrationOptionsModel.AssociatedCatalog = bucketCatalogModel
 				createBucketRegistrationOptionsModel.BucketDetails = bucketDetailsModel
+				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.Region = core.StringPtr("us-south")
 				createBucketRegistrationOptionsModel.StorageDetails = storageDetailsModel
 				createBucketRegistrationOptionsModel.Tags = []string{"bucket-tag1", "bucket-tag2"}
@@ -604,7 +604,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke CreateBucketRegistration successfully`, func() {
@@ -629,13 +629,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -651,12 +651,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
 				createBucketRegistrationOptionsModel := new(watsonxdatav2.CreateBucketRegistrationOptions)
-				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.BucketType = core.StringPtr("ibm_cos")
 				createBucketRegistrationOptionsModel.Description = core.StringPtr("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.ManagedBy = core.StringPtr("ibm")
 				createBucketRegistrationOptionsModel.AssociatedCatalog = bucketCatalogModel
 				createBucketRegistrationOptionsModel.BucketDetails = bucketDetailsModel
+				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.Region = core.StringPtr("us-south")
 				createBucketRegistrationOptionsModel.StorageDetails = storageDetailsModel
 				createBucketRegistrationOptionsModel.Tags = []string{"bucket-tag1", "bucket-tag2"}
@@ -686,13 +686,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -708,12 +708,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
 				createBucketRegistrationOptionsModel := new(watsonxdatav2.CreateBucketRegistrationOptions)
-				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.BucketType = core.StringPtr("ibm_cos")
 				createBucketRegistrationOptionsModel.Description = core.StringPtr("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.ManagedBy = core.StringPtr("ibm")
 				createBucketRegistrationOptionsModel.AssociatedCatalog = bucketCatalogModel
 				createBucketRegistrationOptionsModel.BucketDetails = bucketDetailsModel
+				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.Region = core.StringPtr("us-south")
 				createBucketRegistrationOptionsModel.StorageDetails = storageDetailsModel
 				createBucketRegistrationOptionsModel.Tags = []string{"bucket-tag1", "bucket-tag2"}
@@ -764,13 +764,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -786,12 +786,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
 				createBucketRegistrationOptionsModel := new(watsonxdatav2.CreateBucketRegistrationOptions)
-				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.BucketType = core.StringPtr("ibm_cos")
 				createBucketRegistrationOptionsModel.Description = core.StringPtr("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.ManagedBy = core.StringPtr("ibm")
 				createBucketRegistrationOptionsModel.AssociatedCatalog = bucketCatalogModel
 				createBucketRegistrationOptionsModel.BucketDetails = bucketDetailsModel
+				createBucketRegistrationOptionsModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.Region = core.StringPtr("us-south")
 				createBucketRegistrationOptionsModel.StorageDetails = storageDetailsModel
 				createBucketRegistrationOptionsModel.Tags = []string{"bucket-tag1", "bucket-tag2"}
@@ -878,7 +878,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke GetBucketRegistration successfully with retries`, func() {
@@ -935,7 +935,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke GetBucketRegistration successfully`, func() {
@@ -1133,20 +1133,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the BucketRegistrationPatch model
 				bucketRegistrationPatchModel := new(watsonxdatav2.BucketRegistrationPatch)
 				bucketRegistrationPatchModel.BucketDetails = bucketDetailsModel
 				bucketRegistrationPatchModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				bucketRegistrationPatchModel.Description = core.StringPtr("COS bucket for customer data")
-				bucketRegistrationPatchModel.SystemBucketUpdateCredentials = core.BoolPtr(true)
 				bucketRegistrationPatchModel.Tags = []string{"testbucket", "userbucket"}
 				bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
 				Expect(asPatchErr).To(BeNil())
@@ -1210,7 +1209,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke UpdateBucketRegistration successfully with retries`, func() {
@@ -1224,20 +1223,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the BucketRegistrationPatch model
 				bucketRegistrationPatchModel := new(watsonxdatav2.BucketRegistrationPatch)
 				bucketRegistrationPatchModel.BucketDetails = bucketDetailsModel
 				bucketRegistrationPatchModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				bucketRegistrationPatchModel.Description = core.StringPtr("COS bucket for customer data")
-				bucketRegistrationPatchModel.SystemBucketUpdateCredentials = core.BoolPtr(true)
 				bucketRegistrationPatchModel.Tags = []string{"testbucket", "userbucket"}
 				bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
 				Expect(asPatchErr).To(BeNil())
@@ -1304,7 +1302,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "<access_key>", "bucket_name": "sample-bucket", "endpoint": "https://s3.us-south.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm-cos", "region": "us-south", "secret_key": "secret_key"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "system_bucket_update_credentials": true, "tags": ["Tags"]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "bucket_details": {"access_key": "b9cbf248ea5c4c96947e64407108559j", "bucket_name": "sample-bucket", "endpoint": "https://s3.<region>.cloud-object-storage.appdomain.cloud/", "key_file": "key_file", "provider": "ibm_cos", "region": "us-south", "secret_key": "13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"}, "bucket_display_name": "sample-bucket-displayname", "bucket_id": "samplebucket123", "bucket_type": "ibm_cos", "created_by": "<username>@<domain>.com", "created_on": "1686120645", "description": "COS bucket for customer data", "managed_by": "ibm", "region": "us-south", "state": "active", "storage_details": {"access_key": "<access_key>", "application_id": "<application_id>", "auth_mode": "<account_key/sas/service_principle>", "container_name": "sample-container", "directory_id": "<directory_id>", "endpoint": "abfss://<container_name>@<storage_account_name>.dfs.core.windows.net/", "sas_token": "<sas_token>", "secret_key": "secret_key", "storage_account_name": "sample-storage"}, "tags": ["Tags"]}`)
 				}))
 			})
 			It(`Invoke UpdateBucketRegistration successfully`, func() {
@@ -1323,20 +1321,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the BucketRegistrationPatch model
 				bucketRegistrationPatchModel := new(watsonxdatav2.BucketRegistrationPatch)
 				bucketRegistrationPatchModel.BucketDetails = bucketDetailsModel
 				bucketRegistrationPatchModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				bucketRegistrationPatchModel.Description = core.StringPtr("COS bucket for customer data")
-				bucketRegistrationPatchModel.SystemBucketUpdateCredentials = core.BoolPtr(true)
 				bucketRegistrationPatchModel.Tags = []string{"testbucket", "userbucket"}
 				bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
 				Expect(asPatchErr).To(BeNil())
@@ -1365,20 +1362,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the BucketRegistrationPatch model
 				bucketRegistrationPatchModel := new(watsonxdatav2.BucketRegistrationPatch)
 				bucketRegistrationPatchModel.BucketDetails = bucketDetailsModel
 				bucketRegistrationPatchModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				bucketRegistrationPatchModel.Description = core.StringPtr("COS bucket for customer data")
-				bucketRegistrationPatchModel.SystemBucketUpdateCredentials = core.BoolPtr(true)
 				bucketRegistrationPatchModel.Tags = []string{"testbucket", "userbucket"}
 				bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
 				Expect(asPatchErr).To(BeNil())
@@ -1428,20 +1424,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 				// Construct an instance of the BucketRegistrationPatch model
 				bucketRegistrationPatchModel := new(watsonxdatav2.BucketRegistrationPatch)
 				bucketRegistrationPatchModel.BucketDetails = bucketDetailsModel
 				bucketRegistrationPatchModel.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 				bucketRegistrationPatchModel.Description = core.StringPtr("COS bucket for customer data")
-				bucketRegistrationPatchModel.SystemBucketUpdateCredentials = core.BoolPtr(true)
 				bucketRegistrationPatchModel.Tags = []string{"testbucket", "userbucket"}
 				bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
 				Expect(asPatchErr).To(BeNil())
@@ -2017,14 +2012,14 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				pathModel.Path = core.StringPtr("string")
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				getBucketObjectPropertiesOptionsModel := new(watsonxdatav2.GetBucketObjectPropertiesOptions)
 				getBucketObjectPropertiesOptionsModel.BucketID = core.StringPtr("testString")
-				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}
+				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.Path{*pathModel}
 				getBucketObjectPropertiesOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				getBucketObjectPropertiesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -2092,14 +2087,14 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(watsonxDataService).ToNot(BeNil())
 				watsonxDataService.EnableRetries(0, 0)
 
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				pathModel.Path = core.StringPtr("string")
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				getBucketObjectPropertiesOptionsModel := new(watsonxdatav2.GetBucketObjectPropertiesOptions)
 				getBucketObjectPropertiesOptionsModel.BucketID = core.StringPtr("testString")
-				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}
+				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.Path{*pathModel}
 				getBucketObjectPropertiesOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				getBucketObjectPropertiesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -2175,14 +2170,14 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
 
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				pathModel.Path = core.StringPtr("string")
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				getBucketObjectPropertiesOptionsModel := new(watsonxdatav2.GetBucketObjectPropertiesOptions)
 				getBucketObjectPropertiesOptionsModel.BucketID = core.StringPtr("testString")
-				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}
+				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.Path{*pathModel}
 				getBucketObjectPropertiesOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				getBucketObjectPropertiesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -2201,14 +2196,14 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				pathModel.Path = core.StringPtr("string")
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				getBucketObjectPropertiesOptionsModel := new(watsonxdatav2.GetBucketObjectPropertiesOptions)
 				getBucketObjectPropertiesOptionsModel.BucketID = core.StringPtr("testString")
-				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}
+				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.Path{*pathModel}
 				getBucketObjectPropertiesOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				getBucketObjectPropertiesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -2248,524 +2243,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				pathModel.Path = core.StringPtr("string")
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				getBucketObjectPropertiesOptionsModel := new(watsonxdatav2.GetBucketObjectPropertiesOptions)
 				getBucketObjectPropertiesOptionsModel.BucketID = core.StringPtr("testString")
-				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}
+				getBucketObjectPropertiesOptionsModel.Paths = []watsonxdatav2.Path{*pathModel}
 				getBucketObjectPropertiesOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				getBucketObjectPropertiesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
 				// Invoke operation
 				result, response, operationErr := watsonxDataService.GetBucketObjectProperties(getBucketObjectPropertiesOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-
-				// Verify a nil result
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`GenerateBenchmarkReport(generateBenchmarkReportOptions *GenerateBenchmarkReportOptions) - Operation response error`, func() {
-		generateBenchmarkReportPath := "/generate_benchmark_report"
-		Context(`Using mock server endpoint with invalid JSON response`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportPath))
-					Expect(req.Method).To(Equal("GET"))
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_count"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_size"]).To(Equal([]string{"testString"}))
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprint(res, `} this is not valid json {`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReport with error: Operation response processing error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				generateBenchmarkReportOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				generateBenchmarkReportOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileCount = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileSize = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Expect response parsing to fail since we are receiving a text/plain response
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-
-				// Enable retries and test again
-				watsonxDataService.EnableRetries(0, 0)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`GenerateBenchmarkReport(generateBenchmarkReportOptions *GenerateBenchmarkReportOptions)`, func() {
-		generateBenchmarkReportPath := "/generate_benchmark_report"
-		Context(`Using mock server endpoint with timeout`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportPath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_count"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_size"]).To(Equal([]string{"testString"}))
-					// Sleep a short time to support a timeout test
-					time.Sleep(100 * time.Millisecond)
-
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "req_id": "ReqID", "status": "Status"}}`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReport successfully with retries`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-				watsonxDataService.EnableRetries(0, 0)
-
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				generateBenchmarkReportOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				generateBenchmarkReportOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileCount = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileSize = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with a Context to test a timeout error
-				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc()
-				_, _, operationErr := watsonxDataService.GenerateBenchmarkReportWithContext(ctx, generateBenchmarkReportOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-
-				// Disable retries and test again
-				watsonxDataService.DisableRetries()
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-				// Re-test the timeout error with retries disabled
-				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc2()
-				_, _, operationErr = watsonxDataService.GenerateBenchmarkReportWithContext(ctx, generateBenchmarkReportOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportPath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_count"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["file_size"]).To(Equal([]string{"testString"}))
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "req_id": "ReqID", "status": "Status"}}`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReport successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Invoke operation with nil options model (negative test)
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReport(nil)
-				Expect(operationErr).NotTo(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				generateBenchmarkReportOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				generateBenchmarkReportOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileCount = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileSize = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with valid options model (positive test)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-			})
-			It(`Invoke GenerateBenchmarkReport with error: Operation validation and request error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				generateBenchmarkReportOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				generateBenchmarkReportOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileCount = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileSize = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Invoke operation with empty URL (negative test)
-				err := watsonxDataService.SetServiceURL("")
-				Expect(err).To(BeNil())
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-				// Construct a second instance of the GenerateBenchmarkReportOptions model with no property values
-				generateBenchmarkReportOptionsModelNew := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				// Invoke operation with invalid model (negative test)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModelNew)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint with missing response body`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Set success status code with no respoonse body
-					res.WriteHeader(200)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReport successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				generateBenchmarkReportOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportOptions)
-				generateBenchmarkReportOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileCount = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.FileSize = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-
-				// Verify a nil result
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptions *GenerateBenchmarkReportStatusOptions) - Operation response error`, func() {
-		generateBenchmarkReportStatusPath := "/generate_benchmark_report/status/testString"
-		Context(`Using mock server endpoint with invalid JSON response`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportStatusPath))
-					Expect(req.Method).To(Equal("GET"))
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprint(res, `} this is not valid json {`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReportStatus with error: Operation response processing error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				generateBenchmarkReportStatusOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				generateBenchmarkReportStatusOptionsModel.ReqID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Expect response parsing to fail since we are receiving a text/plain response
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-
-				// Enable retries and test again
-				watsonxDataService.EnableRetries(0, 0)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptions *GenerateBenchmarkReportStatusOptions)`, func() {
-		generateBenchmarkReportStatusPath := "/generate_benchmark_report/status/testString"
-		Context(`Using mock server endpoint with timeout`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportStatusPath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					// Sleep a short time to support a timeout test
-					time.Sleep(100 * time.Millisecond)
-
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"data": {"bandwidth": {"download_bandwidth_mbps": "DownloadBandwidthMbps", "upload_bandwidth_mbps": "UploadBandwidthMbps"}, "date": "2019-01-01", "num_files": 0, "results": {"create_bucket_time_sec": "CreateBucketTimeSec", "download_files_time_sec": "DownloadFilesTimeSec", "erase_bucket_time_sec": "EraseBucketTimeSec", "erase_objects_time_sec": "EraseObjectsTimeSec", "list_files_time_sec": "ListFilesTimeSec", "total_operations_time_sec": "TotalOperationsTimeSec", "upload_files_time_sec": "UploadFilesTimeSec"}, "size_files": 0, "time": "Time"}, "error": "Error", "message": "Message", "status": "Status"}`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReportStatus successfully with retries`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-				watsonxDataService.EnableRetries(0, 0)
-
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				generateBenchmarkReportStatusOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				generateBenchmarkReportStatusOptionsModel.ReqID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with a Context to test a timeout error
-				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc()
-				_, _, operationErr := watsonxDataService.GenerateBenchmarkReportStatusWithContext(ctx, generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-
-				// Disable retries and test again
-				watsonxDataService.DisableRetries()
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-				// Re-test the timeout error with retries disabled
-				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc2()
-				_, _, operationErr = watsonxDataService.GenerateBenchmarkReportStatusWithContext(ctx, generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateBenchmarkReportStatusPath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					Expect(req.URL.Query()["engine_id"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["bucket_name"]).To(Equal([]string{"testString"}))
-					Expect(req.URL.Query()["pod_name"]).To(Equal([]string{"testString"}))
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"data": {"bandwidth": {"download_bandwidth_mbps": "DownloadBandwidthMbps", "upload_bandwidth_mbps": "UploadBandwidthMbps"}, "date": "2019-01-01", "num_files": 0, "results": {"create_bucket_time_sec": "CreateBucketTimeSec", "download_files_time_sec": "DownloadFilesTimeSec", "erase_bucket_time_sec": "EraseBucketTimeSec", "erase_objects_time_sec": "EraseObjectsTimeSec", "list_files_time_sec": "ListFilesTimeSec", "total_operations_time_sec": "TotalOperationsTimeSec", "upload_files_time_sec": "UploadFilesTimeSec"}, "size_files": 0, "time": "Time"}, "error": "Error", "message": "Message", "status": "Status"}`)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReportStatus successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Invoke operation with nil options model (negative test)
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReportStatus(nil)
-				Expect(operationErr).NotTo(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				generateBenchmarkReportStatusOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				generateBenchmarkReportStatusOptionsModel.ReqID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with valid options model (positive test)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-			})
-			It(`Invoke GenerateBenchmarkReportStatus with error: Operation validation and request error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				generateBenchmarkReportStatusOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				generateBenchmarkReportStatusOptionsModel.ReqID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Invoke operation with empty URL (negative test)
-				err := watsonxDataService.SetServiceURL("")
-				Expect(err).To(BeNil())
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-				// Construct a second instance of the GenerateBenchmarkReportStatusOptions model with no property values
-				generateBenchmarkReportStatusOptionsModelNew := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				// Invoke operation with invalid model (negative test)
-				result, response, operationErr = watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModelNew)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint with missing response body`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Set success status code with no respoonse body
-					res.WriteHeader(200)
-				}))
-			})
-			It(`Invoke GenerateBenchmarkReportStatus successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				generateBenchmarkReportStatusOptionsModel := new(watsonxdatav2.GenerateBenchmarkReportStatusOptions)
-				generateBenchmarkReportStatusOptionsModel.ReqID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.EngineID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.BucketName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.PodName = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateBenchmarkReportStatusOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation
-				result, response, operationErr := watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptionsModel)
 				Expect(operationErr).To(BeNil())
 				Expect(response).ToNot(BeNil())
 
@@ -3156,7 +2646,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"database_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"database_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}]}`)
 				}))
 			})
 			It(`Invoke ListDatabaseRegistrations successfully with retries`, func() {
@@ -3212,7 +2702,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"database_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"database_registrations": [{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}]}`)
 				}))
 			})
 			It(`Invoke ListDatabaseRegistrations successfully`, func() {
@@ -3326,22 +2816,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -3349,12 +2837,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -3362,9 +2848,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -3373,11 +2856,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -3389,7 +2871,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := new(watsonxdatav2.CreateDatabaseRegistrationOptions)
 				createDatabaseRegistrationOptionsModel.DatabaseDisplayName = core.StringPtr("new_database")
 				createDatabaseRegistrationOptionsModel.DatabaseType = core.StringPtr("db2")
-				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogPrototypeModel
+				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogModel
 				createDatabaseRegistrationOptionsModel.CreatedOn = core.StringPtr("1686792721")
 				createDatabaseRegistrationOptionsModel.DatabaseDetails = databaseDetailsModel
 				createDatabaseRegistrationOptionsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}
@@ -3450,7 +2932,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke CreateDatabaseRegistration successfully with retries`, func() {
@@ -3462,22 +2944,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(watsonxDataService).ToNot(BeNil())
 				watsonxDataService.EnableRetries(0, 0)
 
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -3485,12 +2965,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -3498,9 +2976,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -3509,11 +2984,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -3525,7 +2999,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := new(watsonxdatav2.CreateDatabaseRegistrationOptions)
 				createDatabaseRegistrationOptionsModel.DatabaseDisplayName = core.StringPtr("new_database")
 				createDatabaseRegistrationOptionsModel.DatabaseType = core.StringPtr("db2")
-				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogPrototypeModel
+				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogModel
 				createDatabaseRegistrationOptionsModel.CreatedOn = core.StringPtr("1686792721")
 				createDatabaseRegistrationOptionsModel.DatabaseDetails = databaseDetailsModel
 				createDatabaseRegistrationOptionsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}
@@ -3589,7 +3063,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke CreateDatabaseRegistration successfully`, func() {
@@ -3606,22 +3080,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
 
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -3629,12 +3101,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -3642,9 +3112,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -3653,11 +3120,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -3669,7 +3135,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := new(watsonxdatav2.CreateDatabaseRegistrationOptions)
 				createDatabaseRegistrationOptionsModel.DatabaseDisplayName = core.StringPtr("new_database")
 				createDatabaseRegistrationOptionsModel.DatabaseType = core.StringPtr("db2")
-				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogPrototypeModel
+				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogModel
 				createDatabaseRegistrationOptionsModel.CreatedOn = core.StringPtr("1686792721")
 				createDatabaseRegistrationOptionsModel.DatabaseDetails = databaseDetailsModel
 				createDatabaseRegistrationOptionsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}
@@ -3693,22 +3159,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -3716,12 +3180,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -3729,9 +3191,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -3740,11 +3199,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -3756,7 +3214,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := new(watsonxdatav2.CreateDatabaseRegistrationOptions)
 				createDatabaseRegistrationOptionsModel.DatabaseDisplayName = core.StringPtr("new_database")
 				createDatabaseRegistrationOptionsModel.DatabaseType = core.StringPtr("db2")
-				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogPrototypeModel
+				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogModel
 				createDatabaseRegistrationOptionsModel.CreatedOn = core.StringPtr("1686792721")
 				createDatabaseRegistrationOptionsModel.DatabaseDetails = databaseDetailsModel
 				createDatabaseRegistrationOptionsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}
@@ -3801,22 +3259,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -3824,12 +3280,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -3837,9 +3291,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -3848,11 +3299,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -3864,7 +3314,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := new(watsonxdatav2.CreateDatabaseRegistrationOptions)
 				createDatabaseRegistrationOptionsModel.DatabaseDisplayName = core.StringPtr("new_database")
 				createDatabaseRegistrationOptionsModel.DatabaseType = core.StringPtr("db2")
-				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogPrototypeModel
+				createDatabaseRegistrationOptionsModel.AssociatedCatalog = databaseCatalogModel
 				createDatabaseRegistrationOptionsModel.CreatedOn = core.StringPtr("1686792721")
 				createDatabaseRegistrationOptionsModel.DatabaseDetails = databaseDetailsModel
 				createDatabaseRegistrationOptionsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}
@@ -3953,7 +3403,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke GetDatabase successfully with retries`, func() {
@@ -4010,7 +3460,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke GetDatabase successfully`, func() {
@@ -4206,39 +3656,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems model
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Encrypt = core.BoolPtr(true)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Key = core.StringPtr("abc")
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Value = core.StringPtr("xyz")
-
 				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetails model
 				databaseRegistrationPatchDatabaseDetailsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-				databaseRegistrationPatchDatabaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-				databaseRegistrationPatchDatabaseDetailsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel}
 				databaseRegistrationPatchDatabaseDetailsModel.Password = core.StringPtr("samplepassword")
 				databaseRegistrationPatchDatabaseDetailsModel.Username = core.StringPtr("sampleuser")
-
-				// Construct an instance of the DatabaseRegistrationPatchTablesItems model
-				databaseRegistrationPatchTablesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-				databaseRegistrationPatchTablesItemsModel.CreatedOn = core.StringPtr("1686792721")
-				databaseRegistrationPatchTablesItemsModel.FileContents = core.StringPtr("sample file content")
-				databaseRegistrationPatchTablesItemsModel.FileName = core.StringPtr("test.json")
-				databaseRegistrationPatchTablesItemsModel.SchemaName = core.StringPtr("customer")
-				databaseRegistrationPatchTablesItemsModel.TableName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatchTopicsItems model
 				databaseRegistrationPatchTopicsItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 				databaseRegistrationPatchTopicsItemsModel.CreatedOn = core.StringPtr("1686792721")
 				databaseRegistrationPatchTopicsItemsModel.FileContents = core.StringPtr("sample file contents")
-				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("test.json")
+				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("sample file name")
 				databaseRegistrationPatchTopicsItemsModel.TopicName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatch model
@@ -4246,7 +3673,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseRegistrationPatchModel.DatabaseDetails = databaseRegistrationPatchDatabaseDetailsModel
 				databaseRegistrationPatchModel.DatabaseDisplayName = core.StringPtr("new_database")
 				databaseRegistrationPatchModel.Description = core.StringPtr("External database description")
-				databaseRegistrationPatchModel.Tables = []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel}
 				databaseRegistrationPatchModel.Tags = []string{"testdatabase", "userdatabase"}
 				databaseRegistrationPatchModel.Topics = []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel}
 				databaseRegistrationPatchModelAsPatch, asPatchErr := databaseRegistrationPatchModel.AsPatch()
@@ -4311,7 +3737,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke UpdateDatabase successfully with retries`, func() {
@@ -4323,39 +3749,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(watsonxDataService).ToNot(BeNil())
 				watsonxDataService.EnableRetries(0, 0)
 
-				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems model
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Encrypt = core.BoolPtr(true)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Key = core.StringPtr("abc")
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Value = core.StringPtr("xyz")
-
 				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetails model
 				databaseRegistrationPatchDatabaseDetailsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-				databaseRegistrationPatchDatabaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-				databaseRegistrationPatchDatabaseDetailsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel}
 				databaseRegistrationPatchDatabaseDetailsModel.Password = core.StringPtr("samplepassword")
 				databaseRegistrationPatchDatabaseDetailsModel.Username = core.StringPtr("sampleuser")
-
-				// Construct an instance of the DatabaseRegistrationPatchTablesItems model
-				databaseRegistrationPatchTablesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-				databaseRegistrationPatchTablesItemsModel.CreatedOn = core.StringPtr("1686792721")
-				databaseRegistrationPatchTablesItemsModel.FileContents = core.StringPtr("sample file content")
-				databaseRegistrationPatchTablesItemsModel.FileName = core.StringPtr("test.json")
-				databaseRegistrationPatchTablesItemsModel.SchemaName = core.StringPtr("customer")
-				databaseRegistrationPatchTablesItemsModel.TableName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatchTopicsItems model
 				databaseRegistrationPatchTopicsItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 				databaseRegistrationPatchTopicsItemsModel.CreatedOn = core.StringPtr("1686792721")
 				databaseRegistrationPatchTopicsItemsModel.FileContents = core.StringPtr("sample file contents")
-				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("test.json")
+				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("sample file name")
 				databaseRegistrationPatchTopicsItemsModel.TopicName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatch model
@@ -4363,7 +3766,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseRegistrationPatchModel.DatabaseDetails = databaseRegistrationPatchDatabaseDetailsModel
 				databaseRegistrationPatchModel.DatabaseDisplayName = core.StringPtr("new_database")
 				databaseRegistrationPatchModel.Description = core.StringPtr("External database description")
-				databaseRegistrationPatchModel.Tables = []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel}
 				databaseRegistrationPatchModel.Tags = []string{"testdatabase", "userdatabase"}
 				databaseRegistrationPatchModel.Topics = []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel}
 				databaseRegistrationPatchModelAsPatch, asPatchErr := databaseRegistrationPatchModel.AsPatch()
@@ -4431,7 +3833,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@ibm.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "authentication_value": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "broker_host": "samplehost", "broker_port": 4553, "certificate": "exampleCertificate", "certificate_extension": "pem", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "coordinator_host": "samplehost", "coordinator_port": 4553, "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "http://db2@localhost:9900.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "sasl_mechanism": "plain", "schema_name": "sampleSchema", "schemas": "redis__name", "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name, redis_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true, "warehouse_name": "samplewrehouse"}, "database_display_name": "new_database", "database_id": "mysql123", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tables": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "test.json", "schema_name": "customer", "table_name": "customer"}], "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "employee.json", "topic_name": "customer"}]}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalog": {"catalog_name": "sampleCatalog", "catalog_tags": ["CatalogTags"], "catalog_type": "iceberg"}, "catalog_name": "sampleCatalog", "created_by": "user1@bim.com", "created_on": "1686792721", "database_details": {"authentication_type": "LDAP", "broker_authentication_password": "samplepassword", "broker_authentication_type": "PASSWORD", "broker_authentication_user": "sampleuser", "certificate": "contents of a pem/crt file", "certificate_extension": "pem/crt", "connection_method": "basic, apikey", "connection_mode": "service_name", "connection_mode_value": "orclpdb", "connection_type": "JDBC, Arrow flight", "controller_authentication_password": "samplepassword", "controller_authentication_type": "PASSWORD", "controller_authentication_user": "sampleuser", "cpd_hostname": "samplecpdhostname", "credentials_key": "eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......", "database_name": "new_database", "hostname": "db2@<hostname>.com", "hostname_in_certificate": "samplehostname", "hosts": "abc.com:1234,xyz.com:4321", "informix_server": "ol_informix1410", "password": "samplepassword", "port": 4553, "project_id": "conops-bigquery", "sasl": true, "service_api_key": "sampleapikey", "service_hostname": "api.dataplatform.dev.cloud.ibm.com", "service_password": "samplepassword", "service_port": 443, "service_ssl": true, "service_token_url": "sampletoakenurl", "service_username": "sampleusername", "ssl": true, "tables": "kafka_table_name", "username": "sampleuser", "validate_server_certificate": true, "verify_host_name": true}, "database_display_name": "new_database", "database_id": "new_database_id", "database_properties": [{"encrypt": true, "key": "hive.metastore", "value": "glue"}], "database_type": "netezza", "description": "Description of the external database", "tags": ["Tags"], "topics": [{"created_on": "1686792721", "file_contents": "sample file content", "file_name": "sample file name", "topic_name": "customer"}]}`)
 				}))
 			})
 			It(`Invoke UpdateDatabase successfully`, func() {
@@ -4448,39 +3850,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
 
-				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems model
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Encrypt = core.BoolPtr(true)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Key = core.StringPtr("abc")
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Value = core.StringPtr("xyz")
-
 				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetails model
 				databaseRegistrationPatchDatabaseDetailsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-				databaseRegistrationPatchDatabaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-				databaseRegistrationPatchDatabaseDetailsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel}
 				databaseRegistrationPatchDatabaseDetailsModel.Password = core.StringPtr("samplepassword")
 				databaseRegistrationPatchDatabaseDetailsModel.Username = core.StringPtr("sampleuser")
-
-				// Construct an instance of the DatabaseRegistrationPatchTablesItems model
-				databaseRegistrationPatchTablesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-				databaseRegistrationPatchTablesItemsModel.CreatedOn = core.StringPtr("1686792721")
-				databaseRegistrationPatchTablesItemsModel.FileContents = core.StringPtr("sample file content")
-				databaseRegistrationPatchTablesItemsModel.FileName = core.StringPtr("test.json")
-				databaseRegistrationPatchTablesItemsModel.SchemaName = core.StringPtr("customer")
-				databaseRegistrationPatchTablesItemsModel.TableName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatchTopicsItems model
 				databaseRegistrationPatchTopicsItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 				databaseRegistrationPatchTopicsItemsModel.CreatedOn = core.StringPtr("1686792721")
 				databaseRegistrationPatchTopicsItemsModel.FileContents = core.StringPtr("sample file contents")
-				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("test.json")
+				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("sample file name")
 				databaseRegistrationPatchTopicsItemsModel.TopicName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatch model
@@ -4488,7 +3867,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseRegistrationPatchModel.DatabaseDetails = databaseRegistrationPatchDatabaseDetailsModel
 				databaseRegistrationPatchModel.DatabaseDisplayName = core.StringPtr("new_database")
 				databaseRegistrationPatchModel.Description = core.StringPtr("External database description")
-				databaseRegistrationPatchModel.Tables = []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel}
 				databaseRegistrationPatchModel.Tags = []string{"testdatabase", "userdatabase"}
 				databaseRegistrationPatchModel.Topics = []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel}
 				databaseRegistrationPatchModelAsPatch, asPatchErr := databaseRegistrationPatchModel.AsPatch()
@@ -4516,39 +3894,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems model
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Encrypt = core.BoolPtr(true)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Key = core.StringPtr("abc")
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Value = core.StringPtr("xyz")
-
 				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetails model
 				databaseRegistrationPatchDatabaseDetailsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-				databaseRegistrationPatchDatabaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-				databaseRegistrationPatchDatabaseDetailsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel}
 				databaseRegistrationPatchDatabaseDetailsModel.Password = core.StringPtr("samplepassword")
 				databaseRegistrationPatchDatabaseDetailsModel.Username = core.StringPtr("sampleuser")
-
-				// Construct an instance of the DatabaseRegistrationPatchTablesItems model
-				databaseRegistrationPatchTablesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-				databaseRegistrationPatchTablesItemsModel.CreatedOn = core.StringPtr("1686792721")
-				databaseRegistrationPatchTablesItemsModel.FileContents = core.StringPtr("sample file content")
-				databaseRegistrationPatchTablesItemsModel.FileName = core.StringPtr("test.json")
-				databaseRegistrationPatchTablesItemsModel.SchemaName = core.StringPtr("customer")
-				databaseRegistrationPatchTablesItemsModel.TableName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatchTopicsItems model
 				databaseRegistrationPatchTopicsItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 				databaseRegistrationPatchTopicsItemsModel.CreatedOn = core.StringPtr("1686792721")
 				databaseRegistrationPatchTopicsItemsModel.FileContents = core.StringPtr("sample file contents")
-				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("test.json")
+				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("sample file name")
 				databaseRegistrationPatchTopicsItemsModel.TopicName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatch model
@@ -4556,7 +3911,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseRegistrationPatchModel.DatabaseDetails = databaseRegistrationPatchDatabaseDetailsModel
 				databaseRegistrationPatchModel.DatabaseDisplayName = core.StringPtr("new_database")
 				databaseRegistrationPatchModel.Description = core.StringPtr("External database description")
-				databaseRegistrationPatchModel.Tables = []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel}
 				databaseRegistrationPatchModel.Tags = []string{"testdatabase", "userdatabase"}
 				databaseRegistrationPatchModel.Topics = []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel}
 				databaseRegistrationPatchModelAsPatch, asPatchErr := databaseRegistrationPatchModel.AsPatch()
@@ -4605,39 +3959,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems model
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Encrypt = core.BoolPtr(true)
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Key = core.StringPtr("abc")
-				databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel.Value = core.StringPtr("xyz")
-
 				// Construct an instance of the DatabaseRegistrationPatchDatabaseDetails model
 				databaseRegistrationPatchDatabaseDetailsModel := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-				databaseRegistrationPatchDatabaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-				databaseRegistrationPatchDatabaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseRegistrationPatchDatabaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-				databaseRegistrationPatchDatabaseDetailsModel.DatabaseProperties = []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel}
 				databaseRegistrationPatchDatabaseDetailsModel.Password = core.StringPtr("samplepassword")
 				databaseRegistrationPatchDatabaseDetailsModel.Username = core.StringPtr("sampleuser")
-
-				// Construct an instance of the DatabaseRegistrationPatchTablesItems model
-				databaseRegistrationPatchTablesItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-				databaseRegistrationPatchTablesItemsModel.CreatedOn = core.StringPtr("1686792721")
-				databaseRegistrationPatchTablesItemsModel.FileContents = core.StringPtr("sample file content")
-				databaseRegistrationPatchTablesItemsModel.FileName = core.StringPtr("test.json")
-				databaseRegistrationPatchTablesItemsModel.SchemaName = core.StringPtr("customer")
-				databaseRegistrationPatchTablesItemsModel.TableName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatchTopicsItems model
 				databaseRegistrationPatchTopicsItemsModel := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 				databaseRegistrationPatchTopicsItemsModel.CreatedOn = core.StringPtr("1686792721")
 				databaseRegistrationPatchTopicsItemsModel.FileContents = core.StringPtr("sample file contents")
-				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("test.json")
+				databaseRegistrationPatchTopicsItemsModel.FileName = core.StringPtr("sample file name")
 				databaseRegistrationPatchTopicsItemsModel.TopicName = core.StringPtr("customer")
 
 				// Construct an instance of the DatabaseRegistrationPatch model
@@ -4645,7 +3976,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseRegistrationPatchModel.DatabaseDetails = databaseRegistrationPatchDatabaseDetailsModel
 				databaseRegistrationPatchModel.DatabaseDisplayName = core.StringPtr("new_database")
 				databaseRegistrationPatchModel.Description = core.StringPtr("External database description")
-				databaseRegistrationPatchModel.Tables = []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel}
 				databaseRegistrationPatchModel.Tags = []string{"testdatabase", "userdatabase"}
 				databaseRegistrationPatchModel.Topics = []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel}
 				databaseRegistrationPatchModelAsPatch, asPatchErr := databaseRegistrationPatchModel.AsPatch()
@@ -4671,16 +4001,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			})
 		})
 	})
-	Describe(`GenerateEngineDump(generateEngineDumpOptions *GenerateEngineDumpOptions) - Operation response error`, func() {
-		generateEngineDumpPath := "/generate_engine_dump"
+	Describe(`ListDriverRegistration(listDriverRegistrationOptions *ListDriverRegistrationOptions) - Operation response error`, func() {
+		listDriverRegistrationPath := "/driver_registrations"
 		Context(`Using mock server endpoint with invalid JSON response`, func() {
 			BeforeEach(func() {
 				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
 					defer GinkgoRecover()
 
 					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateEngineDumpPath))
-					Expect(req.Method).To(Equal("POST"))
+					Expect(req.URL.EscapedPath()).To(Equal(listDriverRegistrationPath))
+					Expect(req.Method).To(Equal("GET"))
 					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
 					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
 					res.Header().Set("Content-type", "application/json")
@@ -4688,7 +4018,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					fmt.Fprint(res, `} this is not valid json {`)
 				}))
 			})
-			It(`Invoke GenerateEngineDump with error: Operation response processing error`, func() {
+			It(`Invoke ListDriverRegistration with error: Operation response processing error`, func() {
 				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
 					URL:           testServer.URL,
 					Authenticator: &core.NoAuthAuthenticator{},
@@ -4696,23 +4026,19 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsModel := new(watsonxdatav2.GenerateEngineDumpOptions)
-				generateEngineDumpOptionsModel.DumpFileName = core.StringPtr("prestodump")
-				generateEngineDumpOptionsModel.DumpType = core.StringPtr("heat")
-				generateEngineDumpOptionsModel.EngineID = core.StringPtr("presto-123")
-				generateEngineDumpOptionsModel.PodName = core.StringPtr("presto")
-				generateEngineDumpOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateEngineDumpOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := new(watsonxdatav2.ListDriverRegistrationOptions)
+				listDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				listDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
-				result, response, operationErr := watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr := watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(response).ToNot(BeNil())
 				Expect(result).To(BeNil())
 
 				// Enable retries and test again
 				watsonxDataService.EnableRetries(0, 0)
-				result, response, operationErr = watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr = watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(response).ToNot(BeNil())
 				Expect(result).To(BeNil())
@@ -4722,16 +4048,625 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			})
 		})
 	})
-	Describe(`GenerateEngineDump(generateEngineDumpOptions *GenerateEngineDumpOptions)`, func() {
-		generateEngineDumpPath := "/generate_engine_dump"
+	Describe(`ListDriverRegistration(listDriverRegistrationOptions *ListDriverRegistrationOptions)`, func() {
+		listDriverRegistrationPath := "/driver_registrations"
 		Context(`Using mock server endpoint with timeout`, func() {
 			BeforeEach(func() {
 				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
 					defer GinkgoRecover()
 
 					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateEngineDumpPath))
+					Expect(req.URL.EscapedPath()).To(Equal(listDriverRegistrationPath))
+					Expect(req.Method).To(Equal("GET"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					// Sleep a short time to support a timeout test
+					time.Sleep(100 * time.Millisecond)
+
+					// Set mock response
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(200)
+					fmt.Fprintf(res, "%s", `{"driver_registrations": [{"associated_engines": ["AssociatedEngines"], "connection_type": "connection-type", "driver_id": "sample-driver-123", "driver_name": "sample-driver-name", "modified_at": "1686792721", "modified_by": "user1@bim.com", "status": "validating", "version": "123-dev"}]}`)
+				}))
+			})
+			It(`Invoke ListDriverRegistration successfully with retries`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+				watsonxDataService.EnableRetries(0, 0)
+
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := new(watsonxdatav2.ListDriverRegistrationOptions)
+				listDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				listDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with a Context to test a timeout error
+				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
+				defer cancelFunc()
+				_, _, operationErr := watsonxDataService.ListDriverRegistrationWithContext(ctx, listDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
+
+				// Disable retries and test again
+				watsonxDataService.DisableRetries()
+				result, response, operationErr := watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).ToNot(BeNil())
+
+				// Re-test the timeout error with retries disabled
+				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
+				defer cancelFunc2()
+				_, _, operationErr = watsonxDataService.ListDriverRegistrationWithContext(ctx, listDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+		Context(`Using mock server endpoint`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(listDriverRegistrationPath))
+					Expect(req.Method).To(Equal("GET"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					// Set mock response
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(200)
+					fmt.Fprintf(res, "%s", `{"driver_registrations": [{"associated_engines": ["AssociatedEngines"], "connection_type": "connection-type", "driver_id": "sample-driver-123", "driver_name": "sample-driver-name", "modified_at": "1686792721", "modified_by": "user1@bim.com", "status": "validating", "version": "123-dev"}]}`)
+				}))
+			})
+			It(`Invoke ListDriverRegistration successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Invoke operation with nil options model (negative test)
+				result, response, operationErr := watsonxDataService.ListDriverRegistration(nil)
+				Expect(operationErr).NotTo(BeNil())
+				Expect(response).To(BeNil())
+				Expect(result).To(BeNil())
+
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := new(watsonxdatav2.ListDriverRegistrationOptions)
+				listDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				listDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with valid options model (positive test)
+				result, response, operationErr = watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).ToNot(BeNil())
+
+			})
+			It(`Invoke ListDriverRegistration with error: Operation request error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := new(watsonxdatav2.ListDriverRegistrationOptions)
+				listDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				listDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Invoke operation with empty URL (negative test)
+				err := watsonxDataService.SetServiceURL("")
+				Expect(err).To(BeNil())
+				result, response, operationErr := watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
+				Expect(response).To(BeNil())
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+		Context(`Using mock server endpoint with missing response body`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Set success status code with no respoonse body
+					res.WriteHeader(200)
+				}))
+			})
+			It(`Invoke ListDriverRegistration successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := new(watsonxdatav2.ListDriverRegistrationOptions)
+				listDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				listDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation
+				result, response, operationErr := watsonxDataService.ListDriverRegistration(listDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+
+				// Verify a nil result
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`CreateDriverRegistration(createDriverRegistrationOptions *CreateDriverRegistrationOptions) - Operation response error`, func() {
+		createDriverRegistrationPath := "/driver_registrations"
+		Context(`Using mock server endpoint with invalid JSON response`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(createDriverRegistrationPath))
 					Expect(req.Method).To(Equal("POST"))
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(201)
+					fmt.Fprint(res, `} this is not valid json {`)
+				}))
+			})
+			It(`Invoke CreateDriverRegistration with error: Operation response processing error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				createDriverRegistrationOptionsModel := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				createDriverRegistrationOptionsModel.Driver = CreateMockReader("This is a mock file.")
+				createDriverRegistrationOptionsModel.DriverName = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.ConnectionType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.DriverContentType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Version = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Expect response parsing to fail since we are receiving a text/plain response
+				result, response, operationErr := watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).To(BeNil())
+
+				// Enable retries and test again
+				watsonxDataService.EnableRetries(0, 0)
+				result, response, operationErr = watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`CreateDriverRegistration(createDriverRegistrationOptions *CreateDriverRegistrationOptions)`, func() {
+		createDriverRegistrationPath := "/driver_registrations"
+		Context(`Using mock server endpoint with timeout`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(createDriverRegistrationPath))
+					Expect(req.Method).To(Equal("POST"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					// Sleep a short time to support a timeout test
+					time.Sleep(100 * time.Millisecond)
+
+					// Set mock response
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(201)
+					fmt.Fprintf(res, "%s", `{"associated_engines": ["AssociatedEngines"], "connection_type": "connection-type", "driver_id": "sample-driver-123", "driver_name": "sample-driver-name", "modified_at": "1686792721", "modified_by": "user1@bim.com", "status": "validating", "version": "123-dev"}`)
+				}))
+			})
+			It(`Invoke CreateDriverRegistration successfully with retries`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+				watsonxDataService.EnableRetries(0, 0)
+
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				createDriverRegistrationOptionsModel := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				createDriverRegistrationOptionsModel.Driver = CreateMockReader("This is a mock file.")
+				createDriverRegistrationOptionsModel.DriverName = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.ConnectionType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.DriverContentType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Version = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with a Context to test a timeout error
+				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
+				defer cancelFunc()
+				_, _, operationErr := watsonxDataService.CreateDriverRegistrationWithContext(ctx, createDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
+
+				// Disable retries and test again
+				watsonxDataService.DisableRetries()
+				result, response, operationErr := watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).ToNot(BeNil())
+
+				// Re-test the timeout error with retries disabled
+				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
+				defer cancelFunc2()
+				_, _, operationErr = watsonxDataService.CreateDriverRegistrationWithContext(ctx, createDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+		Context(`Using mock server endpoint`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(createDriverRegistrationPath))
+					Expect(req.Method).To(Equal("POST"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					// Set mock response
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(201)
+					fmt.Fprintf(res, "%s", `{"associated_engines": ["AssociatedEngines"], "connection_type": "connection-type", "driver_id": "sample-driver-123", "driver_name": "sample-driver-name", "modified_at": "1686792721", "modified_by": "user1@bim.com", "status": "validating", "version": "123-dev"}`)
+				}))
+			})
+			It(`Invoke CreateDriverRegistration successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Invoke operation with nil options model (negative test)
+				result, response, operationErr := watsonxDataService.CreateDriverRegistration(nil)
+				Expect(operationErr).NotTo(BeNil())
+				Expect(response).To(BeNil())
+				Expect(result).To(BeNil())
+
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				createDriverRegistrationOptionsModel := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				createDriverRegistrationOptionsModel.Driver = CreateMockReader("This is a mock file.")
+				createDriverRegistrationOptionsModel.DriverName = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.ConnectionType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.DriverContentType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Version = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with valid options model (positive test)
+				result, response, operationErr = watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).ToNot(BeNil())
+
+			})
+			It(`Invoke CreateDriverRegistration with error: Operation validation and request error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				createDriverRegistrationOptionsModel := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				createDriverRegistrationOptionsModel.Driver = CreateMockReader("This is a mock file.")
+				createDriverRegistrationOptionsModel.DriverName = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.ConnectionType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.DriverContentType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Version = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Invoke operation with empty URL (negative test)
+				err := watsonxDataService.SetServiceURL("")
+				Expect(err).To(BeNil())
+				result, response, operationErr := watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
+				Expect(response).To(BeNil())
+				Expect(result).To(BeNil())
+				// Construct a second instance of the CreateDriverRegistrationOptions model with no property values
+				createDriverRegistrationOptionsModelNew := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				// Invoke operation with invalid model (negative test)
+				result, response, operationErr = watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModelNew)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).To(BeNil())
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+		Context(`Using mock server endpoint with missing response body`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Set success status code with no respoonse body
+					res.WriteHeader(201)
+				}))
+			})
+			It(`Invoke CreateDriverRegistration successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				createDriverRegistrationOptionsModel := new(watsonxdatav2.CreateDriverRegistrationOptions)
+				createDriverRegistrationOptionsModel.Driver = CreateMockReader("This is a mock file.")
+				createDriverRegistrationOptionsModel.DriverName = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.ConnectionType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.DriverContentType = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Version = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				createDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation
+				result, response, operationErr := watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+
+				// Verify a nil result
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`DeleteDriverRegistration(deleteDriverRegistrationOptions *DeleteDriverRegistrationOptions)`, func() {
+		deleteDriverRegistrationPath := "/driver_registrations/testString"
+		Context(`Using mock server endpoint`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(deleteDriverRegistrationPath))
+					Expect(req.Method).To(Equal("DELETE"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					res.WriteHeader(204)
+				}))
+			})
+			It(`Invoke DeleteDriverRegistration successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Invoke operation with nil options model (negative test)
+				response, operationErr := watsonxDataService.DeleteDriverRegistration(nil)
+				Expect(operationErr).NotTo(BeNil())
+				Expect(response).To(BeNil())
+
+				// Construct an instance of the DeleteDriverRegistrationOptions model
+				deleteDriverRegistrationOptionsModel := new(watsonxdatav2.DeleteDriverRegistrationOptions)
+				deleteDriverRegistrationOptionsModel.DriverID = core.StringPtr("testString")
+				deleteDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				deleteDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with valid options model (positive test)
+				response, operationErr = watsonxDataService.DeleteDriverRegistration(deleteDriverRegistrationOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+			})
+			It(`Invoke DeleteDriverRegistration with error: Operation validation and request error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the DeleteDriverRegistrationOptions model
+				deleteDriverRegistrationOptionsModel := new(watsonxdatav2.DeleteDriverRegistrationOptions)
+				deleteDriverRegistrationOptionsModel.DriverID = core.StringPtr("testString")
+				deleteDriverRegistrationOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				deleteDriverRegistrationOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Invoke operation with empty URL (negative test)
+				err := watsonxDataService.SetServiceURL("")
+				Expect(err).To(BeNil())
+				response, operationErr := watsonxDataService.DeleteDriverRegistration(deleteDriverRegistrationOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
+				Expect(response).To(BeNil())
+				// Construct a second instance of the DeleteDriverRegistrationOptions model with no property values
+				deleteDriverRegistrationOptionsModelNew := new(watsonxdatav2.DeleteDriverRegistrationOptions)
+				// Invoke operation with invalid model (negative test)
+				response, operationErr = watsonxDataService.DeleteDriverRegistration(deleteDriverRegistrationOptionsModelNew)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`DeleteDriverEngines(deleteDriverEnginesOptions *DeleteDriverEnginesOptions)`, func() {
+		deleteDriverEnginesPath := "/driver_registrations/testString/engines"
+		Context(`Using mock server endpoint`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(deleteDriverEnginesPath))
+					Expect(req.Method).To(Equal("DELETE"))
+
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					Expect(req.URL.Query()["engine_ids"]).To(Equal([]string{"testString"}))
+					res.WriteHeader(204)
+				}))
+			})
+			It(`Invoke DeleteDriverEngines successfully`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Invoke operation with nil options model (negative test)
+				response, operationErr := watsonxDataService.DeleteDriverEngines(nil)
+				Expect(operationErr).NotTo(BeNil())
+				Expect(response).To(BeNil())
+
+				// Construct an instance of the DeleteDriverEnginesOptions model
+				deleteDriverEnginesOptionsModel := new(watsonxdatav2.DeleteDriverEnginesOptions)
+				deleteDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.EngineIds = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+
+				// Invoke operation with valid options model (positive test)
+				response, operationErr = watsonxDataService.DeleteDriverEngines(deleteDriverEnginesOptionsModel)
+				Expect(operationErr).To(BeNil())
+				Expect(response).ToNot(BeNil())
+			})
+			It(`Invoke DeleteDriverEngines with error: Operation validation and request error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the DeleteDriverEnginesOptions model
+				deleteDriverEnginesOptionsModel := new(watsonxdatav2.DeleteDriverEnginesOptions)
+				deleteDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.EngineIds = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				deleteDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Invoke operation with empty URL (negative test)
+				err := watsonxDataService.SetServiceURL("")
+				Expect(err).To(BeNil())
+				response, operationErr := watsonxDataService.DeleteDriverEngines(deleteDriverEnginesOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
+				Expect(response).To(BeNil())
+				// Construct a second instance of the DeleteDriverEnginesOptions model with no property values
+				deleteDriverEnginesOptionsModelNew := new(watsonxdatav2.DeleteDriverEnginesOptions)
+				// Invoke operation with invalid model (negative test)
+				response, operationErr = watsonxDataService.DeleteDriverEngines(deleteDriverEnginesOptionsModelNew)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`UpdateDriverEngines(updateDriverEnginesOptions *UpdateDriverEnginesOptions) - Operation response error`, func() {
+		updateDriverEnginesPath := "/driver_registrations/testString/engines"
+		Context(`Using mock server endpoint with invalid JSON response`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(updateDriverEnginesPath))
+					Expect(req.Method).To(Equal("PATCH"))
+					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
+					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
+					res.Header().Set("Content-type", "application/json")
+					res.WriteHeader(200)
+					fmt.Fprint(res, `} this is not valid json {`)
+				}))
+			})
+			It(`Invoke UpdateDriverEngines with error: Operation response processing error`, func() {
+				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
+					URL:           testServer.URL,
+					Authenticator: &core.NoAuthAuthenticator{},
+				})
+				Expect(serviceErr).To(BeNil())
+				Expect(watsonxDataService).ToNot(BeNil())
+
+				// Construct an instance of the DriverRegistrationEnginePrototype model
+				driverRegistrationEnginePrototypeModel := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+				driverRegistrationEnginePrototypeModel.Engines = []string{"testString"}
+				driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+				Expect(asPatchErr).To(BeNil())
+
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				updateDriverEnginesOptionsModel := new(watsonxdatav2.UpdateDriverEnginesOptions)
+				updateDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Body = driverRegistrationEnginePrototypeModelAsPatch
+				updateDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Expect response parsing to fail since we are receiving a text/plain response
+				result, response, operationErr := watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).To(BeNil())
+
+				// Enable retries and test again
+				watsonxDataService.EnableRetries(0, 0)
+				result, response, operationErr = watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
+				Expect(operationErr).ToNot(BeNil())
+				Expect(response).ToNot(BeNil())
+				Expect(result).To(BeNil())
+			})
+			AfterEach(func() {
+				testServer.Close()
+			})
+		})
+	})
+	Describe(`UpdateDriverEngines(updateDriverEnginesOptions *UpdateDriverEnginesOptions)`, func() {
+		updateDriverEnginesPath := "/driver_registrations/testString/engines"
+		Context(`Using mock server endpoint with timeout`, func() {
+			BeforeEach(func() {
+				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+					defer GinkgoRecover()
+
+					// Verify the contents of the request
+					Expect(req.URL.EscapedPath()).To(Equal(updateDriverEnginesPath))
+					Expect(req.Method).To(Equal("PATCH"))
 
 					// For gzip-disabled operation, verify Content-Encoding is not set.
 					Expect(req.Header.Get("Content-Encoding")).To(BeEmpty())
@@ -4757,10 +4692,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "status": "Status"}}`)
+					fmt.Fprintf(res, "%s", `{"engines": ["Engines"]}`)
 				}))
 			})
-			It(`Invoke GenerateEngineDump successfully with retries`, func() {
+			It(`Invoke UpdateDriverEngines successfully with retries`, func() {
 				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
 					URL:           testServer.URL,
 					Authenticator: &core.NoAuthAuthenticator{},
@@ -4769,25 +4704,29 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(watsonxDataService).ToNot(BeNil())
 				watsonxDataService.EnableRetries(0, 0)
 
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsModel := new(watsonxdatav2.GenerateEngineDumpOptions)
-				generateEngineDumpOptionsModel.DumpFileName = core.StringPtr("prestodump")
-				generateEngineDumpOptionsModel.DumpType = core.StringPtr("heat")
-				generateEngineDumpOptionsModel.EngineID = core.StringPtr("presto-123")
-				generateEngineDumpOptionsModel.PodName = core.StringPtr("presto")
-				generateEngineDumpOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateEngineDumpOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Construct an instance of the DriverRegistrationEnginePrototype model
+				driverRegistrationEnginePrototypeModel := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+				driverRegistrationEnginePrototypeModel.Engines = []string{"testString"}
+				driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+				Expect(asPatchErr).To(BeNil())
+
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				updateDriverEnginesOptionsModel := new(watsonxdatav2.UpdateDriverEnginesOptions)
+				updateDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Body = driverRegistrationEnginePrototypeModelAsPatch
+				updateDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
 				// Invoke operation with a Context to test a timeout error
 				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
 				defer cancelFunc()
-				_, _, operationErr := watsonxDataService.GenerateEngineDumpWithContext(ctx, generateEngineDumpOptionsModel)
+				_, _, operationErr := watsonxDataService.UpdateDriverEnginesWithContext(ctx, updateDriverEnginesOptionsModel)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
 
 				// Disable retries and test again
 				watsonxDataService.DisableRetries()
-				result, response, operationErr := watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr := watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
 				Expect(operationErr).To(BeNil())
 				Expect(response).ToNot(BeNil())
 				Expect(result).ToNot(BeNil())
@@ -4795,7 +4734,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Re-test the timeout error with retries disabled
 				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
 				defer cancelFunc2()
-				_, _, operationErr = watsonxDataService.GenerateEngineDumpWithContext(ctx, generateEngineDumpOptionsModel)
+				_, _, operationErr = watsonxDataService.UpdateDriverEnginesWithContext(ctx, updateDriverEnginesOptionsModel)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
 			})
@@ -4809,8 +4748,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					defer GinkgoRecover()
 
 					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(generateEngineDumpPath))
-					Expect(req.Method).To(Equal("POST"))
+					Expect(req.URL.EscapedPath()).To(Equal(updateDriverEnginesPath))
+					Expect(req.Method).To(Equal("PATCH"))
 
 					// For gzip-disabled operation, verify Content-Encoding is not set.
 					Expect(req.Header.Get("Content-Encoding")).To(BeEmpty())
@@ -4833,10 +4772,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "status": "Status"}}`)
+					fmt.Fprintf(res, "%s", `{"engines": ["Engines"]}`)
 				}))
 			})
-			It(`Invoke GenerateEngineDump successfully`, func() {
+			It(`Invoke UpdateDriverEngines successfully`, func() {
 				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
 					URL:           testServer.URL,
 					Authenticator: &core.NoAuthAuthenticator{},
@@ -4845,28 +4784,32 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(watsonxDataService).ToNot(BeNil())
 
 				// Invoke operation with nil options model (negative test)
-				result, response, operationErr := watsonxDataService.GenerateEngineDump(nil)
+				result, response, operationErr := watsonxDataService.UpdateDriverEngines(nil)
 				Expect(operationErr).NotTo(BeNil())
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
 
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsModel := new(watsonxdatav2.GenerateEngineDumpOptions)
-				generateEngineDumpOptionsModel.DumpFileName = core.StringPtr("prestodump")
-				generateEngineDumpOptionsModel.DumpType = core.StringPtr("heat")
-				generateEngineDumpOptionsModel.EngineID = core.StringPtr("presto-123")
-				generateEngineDumpOptionsModel.PodName = core.StringPtr("presto")
-				generateEngineDumpOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateEngineDumpOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Construct an instance of the DriverRegistrationEnginePrototype model
+				driverRegistrationEnginePrototypeModel := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+				driverRegistrationEnginePrototypeModel.Engines = []string{"testString"}
+				driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+				Expect(asPatchErr).To(BeNil())
+
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				updateDriverEnginesOptionsModel := new(watsonxdatav2.UpdateDriverEnginesOptions)
+				updateDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Body = driverRegistrationEnginePrototypeModelAsPatch
+				updateDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
 				// Invoke operation with valid options model (positive test)
-				result, response, operationErr = watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr = watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
 				Expect(operationErr).To(BeNil())
 				Expect(response).ToNot(BeNil())
 				Expect(result).ToNot(BeNil())
 
 			})
-			It(`Invoke GenerateEngineDump with error: Operation validation and request error`, func() {
+			It(`Invoke UpdateDriverEngines with error: Operation validation and request error`, func() {
 				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
 					URL:           testServer.URL,
 					Authenticator: &core.NoAuthAuthenticator{},
@@ -4874,26 +4817,30 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsModel := new(watsonxdatav2.GenerateEngineDumpOptions)
-				generateEngineDumpOptionsModel.DumpFileName = core.StringPtr("prestodump")
-				generateEngineDumpOptionsModel.DumpType = core.StringPtr("heat")
-				generateEngineDumpOptionsModel.EngineID = core.StringPtr("presto-123")
-				generateEngineDumpOptionsModel.PodName = core.StringPtr("presto")
-				generateEngineDumpOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateEngineDumpOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Construct an instance of the DriverRegistrationEnginePrototype model
+				driverRegistrationEnginePrototypeModel := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+				driverRegistrationEnginePrototypeModel.Engines = []string{"testString"}
+				driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+				Expect(asPatchErr).To(BeNil())
+
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				updateDriverEnginesOptionsModel := new(watsonxdatav2.UpdateDriverEnginesOptions)
+				updateDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Body = driverRegistrationEnginePrototypeModelAsPatch
+				updateDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
 				err := watsonxDataService.SetServiceURL("")
 				Expect(err).To(BeNil())
-				result, response, operationErr := watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr := watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
-				// Construct a second instance of the GenerateEngineDumpOptions model with no property values
-				generateEngineDumpOptionsModelNew := new(watsonxdatav2.GenerateEngineDumpOptions)
+				// Construct a second instance of the UpdateDriverEnginesOptions model with no property values
+				updateDriverEnginesOptionsModelNew := new(watsonxdatav2.UpdateDriverEnginesOptions)
 				// Invoke operation with invalid model (negative test)
-				result, response, operationErr = watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModelNew)
+				result, response, operationErr = watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModelNew)
 				Expect(operationErr).ToNot(BeNil())
 				Expect(response).To(BeNil())
 				Expect(result).To(BeNil())
@@ -4911,7 +4858,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					res.WriteHeader(200)
 				}))
 			})
-			It(`Invoke GenerateEngineDump successfully`, func() {
+			It(`Invoke UpdateDriverEngines successfully`, func() {
 				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
 					URL:           testServer.URL,
 					Authenticator: &core.NoAuthAuthenticator{},
@@ -4919,17 +4866,21 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(serviceErr).To(BeNil())
 				Expect(watsonxDataService).ToNot(BeNil())
 
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsModel := new(watsonxdatav2.GenerateEngineDumpOptions)
-				generateEngineDumpOptionsModel.DumpFileName = core.StringPtr("prestodump")
-				generateEngineDumpOptionsModel.DumpType = core.StringPtr("heat")
-				generateEngineDumpOptionsModel.EngineID = core.StringPtr("presto-123")
-				generateEngineDumpOptionsModel.PodName = core.StringPtr("presto")
-				generateEngineDumpOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				generateEngineDumpOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
+				// Construct an instance of the DriverRegistrationEnginePrototype model
+				driverRegistrationEnginePrototypeModel := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+				driverRegistrationEnginePrototypeModel.Engines = []string{"testString"}
+				driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+				Expect(asPatchErr).To(BeNil())
+
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				updateDriverEnginesOptionsModel := new(watsonxdatav2.UpdateDriverEnginesOptions)
+				updateDriverEnginesOptionsModel.DriverID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Body = driverRegistrationEnginePrototypeModelAsPatch
+				updateDriverEnginesOptionsModel.AuthInstanceID = core.StringPtr("testString")
+				updateDriverEnginesOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
 				// Invoke operation
-				result, response, operationErr := watsonxDataService.GenerateEngineDump(generateEngineDumpOptionsModel)
+				result, response, operationErr := watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptionsModel)
 				Expect(operationErr).To(BeNil())
 				Expect(response).ToNot(BeNil())
 
@@ -5599,7 +5550,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"integrations": [{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}]}`)
+					fmt.Fprintf(res, "%s", `{"integrations": [{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}]}`)
 				}))
 			})
 			It(`Invoke ListAllIntegrations successfully with retries`, func() {
@@ -5661,7 +5612,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"integrations": [{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}]}`)
+					fmt.Fprintf(res, "%s", `{"integrations": [{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}]}`)
 				}))
 			})
 			It(`Invoke ListAllIntegrations successfully`, func() {
@@ -5852,7 +5803,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke CreateIntegration successfully with retries`, func() {
@@ -5935,7 +5886,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke CreateIntegration successfully`, func() {
@@ -6129,7 +6080,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke GetIntegrations successfully with retries`, func() {
@@ -6189,7 +6140,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke GetIntegrations successfully`, func() {
@@ -6463,7 +6414,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke UpdateIntegration successfully with retries`, func() {
@@ -6553,7 +6504,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_token": "accessToken", "apikey": "apikey", "auth_url": "https://abc.ibm.com", "config_properties": "ikc-env.password=ibm-abcefghijklmno==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "cross_account_integration": true, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "integration_id": "ikc001", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 123456789, "modified_by": "username@email.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "http://abcd.efgh.com:9876/", "username": "username@email.com"}`)
+					fmt.Fprintf(res, "%s", `{"apikey": "apikey", "access_token": "uiOO90kklop", "config_properties": "ikc-env.password=ibmlhenc__0001__uMkFATDDZNnxJ7z6BA/QqA==\nikc-env.url=ikc\nikc-enabled-catalogs=\nikc-username=\nlh-unique-identifier=1711796957622126\nlh-crn=1711796957622126", "auth_url": "https://iam.abc.com", "integration_id": "presto01", "cross_account_integration": false, "enable_data_policy_within_wxd": false, "governance_properties": "query-governance.name=external", "ikc_user_account_id": "abcdefghijklmnopqrstuvwxyz", "manta_url": "https://abcd.com/gov_lineage/v2/lineage_events/openlineage", "modified_at": 10, "modified_by": "<username>@<domain>.com", "password": "password", "resource": "presto01", "service_type": "ikc", "state": "active", "storage_catalogs": ["StorageCatalogs"], "url": "ikc.url", "zen_apikey": "zen_apikey", "username": "username@email.com"}`)
 				}))
 			})
 			It(`Invoke UpdateIntegration successfully`, func() {
@@ -6769,7 +6720,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"db2_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}]}`)
+					fmt.Fprintf(res, "%s", `{"db2_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}]}`)
 				}))
 			})
 			It(`Invoke ListDb2Engines successfully with retries`, func() {
@@ -6825,7 +6776,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"db2_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}]}`)
+					fmt.Fprintf(res, "%s", `{"db2_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}]}`)
 				}))
 			})
 			It(`Invoke ListDb2Engines successfully`, func() {
@@ -7005,7 +6956,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
 				}))
 			})
 			It(`Invoke CreateDb2Engine successfully with retries`, func() {
@@ -7086,7 +7037,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
 				}))
 			})
 			It(`Invoke CreateDb2Engine successfully`, func() {
@@ -7373,7 +7324,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
 				}))
 			})
 			It(`Invoke UpdateDb2Engine successfully with retries`, func() {
@@ -7455,7 +7406,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "db2 engine to run sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sample-engine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "db2 engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-db2-01-db2-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "db2"}`)
 				}))
 			})
 			It(`Invoke UpdateDb2Engine successfully`, func() {
@@ -7647,7 +7598,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"netezza_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}]}`)
+					fmt.Fprintf(res, "%s", `{"netezza_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}]}`)
 				}))
 			})
 			It(`Invoke ListNetezzaEngines successfully with retries`, func() {
@@ -7703,7 +7654,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"netezza_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}]}`)
+					fmt.Fprintf(res, "%s", `{"netezza_engines": [{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}]}`)
 				}))
 			})
 			It(`Invoke ListNetezzaEngines successfully`, func() {
@@ -7883,7 +7834,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
 				}))
 			})
 			It(`Invoke CreateNetezzaEngine successfully with retries`, func() {
@@ -7964,7 +7915,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
 				}))
 			})
 			It(`Invoke CreateNetezzaEngine successfully`, func() {
@@ -8251,7 +8202,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
 				}))
 			})
 			It(`Invoke UpdateNetezzaEngine successfully with retries`, func() {
@@ -8333,7 +8284,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 0, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 0, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "build_version": "1.0.3.0.0", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "netezza engine for running sql queries", "engine_details": {"connection_string": "1.2.3.4", "metastore_host": "1.2.3.4"}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "host_name": "xyz-netezza-01-netezza-svc", "origin": "ibm", "port": 4, "status": "REGISTERED", "tags": ["Tags"], "type": "netezza"}`)
 				}))
 			})
 			It(`Invoke UpdateNetezzaEngine successfully`, func() {
@@ -11228,7 +11179,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListPrestissimoEngineCatalogs successfully with retries`, func() {
@@ -11285,7 +11236,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListPrestissimoEngineCatalogs successfully`, func() {
@@ -11412,7 +11363,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestissimoEngineCatalogsOptions model
 				createPrestissimoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestissimoEngineCatalogsOptions)
 				createPrestissimoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestissimoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestissimoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -11468,7 +11419,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreatePrestissimoEngineCatalogs successfully with retries`, func() {
@@ -11483,7 +11434,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestissimoEngineCatalogsOptions model
 				createPrestissimoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestissimoEngineCatalogsOptions)
 				createPrestissimoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestissimoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestissimoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -11542,7 +11493,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreatePrestissimoEngineCatalogs successfully`, func() {
@@ -11562,7 +11513,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestissimoEngineCatalogsOptions model
 				createPrestissimoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestissimoEngineCatalogsOptions)
 				createPrestissimoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestissimoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestissimoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -11584,7 +11535,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestissimoEngineCatalogsOptions model
 				createPrestissimoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestissimoEngineCatalogsOptions)
 				createPrestissimoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestissimoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestissimoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -11627,7 +11578,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestissimoEngineCatalogsOptions model
 				createPrestissimoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestissimoEngineCatalogsOptions)
 				createPrestissimoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestissimoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestissimoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestissimoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -11787,7 +11738,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetPrestissimoEngineCatalog successfully with retries`, func() {
@@ -11845,7 +11796,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetPrestissimoEngineCatalog successfully`, func() {
@@ -13507,7 +13458,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"presto_engines": [{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}]}`)
+					fmt.Fprintf(res, "%s", `{"presto_engines": [{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}]}`)
 				}))
 			})
 			It(`Invoke ListPrestoEngines successfully with retries`, func() {
@@ -13563,7 +13514,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"presto_engines": [{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}]}`)
+					fmt.Fprintf(res, "%s", `{"presto_engines": [{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}]}`)
 				}))
 			})
 			It(`Invoke ListPrestoEngines successfully`, func() {
@@ -13757,7 +13708,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke CreatePrestoEngine successfully with retries`, func() {
@@ -13852,7 +13803,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke CreatePrestoEngine successfully`, func() {
@@ -14084,7 +14035,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke GetPrestoEngine successfully with retries`, func() {
@@ -14141,7 +14092,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke GetPrestoEngine successfully`, func() {
@@ -14478,7 +14429,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke UpdatePrestoEngine successfully with retries`, func() {
@@ -14634,7 +14585,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "worker", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "worker", "quantity": 8}}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_catalogs": ["AssociatedCatalogs"], "build_version": "1.0.3.0.0", "coordinator": {"node_type": "starter", "quantity": 8}, "created_by": "<username>@<domain>.com", "created_on": 9, "description": "presto engine for running sql queries", "drivers": [{"connection_type": "saphana", "driver_id": "saphanadriver123", "driver_name": "saphanadriver-1.2.3", "driver_version": "1.2.3"}], "engine_details": {"api_key": "<api_key>", "connection_string": "1.2.3.4", "coordinator": {"node_type": "worker", "quantity": 8}, "instance_id": "instance_id", "managed_by": "fully/self", "size_config": "starter", "worker": {"node_type": "worker", "quantity": 8}}, "engine_display_name": "sampleEngine", "engine_id": "sampleEngine123", "engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "event_listener": {"event_listener_property": "EventListenerProperty"}, "global": {"global_property": "enable-mixed-case-support:true"}, "jvm": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}, "jmx_exporter_config": {"global_property": "watsonx_data_presto_cluster_memory_manager_cluster_memory_bytes:presto.memory<name=ClusterMemoryManager><>ClusterMemoryBytes"}, "log_config": {"coordinator": {"node_type": "worker", "quantity": 8}, "worker": {"node_type": "worker", "quantity": 8}}}, "engine_restart": "force", "external_host_name": "your-hostname.apps.your-domain.com", "group_id": "new_group_id", "host_name": "ibm-lh-lakehouse-presto-01-presto-svc", "origin": "native", "port": 4, "region": "us-south", "remove_engine_properties": {"catalog": {"catalog_name": "CatalogName"}, "configuration": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "jvm": {"coordinator": ["Coordinator"], "worker": ["Worker"]}, "event_listener": ["EventListener"], "global": ["Global"], "jmx_exporter_config": ["JmxExporterConfig"], "log_config": {"coordinator": ["Coordinator"], "worker": ["Worker"]}}, "size_config": "starter", "status": "running", "status_code": 10, "tags": ["Tags"], "type": "presto", "version": "1.2.0", "worker": {"node_type": "starter", "quantity": 8}}`)
 				}))
 			})
 			It(`Invoke UpdatePrestoEngine successfully`, func() {
@@ -15049,7 +15000,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListPrestoEngineCatalogs successfully with retries`, func() {
@@ -15106,7 +15057,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListPrestoEngineCatalogs successfully`, func() {
@@ -15233,7 +15184,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestoEngineCatalogsOptions model
 				createPrestoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestoEngineCatalogsOptions)
 				createPrestoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -15289,7 +15240,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreatePrestoEngineCatalogs successfully with retries`, func() {
@@ -15304,7 +15255,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestoEngineCatalogsOptions model
 				createPrestoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestoEngineCatalogsOptions)
 				createPrestoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -15363,7 +15314,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreatePrestoEngineCatalogs successfully`, func() {
@@ -15383,7 +15334,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestoEngineCatalogsOptions model
 				createPrestoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestoEngineCatalogsOptions)
 				createPrestoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -15405,7 +15356,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestoEngineCatalogsOptions model
 				createPrestoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestoEngineCatalogsOptions)
 				createPrestoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -15448,7 +15399,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreatePrestoEngineCatalogsOptions model
 				createPrestoEngineCatalogsOptionsModel := new(watsonxdatav2.CreatePrestoEngineCatalogsOptions)
 				createPrestoEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createPrestoEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createPrestoEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createPrestoEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -15608,7 +15559,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetPrestoEngineCatalog successfully with retries`, func() {
@@ -15666,7 +15617,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetPrestoEngineCatalog successfully`, func() {
@@ -16999,7 +16950,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -17076,7 +17027,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -17161,7 +17112,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -17189,7 +17140,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -17238,7 +17189,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -23540,7 +23491,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListSparkEngineCatalogs successfully with retries`, func() {
@@ -23597,7 +23548,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListSparkEngineCatalogs successfully`, func() {
@@ -23724,7 +23675,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateSparkEngineCatalogsOptions model
 				createSparkEngineCatalogsOptionsModel := new(watsonxdatav2.CreateSparkEngineCatalogsOptions)
 				createSparkEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createSparkEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createSparkEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -23780,7 +23731,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreateSparkEngineCatalogs successfully with retries`, func() {
@@ -23795,7 +23746,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateSparkEngineCatalogsOptions model
 				createSparkEngineCatalogsOptionsModel := new(watsonxdatav2.CreateSparkEngineCatalogsOptions)
 				createSparkEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createSparkEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createSparkEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -23854,7 +23805,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke CreateSparkEngineCatalogs successfully`, func() {
@@ -23874,7 +23825,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateSparkEngineCatalogsOptions model
 				createSparkEngineCatalogsOptionsModel := new(watsonxdatav2.CreateSparkEngineCatalogsOptions)
 				createSparkEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createSparkEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createSparkEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -23896,7 +23847,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateSparkEngineCatalogsOptions model
 				createSparkEngineCatalogsOptionsModel := new(watsonxdatav2.CreateSparkEngineCatalogsOptions)
 				createSparkEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createSparkEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createSparkEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -23939,7 +23890,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateSparkEngineCatalogsOptions model
 				createSparkEngineCatalogsOptionsModel := new(watsonxdatav2.CreateSparkEngineCatalogsOptions)
 				createSparkEngineCatalogsOptionsModel.EngineID = core.StringPtr("testString")
-				createSparkEngineCatalogsOptionsModel.CatalogNames = core.StringPtr("testString")
+				createSparkEngineCatalogsOptionsModel.CatalogName = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createSparkEngineCatalogsOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -24099,7 +24050,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetSparkEngineCatalog successfully with retries`, func() {
@@ -24157,7 +24108,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetSparkEngineCatalog successfully`, func() {
@@ -25628,7 +25579,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}, "spark_versions": [{"cpp": [{"display_name": "Instance Name", "value": "Instance Name"}], "java": [{"display_name": "Instance Name", "value": "Instance Name"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}, "spark_versions": [{"display_name": "Instance Name"}]}`)
 				}))
 			})
 			It(`Invoke ListSparkVersions successfully with retries`, func() {
@@ -25684,7 +25635,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}, "spark_versions": [{"cpp": [{"display_name": "Instance Name", "value": "Instance Name"}], "java": [{"display_name": "Instance Name", "value": "Instance Name"}]}]}`)
+					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}, "spark_versions": [{"display_name": "Instance Name"}]}`)
 				}))
 			})
 			It(`Invoke ListSparkVersions successfully`, func() {
@@ -25839,7 +25790,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListCatalogs successfully with retries`, func() {
@@ -25895,7 +25846,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
+					fmt.Fprintf(res, "%s", `{"catalogs": [{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}]}`)
 				}))
 			})
 			It(`Invoke ListCatalogs successfully`, func() {
@@ -26051,7 +26002,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetCatalog successfully with retries`, func() {
@@ -26108,7 +26059,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "days_left": "30", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "rest_uri": "https://samplehost-catalog:4352", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
+					fmt.Fprintf(res, "%s", `{"actions": ["Actions"], "associated_buckets": ["AssociatedBuckets"], "associated_databases": ["AssociatedDatabases"], "associated_engines": ["AssociatedEngines"], "catalog_name": "sampleCatalog", "catalog_type": "iceberg", "created_by": "<username>@<domain>.com", "created_on": "1602839833", "description": "Iceberg catalog description", "hostname": "s3a://samplehost.com", "last_sync_at": "1602839833", "managed_by": "ibm", "metastore": "glue", "port": "3232", "status": "running", "sync_description": "Table registration was successful", "sync_exception": ["SyncException"], "sync_status": "SUCCESS", "tags": ["Tags"], "thrift_uri": "thrift://samplehost-catalog:4354"}`)
 				}))
 			})
 			It(`Invoke GetCatalog successfully`, func() {
@@ -27114,7 +27065,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}], "table_name": "TableName"}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}], "table_name": "TableName"}`)
 				}))
 			})
 			It(`Invoke GetTable successfully with retries`, func() {
@@ -27177,7 +27128,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}], "table_name": "TableName"}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}], "table_name": "TableName"}`)
 				}))
 			})
 			It(`Invoke GetTable successfully`, func() {
@@ -27468,7 +27419,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}], "table_name": "TableName"}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}], "table_name": "TableName"}`)
 				}))
 			})
 			It(`Invoke UpdateTable successfully with retries`, func() {
@@ -27554,7 +27505,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}], "table_name": "TableName"}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}], "table_name": "TableName"}`)
 				}))
 			})
 			It(`Invoke UpdateTable successfully`, func() {
@@ -27758,7 +27709,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}]}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}]}`)
 				}))
 			})
 			It(`Invoke ListColumns successfully with retries`, func() {
@@ -27819,7 +27770,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}]}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}]}`)
 				}))
 			})
 			It(`Invoke ListColumns successfully`, func() {
@@ -27959,8 +27910,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -28026,7 +27977,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}]}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}]}`)
 				}))
 			})
 			It(`Invoke CreateColumns successfully with retries`, func() {
@@ -28044,8 +27995,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -28114,7 +28065,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}]}`)
+					fmt.Fprintf(res, "%s", `{"columns": [{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}]}`)
 				}))
 			})
 			It(`Invoke CreateColumns successfully`, func() {
@@ -28137,8 +28088,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -28172,8 +28123,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -28228,8 +28179,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -28432,7 +28383,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}`)
+					fmt.Fprintf(res, "%s", `{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}`)
 				}))
 			})
 			It(`Invoke UpdateColumn successfully with retries`, func() {
@@ -28517,7 +28468,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "precision": "10", "scale": "2", "type": "varchar"}`)
+					fmt.Fprintf(res, "%s", `{"column_name": "expenses", "comment": "expenses column", "extra": "varchar", "length": "30", "scale": "2", "precision": "10", "type": "varchar"}`)
 				}))
 			})
 			It(`Invoke UpdateColumn successfully`, func() {
@@ -29529,7 +29480,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"milvus_services": [{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}]}`)
+					fmt.Fprintf(res, "%s", `{"milvus_services": [{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}]}`)
 				}))
 			})
 			It(`Invoke ListMilvusServices successfully with retries`, func() {
@@ -29585,7 +29536,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"milvus_services": [{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}]}`)
+					fmt.Fprintf(res, "%s", `{"milvus_services": [{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}]}`)
 				}))
 			})
 			It(`Invoke ListMilvusServices successfully`, func() {
@@ -29707,17 +29658,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.ServiceDisplayName = core.StringPtr("sampleService")
 				createMilvusServiceOptionsModel.BucketType = core.StringPtr("Sample bucket type")
 				createMilvusServiceOptionsModel.Description = core.StringPtr("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.ManagedBy = core.StringPtr("customer")
-				createMilvusServiceOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
 				createMilvusServiceOptionsModel.Tags = []string{"tag1", "tag2"}
 				createMilvusServiceOptionsModel.TshirtSize = core.StringPtr("small")
-				createMilvusServiceOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
 				createMilvusServiceOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -29773,7 +29715,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke CreateMilvusService successfully with retries`, func() {
@@ -29793,17 +29735,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.ServiceDisplayName = core.StringPtr("sampleService")
 				createMilvusServiceOptionsModel.BucketType = core.StringPtr("Sample bucket type")
 				createMilvusServiceOptionsModel.Description = core.StringPtr("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.ManagedBy = core.StringPtr("customer")
-				createMilvusServiceOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
 				createMilvusServiceOptionsModel.Tags = []string{"tag1", "tag2"}
 				createMilvusServiceOptionsModel.TshirtSize = core.StringPtr("small")
-				createMilvusServiceOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
 				createMilvusServiceOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -29862,7 +29795,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke CreateMilvusService successfully`, func() {
@@ -29887,17 +29820,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.ServiceDisplayName = core.StringPtr("sampleService")
 				createMilvusServiceOptionsModel.BucketType = core.StringPtr("Sample bucket type")
 				createMilvusServiceOptionsModel.Description = core.StringPtr("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.ManagedBy = core.StringPtr("customer")
-				createMilvusServiceOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
 				createMilvusServiceOptionsModel.Tags = []string{"tag1", "tag2"}
 				createMilvusServiceOptionsModel.TshirtSize = core.StringPtr("small")
-				createMilvusServiceOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
 				createMilvusServiceOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -29924,17 +29848,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.ServiceDisplayName = core.StringPtr("sampleService")
 				createMilvusServiceOptionsModel.BucketType = core.StringPtr("Sample bucket type")
 				createMilvusServiceOptionsModel.Description = core.StringPtr("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.ManagedBy = core.StringPtr("customer")
-				createMilvusServiceOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
 				createMilvusServiceOptionsModel.Tags = []string{"tag1", "tag2"}
 				createMilvusServiceOptionsModel.TshirtSize = core.StringPtr("small")
-				createMilvusServiceOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
 				createMilvusServiceOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -29982,17 +29897,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.ServiceDisplayName = core.StringPtr("sampleService")
 				createMilvusServiceOptionsModel.BucketType = core.StringPtr("Sample bucket type")
 				createMilvusServiceOptionsModel.Description = core.StringPtr("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.ManagedBy = core.StringPtr("customer")
-				createMilvusServiceOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
 				createMilvusServiceOptionsModel.Tags = []string{"tag1", "tag2"}
 				createMilvusServiceOptionsModel.TshirtSize = core.StringPtr("small")
-				createMilvusServiceOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
 				createMilvusServiceOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -30076,7 +29982,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke GetMilvusService successfully with retries`, func() {
@@ -30133,7 +30039,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke GetMilvusService successfully`, func() {
@@ -30396,7 +30302,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke UpdateMilvusService successfully with retries`, func() {
@@ -30478,7 +30384,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke UpdateMilvusService successfully`, func() {
@@ -30697,7 +30603,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke UpdateMilvusServiceBucket successfully with retries`, func() {
@@ -30780,7 +30686,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 1, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 1, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 1, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
+					fmt.Fprintf(res, "%s", `{"access_key": "Sample bucket access key", "actions": ["Actions"], "bucket_name": "Sample bucket name", "bucket_type": "Sample bucket type", "created_by": "<username>@<domain>.com", "created_on": 9, "description": "milvus service for running sql queries", "endpoint": "Sample bucket type", "grpc_host": "example.grpc.host", "grpc_port": 8, "host_name": "sampleMilvus", "https_host": "example.https.host", "https_port": 9, "origin": "native", "root_path": "Sample path", "secret_key": "Sample bucket secret access key", "service_display_name": "sampleService", "service_id": "sampleService123", "status": "running", "status_code": 10, "tags": ["Tags"], "tshirt_size": "small", "type": "milvus"}`)
 				}))
 			})
 			It(`Invoke UpdateMilvusServiceBucket successfully`, func() {
@@ -30976,7 +30882,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"milvus_databases": ["[\"default\",\"new\"]"]}`)
+					fmt.Fprintf(res, "%s", `{"databases": ["default"]}`)
 				}))
 			})
 			It(`Invoke ListMilvusServiceDatabases successfully with retries`, func() {
@@ -31033,7 +30939,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"milvus_databases": ["[\"default\",\"new\"]"]}`)
+					fmt.Fprintf(res, "%s", `{"databases": ["default"]}`)
 				}))
 			})
 			It(`Invoke ListMilvusServiceDatabases successfully`, func() {
@@ -31200,7 +31106,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"collections": [{"collection_id": 1, "collection_name": "col1", "physical_channels": ["PhysicalChannels"], "virtual_channels": ["VirtualChannels"]}]}`)
+					fmt.Fprintf(res, "%s", `{"collections": [{"collection_id": 12, "collection_name": "col1", "physical_channels": ["PhysicalChannels"], "virtual_channels": ["VirtualChannels"]}]}`)
 				}))
 			})
 			It(`Invoke ListMilvusDatabaseCollections successfully with retries`, func() {
@@ -31258,7 +31164,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 					// Set mock response
 					res.Header().Set("Content-type", "application/json")
 					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"collections": [{"collection_id": 1, "collection_name": "col1", "physical_channels": ["PhysicalChannels"], "virtual_channels": ["VirtualChannels"]}]}`)
+					fmt.Fprintf(res, "%s", `{"collections": [{"collection_id": 12, "collection_name": "col1", "physical_channels": ["PhysicalChannels"], "virtual_channels": ["VirtualChannels"]}]}`)
 				}))
 			})
 			It(`Invoke ListMilvusDatabaseCollections successfully`, func() {
@@ -31834,16 +31740,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				createMilvusServiceScaleOptionsModel := new(watsonxdatav2.CreateMilvusServiceScaleOptions)
 				createMilvusServiceScaleOptionsModel.ServiceID = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceScaleOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.MilvusName = core.StringPtr("milvus123")
-				createMilvusServiceScaleOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
+				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("small")
 				createMilvusServiceScaleOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceScaleOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Expect response parsing to fail since we are receiving a text/plain response
@@ -31914,16 +31811,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				createMilvusServiceScaleOptionsModel := new(watsonxdatav2.CreateMilvusServiceScaleOptions)
 				createMilvusServiceScaleOptionsModel.ServiceID = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceScaleOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.MilvusName = core.StringPtr("milvus123")
-				createMilvusServiceScaleOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
+				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("small")
 				createMilvusServiceScaleOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceScaleOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -32002,16 +31890,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				createMilvusServiceScaleOptionsModel := new(watsonxdatav2.CreateMilvusServiceScaleOptions)
 				createMilvusServiceScaleOptionsModel.ServiceID = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceScaleOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.MilvusName = core.StringPtr("milvus123")
-				createMilvusServiceScaleOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
+				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("small")
 				createMilvusServiceScaleOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceScaleOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -32033,16 +31912,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				createMilvusServiceScaleOptionsModel := new(watsonxdatav2.CreateMilvusServiceScaleOptions)
 				createMilvusServiceScaleOptionsModel.ServiceID = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceScaleOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.MilvusName = core.StringPtr("milvus123")
-				createMilvusServiceScaleOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
+				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("small")
 				createMilvusServiceScaleOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceScaleOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 				// Invoke operation with empty URL (negative test)
@@ -32085,16 +31955,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				createMilvusServiceScaleOptionsModel := new(watsonxdatav2.CreateMilvusServiceScaleOptions)
 				createMilvusServiceScaleOptionsModel.ServiceID = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("testString")
-				createMilvusServiceScaleOptionsModel.IndexType = core.StringPtr("FLAT")
-				createMilvusServiceScaleOptionsModel.IwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.IwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.MilvusName = core.StringPtr("milvus123")
-				createMilvusServiceScaleOptionsModel.QwCpu = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwMemory = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.QwReplicas = core.Int64Ptr(int64(1))
-				createMilvusServiceScaleOptionsModel.VectorDimension = core.Int64Ptr(int64(384))
+				createMilvusServiceScaleOptionsModel.TshirtSize = core.StringPtr("small")
 				createMilvusServiceScaleOptionsModel.AuthInstanceID = core.StringPtr("testString")
 				createMilvusServiceScaleOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
 
@@ -33920,509 +33781,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			})
 		})
 	})
-	Describe(`RegisterTable(registerTableOptions *RegisterTableOptions) - Operation response error`, func() {
-		registerTablePath := "/catalogs/testString/schemas/testString/register"
-		Context(`Using mock server endpoint with invalid JSON response`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(registerTablePath))
-					Expect(req.Method).To(Equal("POST"))
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(201)
-					fmt.Fprint(res, `} this is not valid json {`)
-				}))
-			})
-			It(`Invoke RegisterTable with error: Operation response processing error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the RegisterTableOptions model
-				registerTableOptionsModel := new(watsonxdatav2.RegisterTableOptions)
-				registerTableOptionsModel.CatalogID = core.StringPtr("testString")
-				registerTableOptionsModel.SchemaID = core.StringPtr("testString")
-				registerTableOptionsModel.MetadataLocation = core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.TableName = core.StringPtr("table1")
-				registerTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				registerTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Expect response parsing to fail since we are receiving a text/plain response
-				result, response, operationErr := watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-
-				// Enable retries and test again
-				watsonxDataService.EnableRetries(0, 0)
-				result, response, operationErr = watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`RegisterTable(registerTableOptions *RegisterTableOptions)`, func() {
-		registerTablePath := "/catalogs/testString/schemas/testString/register"
-		Context(`Using mock server endpoint with timeout`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(registerTablePath))
-					Expect(req.Method).To(Equal("POST"))
-
-					// For gzip-disabled operation, verify Content-Encoding is not set.
-					Expect(req.Header.Get("Content-Encoding")).To(BeEmpty())
-
-					// If there is a body, then make sure we can read it
-					bodyBuf := new(bytes.Buffer)
-					if req.Header.Get("Content-Encoding") == "gzip" {
-						body, err := core.NewGzipDecompressionReader(req.Body)
-						Expect(err).To(BeNil())
-						_, err = bodyBuf.ReadFrom(body)
-						Expect(err).To(BeNil())
-					} else {
-						_, err := bodyBuf.ReadFrom(req.Body)
-						Expect(err).To(BeNil())
-					}
-					fmt.Fprintf(GinkgoWriter, "  Request body: %s", bodyBuf.String())
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					// Sleep a short time to support a timeout test
-					time.Sleep(100 * time.Millisecond)
-
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}}`)
-				}))
-			})
-			It(`Invoke RegisterTable successfully with retries`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-				watsonxDataService.EnableRetries(0, 0)
-
-				// Construct an instance of the RegisterTableOptions model
-				registerTableOptionsModel := new(watsonxdatav2.RegisterTableOptions)
-				registerTableOptionsModel.CatalogID = core.StringPtr("testString")
-				registerTableOptionsModel.SchemaID = core.StringPtr("testString")
-				registerTableOptionsModel.MetadataLocation = core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.TableName = core.StringPtr("table1")
-				registerTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				registerTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with a Context to test a timeout error
-				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc()
-				_, _, operationErr := watsonxDataService.RegisterTableWithContext(ctx, registerTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-
-				// Disable retries and test again
-				watsonxDataService.DisableRetries()
-				result, response, operationErr := watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-				// Re-test the timeout error with retries disabled
-				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc2()
-				_, _, operationErr = watsonxDataService.RegisterTableWithContext(ctx, registerTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(registerTablePath))
-					Expect(req.Method).To(Equal("POST"))
-
-					// For gzip-disabled operation, verify Content-Encoding is not set.
-					Expect(req.Header.Get("Content-Encoding")).To(BeEmpty())
-
-					// If there is a body, then make sure we can read it
-					bodyBuf := new(bytes.Buffer)
-					if req.Header.Get("Content-Encoding") == "gzip" {
-						body, err := core.NewGzipDecompressionReader(req.Body)
-						Expect(err).To(BeNil())
-						_, err = bodyBuf.ReadFrom(body)
-						Expect(err).To(BeNil())
-					} else {
-						_, err := bodyBuf.ReadFrom(req.Body)
-						Expect(err).To(BeNil())
-					}
-					fmt.Fprintf(GinkgoWriter, "  Request body: %s", bodyBuf.String())
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(201)
-					fmt.Fprintf(res, "%s", `{"response": {"message": "Message", "message_code": "MessageCode"}}`)
-				}))
-			})
-			It(`Invoke RegisterTable successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Invoke operation with nil options model (negative test)
-				result, response, operationErr := watsonxDataService.RegisterTable(nil)
-				Expect(operationErr).NotTo(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-
-				// Construct an instance of the RegisterTableOptions model
-				registerTableOptionsModel := new(watsonxdatav2.RegisterTableOptions)
-				registerTableOptionsModel.CatalogID = core.StringPtr("testString")
-				registerTableOptionsModel.SchemaID = core.StringPtr("testString")
-				registerTableOptionsModel.MetadataLocation = core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.TableName = core.StringPtr("table1")
-				registerTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				registerTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with valid options model (positive test)
-				result, response, operationErr = watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-			})
-			It(`Invoke RegisterTable with error: Operation validation and request error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the RegisterTableOptions model
-				registerTableOptionsModel := new(watsonxdatav2.RegisterTableOptions)
-				registerTableOptionsModel.CatalogID = core.StringPtr("testString")
-				registerTableOptionsModel.SchemaID = core.StringPtr("testString")
-				registerTableOptionsModel.MetadataLocation = core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.TableName = core.StringPtr("table1")
-				registerTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				registerTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Invoke operation with empty URL (negative test)
-				err := watsonxDataService.SetServiceURL("")
-				Expect(err).To(BeNil())
-				result, response, operationErr := watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-				// Construct a second instance of the RegisterTableOptions model with no property values
-				registerTableOptionsModelNew := new(watsonxdatav2.RegisterTableOptions)
-				// Invoke operation with invalid model (negative test)
-				result, response, operationErr = watsonxDataService.RegisterTable(registerTableOptionsModelNew)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint with missing response body`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Set success status code with no respoonse body
-					res.WriteHeader(201)
-				}))
-			})
-			It(`Invoke RegisterTable successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the RegisterTableOptions model
-				registerTableOptionsModel := new(watsonxdatav2.RegisterTableOptions)
-				registerTableOptionsModel.CatalogID = core.StringPtr("testString")
-				registerTableOptionsModel.SchemaID = core.StringPtr("testString")
-				registerTableOptionsModel.MetadataLocation = core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.TableName = core.StringPtr("table1")
-				registerTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				registerTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation
-				result, response, operationErr := watsonxDataService.RegisterTable(registerTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-
-				// Verify a nil result
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`LoadTable(loadTableOptions *LoadTableOptions) - Operation response error`, func() {
-		loadTablePath := "/catalogs/testString/schemas/testString/tables/testString/metadata"
-		Context(`Using mock server endpoint with invalid JSON response`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(loadTablePath))
-					Expect(req.Method).To(Equal("GET"))
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprint(res, `} this is not valid json {`)
-				}))
-			})
-			It(`Invoke LoadTable with error: Operation response processing error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the LoadTableOptions model
-				loadTableOptionsModel := new(watsonxdatav2.LoadTableOptions)
-				loadTableOptionsModel.CatalogID = core.StringPtr("testString")
-				loadTableOptionsModel.SchemaID = core.StringPtr("testString")
-				loadTableOptionsModel.TableID = core.StringPtr("testString")
-				loadTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				loadTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Expect response parsing to fail since we are receiving a text/plain response
-				result, response, operationErr := watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-
-				// Enable retries and test again
-				watsonxDataService.EnableRetries(0, 0)
-				result, response, operationErr = watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
-	Describe(`LoadTable(loadTableOptions *LoadTableOptions)`, func() {
-		loadTablePath := "/catalogs/testString/schemas/testString/tables/testString/metadata"
-		Context(`Using mock server endpoint with timeout`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(loadTablePath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					// Sleep a short time to support a timeout test
-					time.Sleep(100 * time.Millisecond)
-
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"metadata_location": "s3a://bucketname/path/to/table/metadata_location/_delta_log", "table_path": "s3a://bucketname/path/to/table"}`)
-				}))
-			})
-			It(`Invoke LoadTable successfully with retries`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-				watsonxDataService.EnableRetries(0, 0)
-
-				// Construct an instance of the LoadTableOptions model
-				loadTableOptionsModel := new(watsonxdatav2.LoadTableOptions)
-				loadTableOptionsModel.CatalogID = core.StringPtr("testString")
-				loadTableOptionsModel.SchemaID = core.StringPtr("testString")
-				loadTableOptionsModel.TableID = core.StringPtr("testString")
-				loadTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				loadTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with a Context to test a timeout error
-				ctx, cancelFunc := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc()
-				_, _, operationErr := watsonxDataService.LoadTableWithContext(ctx, loadTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-
-				// Disable retries and test again
-				watsonxDataService.DisableRetries()
-				result, response, operationErr := watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-				// Re-test the timeout error with retries disabled
-				ctx, cancelFunc2 := context.WithTimeout(context.Background(), 80*time.Millisecond)
-				defer cancelFunc2()
-				_, _, operationErr = watsonxDataService.LoadTableWithContext(ctx, loadTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring("deadline exceeded"))
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Verify the contents of the request
-					Expect(req.URL.EscapedPath()).To(Equal(loadTablePath))
-					Expect(req.Method).To(Equal("GET"))
-
-					Expect(req.Header["Authinstanceid"]).ToNot(BeNil())
-					Expect(req.Header["Authinstanceid"][0]).To(Equal(fmt.Sprintf("%v", "testString")))
-					// Set mock response
-					res.Header().Set("Content-type", "application/json")
-					res.WriteHeader(200)
-					fmt.Fprintf(res, "%s", `{"metadata_location": "s3a://bucketname/path/to/table/metadata_location/_delta_log", "table_path": "s3a://bucketname/path/to/table"}`)
-				}))
-			})
-			It(`Invoke LoadTable successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Invoke operation with nil options model (negative test)
-				result, response, operationErr := watsonxDataService.LoadTable(nil)
-				Expect(operationErr).NotTo(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-
-				// Construct an instance of the LoadTableOptions model
-				loadTableOptionsModel := new(watsonxdatav2.LoadTableOptions)
-				loadTableOptionsModel.CatalogID = core.StringPtr("testString")
-				loadTableOptionsModel.SchemaID = core.StringPtr("testString")
-				loadTableOptionsModel.TableID = core.StringPtr("testString")
-				loadTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				loadTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation with valid options model (positive test)
-				result, response, operationErr = watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-				Expect(result).ToNot(BeNil())
-
-			})
-			It(`Invoke LoadTable with error: Operation validation and request error`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the LoadTableOptions model
-				loadTableOptionsModel := new(watsonxdatav2.LoadTableOptions)
-				loadTableOptionsModel.CatalogID = core.StringPtr("testString")
-				loadTableOptionsModel.SchemaID = core.StringPtr("testString")
-				loadTableOptionsModel.TableID = core.StringPtr("testString")
-				loadTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				loadTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-				// Invoke operation with empty URL (negative test)
-				err := watsonxDataService.SetServiceURL("")
-				Expect(err).To(BeNil())
-				result, response, operationErr := watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(operationErr.Error()).To(ContainSubstring(core.ERRORMSG_SERVICE_URL_MISSING))
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-				// Construct a second instance of the LoadTableOptions model with no property values
-				loadTableOptionsModelNew := new(watsonxdatav2.LoadTableOptions)
-				// Invoke operation with invalid model (negative test)
-				result, response, operationErr = watsonxDataService.LoadTable(loadTableOptionsModelNew)
-				Expect(operationErr).ToNot(BeNil())
-				Expect(response).To(BeNil())
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-		Context(`Using mock server endpoint with missing response body`, func() {
-			BeforeEach(func() {
-				testServer = httptest.NewServer(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-					defer GinkgoRecover()
-
-					// Set success status code with no respoonse body
-					res.WriteHeader(200)
-				}))
-			})
-			It(`Invoke LoadTable successfully`, func() {
-				watsonxDataService, serviceErr := watsonxdatav2.NewWatsonxDataV2(&watsonxdatav2.WatsonxDataV2Options{
-					URL:           testServer.URL,
-					Authenticator: &core.NoAuthAuthenticator{},
-				})
-				Expect(serviceErr).To(BeNil())
-				Expect(watsonxDataService).ToNot(BeNil())
-
-				// Construct an instance of the LoadTableOptions model
-				loadTableOptionsModel := new(watsonxdatav2.LoadTableOptions)
-				loadTableOptionsModel.CatalogID = core.StringPtr("testString")
-				loadTableOptionsModel.SchemaID = core.StringPtr("testString")
-				loadTableOptionsModel.TableID = core.StringPtr("testString")
-				loadTableOptionsModel.AuthInstanceID = core.StringPtr("testString")
-				loadTableOptionsModel.Headers = map[string]string{"x-custom-header": "x-custom-value"}
-
-				// Invoke operation
-				result, response, operationErr := watsonxDataService.LoadTable(loadTableOptionsModel)
-				Expect(operationErr).To(BeNil())
-				Expect(response).ToNot(BeNil())
-
-				// Verify a nil result
-				Expect(result).To(BeNil())
-			})
-			AfterEach(func() {
-				testServer.Close()
-			})
-		})
-	})
 	Describe(`GetAllColumns(getAllColumnsOptions *GetAllColumnsOptions) - Operation response error`, func() {
 		getAllColumnsPath := "/columns"
 		Context(`Using mock server endpoint with invalid JSON response`, func() {
@@ -35612,20 +34970,20 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the BucketDetails model
 				bucketDetailsModel := new(watsonxdatav2.BucketDetails)
 				Expect(bucketDetailsModel).ToNot(BeNil())
-				bucketDetailsModel.AccessKey = core.StringPtr("<access_key>")
+				bucketDetailsModel.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 				bucketDetailsModel.BucketName = core.StringPtr("sample-bucket")
-				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+				bucketDetailsModel.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 				bucketDetailsModel.KeyFile = core.StringPtr("key_file")
-				bucketDetailsModel.Provider = core.StringPtr("ibm-cos")
+				bucketDetailsModel.Provider = core.StringPtr("ibm_cos")
 				bucketDetailsModel.Region = core.StringPtr("us-south")
-				bucketDetailsModel.SecretKey = core.StringPtr("secret_key")
-				Expect(bucketDetailsModel.AccessKey).To(Equal(core.StringPtr("<access_key>")))
+				bucketDetailsModel.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
+				Expect(bucketDetailsModel.AccessKey).To(Equal(core.StringPtr("b9cbf248ea5c4c96947e64407108559j")))
 				Expect(bucketDetailsModel.BucketName).To(Equal(core.StringPtr("sample-bucket")))
-				Expect(bucketDetailsModel.Endpoint).To(Equal(core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")))
+				Expect(bucketDetailsModel.Endpoint).To(Equal(core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")))
 				Expect(bucketDetailsModel.KeyFile).To(Equal(core.StringPtr("key_file")))
-				Expect(bucketDetailsModel.Provider).To(Equal(core.StringPtr("ibm-cos")))
+				Expect(bucketDetailsModel.Provider).To(Equal(core.StringPtr("ibm_cos")))
 				Expect(bucketDetailsModel.Region).To(Equal(core.StringPtr("us-south")))
-				Expect(bucketDetailsModel.SecretKey).To(Equal(core.StringPtr("secret_key")))
+				Expect(bucketDetailsModel.SecretKey).To(Equal(core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")))
 
 				// Construct an instance of the StorageDetails model
 				storageDetailsModel := new(watsonxdatav2.StorageDetails)
@@ -35650,29 +35008,28 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(storageDetailsModel.StorageAccountName).To(Equal(core.StringPtr("sample-storage")))
 
 				// Construct an instance of the CreateBucketRegistrationOptions model
-				createBucketRegistrationOptionsBucketDisplayName := "sample-bucket-displayname"
 				createBucketRegistrationOptionsBucketType := "ibm_cos"
 				createBucketRegistrationOptionsDescription := "COS bucket for customer data"
 				createBucketRegistrationOptionsManagedBy := "ibm"
-				createBucketRegistrationOptionsModel := watsonxDataService.NewCreateBucketRegistrationOptions(createBucketRegistrationOptionsBucketDisplayName, createBucketRegistrationOptionsBucketType, createBucketRegistrationOptionsDescription, createBucketRegistrationOptionsManagedBy)
-				createBucketRegistrationOptionsModel.SetBucketDisplayName("sample-bucket-displayname")
+				createBucketRegistrationOptionsModel := watsonxDataService.NewCreateBucketRegistrationOptions(createBucketRegistrationOptionsBucketType, createBucketRegistrationOptionsDescription, createBucketRegistrationOptionsManagedBy)
 				createBucketRegistrationOptionsModel.SetBucketType("ibm_cos")
 				createBucketRegistrationOptionsModel.SetDescription("COS bucket for customer data")
 				createBucketRegistrationOptionsModel.SetManagedBy("ibm")
 				createBucketRegistrationOptionsModel.SetAssociatedCatalog(bucketCatalogModel)
 				createBucketRegistrationOptionsModel.SetBucketDetails(bucketDetailsModel)
+				createBucketRegistrationOptionsModel.SetBucketDisplayName("sample-bucket-displayname")
 				createBucketRegistrationOptionsModel.SetRegion("us-south")
 				createBucketRegistrationOptionsModel.SetStorageDetails(storageDetailsModel)
 				createBucketRegistrationOptionsModel.SetTags([]string{"bucket-tag1", "bucket-tag2"})
 				createBucketRegistrationOptionsModel.SetAuthInstanceID("testString")
 				createBucketRegistrationOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createBucketRegistrationOptionsModel).ToNot(BeNil())
-				Expect(createBucketRegistrationOptionsModel.BucketDisplayName).To(Equal(core.StringPtr("sample-bucket-displayname")))
 				Expect(createBucketRegistrationOptionsModel.BucketType).To(Equal(core.StringPtr("ibm_cos")))
 				Expect(createBucketRegistrationOptionsModel.Description).To(Equal(core.StringPtr("COS bucket for customer data")))
 				Expect(createBucketRegistrationOptionsModel.ManagedBy).To(Equal(core.StringPtr("ibm")))
 				Expect(createBucketRegistrationOptionsModel.AssociatedCatalog).To(Equal(bucketCatalogModel))
 				Expect(createBucketRegistrationOptionsModel.BucketDetails).To(Equal(bucketDetailsModel))
+				Expect(createBucketRegistrationOptionsModel.BucketDisplayName).To(Equal(core.StringPtr("sample-bucket-displayname")))
 				Expect(createBucketRegistrationOptionsModel.Region).To(Equal(core.StringPtr("us-south")))
 				Expect(createBucketRegistrationOptionsModel.StorageDetails).To(Equal(storageDetailsModel))
 				Expect(createBucketRegistrationOptionsModel.Tags).To(Equal([]string{"bucket-tag1", "bucket-tag2"}))
@@ -35687,15 +35044,15 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				columnModel.Comment = core.StringPtr("expenses column")
 				columnModel.Extra = core.StringPtr("varchar")
 				columnModel.Length = core.StringPtr("30")
-				columnModel.Precision = core.StringPtr("10")
 				columnModel.Scale = core.StringPtr("2")
+				columnModel.Precision = core.StringPtr("10")
 				columnModel.Type = core.StringPtr("varchar")
 				Expect(columnModel.ColumnName).To(Equal(core.StringPtr("expenses")))
 				Expect(columnModel.Comment).To(Equal(core.StringPtr("expenses column")))
 				Expect(columnModel.Extra).To(Equal(core.StringPtr("varchar")))
 				Expect(columnModel.Length).To(Equal(core.StringPtr("30")))
-				Expect(columnModel.Precision).To(Equal(core.StringPtr("10")))
 				Expect(columnModel.Scale).To(Equal(core.StringPtr("2")))
+				Expect(columnModel.Precision).To(Equal(core.StringPtr("10")))
 				Expect(columnModel.Type).To(Equal(core.StringPtr("varchar")))
 
 				// Construct an instance of the CreateColumnsOptions model
@@ -35721,26 +35078,25 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(createColumnsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewCreateDatabaseRegistrationOptions successfully`, func() {
-				// Construct an instance of the DatabaseCatalogPrototype model
-				databaseCatalogPrototypeModel := new(watsonxdatav2.DatabaseCatalogPrototype)
-				Expect(databaseCatalogPrototypeModel).ToNot(BeNil())
-				databaseCatalogPrototypeModel.CatalogName = core.StringPtr("sampleCatalog")
-				databaseCatalogPrototypeModel.CatalogType = core.StringPtr("iceberg")
-				Expect(databaseCatalogPrototypeModel.CatalogName).To(Equal(core.StringPtr("sampleCatalog")))
-				Expect(databaseCatalogPrototypeModel.CatalogType).To(Equal(core.StringPtr("iceberg")))
+				// Construct an instance of the DatabaseCatalog model
+				databaseCatalogModel := new(watsonxdatav2.DatabaseCatalog)
+				Expect(databaseCatalogModel).ToNot(BeNil())
+				databaseCatalogModel.CatalogName = core.StringPtr("sampleCatalog")
+				databaseCatalogModel.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
+				databaseCatalogModel.CatalogType = core.StringPtr("iceberg")
+				Expect(databaseCatalogModel.CatalogName).To(Equal(core.StringPtr("sampleCatalog")))
+				Expect(databaseCatalogModel.CatalogTags).To(Equal([]string{"catalog_tag_1", "catalog_tag_2"}))
+				Expect(databaseCatalogModel.CatalogType).To(Equal(core.StringPtr("iceberg")))
 
 				// Construct an instance of the DatabaseDetails model
 				databaseDetailsModel := new(watsonxdatav2.DatabaseDetails)
 				Expect(databaseDetailsModel).ToNot(BeNil())
 				databaseDetailsModel.AuthenticationType = core.StringPtr("LDAP")
-				databaseDetailsModel.AuthenticationValue = core.StringPtr("LDAP")
 				databaseDetailsModel.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.BrokerHost = core.StringPtr("samplehost")
-				databaseDetailsModel.BrokerPort = core.Int64Ptr(int64(4553))
-				databaseDetailsModel.Certificate = core.StringPtr("exampleCertificate")
-				databaseDetailsModel.CertificateExtension = core.StringPtr("pem")
+				databaseDetailsModel.Certificate = core.StringPtr("contents of a pem/crt file")
+				databaseDetailsModel.CertificateExtension = core.StringPtr("pem/crt")
 				databaseDetailsModel.ConnectionMethod = core.StringPtr("basic, apikey")
 				databaseDetailsModel.ConnectionMode = core.StringPtr("service_name")
 				databaseDetailsModel.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -35748,12 +35104,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 				databaseDetailsModel.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 				databaseDetailsModel.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-				databaseDetailsModel.CoordinatorHost = core.StringPtr("samplehost")
-				databaseDetailsModel.CoordinatorPort = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.CpdHostname = core.StringPtr("samplecpdhostname")
 				databaseDetailsModel.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 				databaseDetailsModel.DatabaseName = core.StringPtr("new_database")
-				databaseDetailsModel.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+				databaseDetailsModel.Hostname = core.StringPtr("db2@<hostname>.com")
 				databaseDetailsModel.HostnameInCertificate = core.StringPtr("samplehostname")
 				databaseDetailsModel.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 				databaseDetailsModel.InformixServer = core.StringPtr("ol_informix1410")
@@ -35761,9 +35115,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.Port = core.Int64Ptr(int64(4553))
 				databaseDetailsModel.ProjectID = core.StringPtr("conops-bigquery")
 				databaseDetailsModel.Sasl = core.BoolPtr(true)
-				databaseDetailsModel.SaslMechanism = core.StringPtr("plain")
-				databaseDetailsModel.SchemaName = core.StringPtr("sampleSchema")
-				databaseDetailsModel.Schemas = core.StringPtr("redis__name")
 				databaseDetailsModel.ServiceApiKey = core.StringPtr("sampleapikey")
 				databaseDetailsModel.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 				databaseDetailsModel.ServicePassword = core.StringPtr("samplepassword")
@@ -35772,20 +35123,16 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				databaseDetailsModel.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 				databaseDetailsModel.ServiceUsername = core.StringPtr("sampleusername")
 				databaseDetailsModel.Ssl = core.BoolPtr(true)
-				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+				databaseDetailsModel.Tables = core.StringPtr("kafka_table_name")
 				databaseDetailsModel.Username = core.StringPtr("sampleuser")
 				databaseDetailsModel.ValidateServerCertificate = core.BoolPtr(true)
 				databaseDetailsModel.VerifyHostName = core.BoolPtr(true)
-				databaseDetailsModel.WarehouseName = core.StringPtr("samplewrehouse")
 				Expect(databaseDetailsModel.AuthenticationType).To(Equal(core.StringPtr("LDAP")))
-				Expect(databaseDetailsModel.AuthenticationValue).To(Equal(core.StringPtr("LDAP")))
 				Expect(databaseDetailsModel.BrokerAuthenticationPassword).To(Equal(core.StringPtr("samplepassword")))
 				Expect(databaseDetailsModel.BrokerAuthenticationType).To(Equal(core.StringPtr("PASSWORD")))
 				Expect(databaseDetailsModel.BrokerAuthenticationUser).To(Equal(core.StringPtr("sampleuser")))
-				Expect(databaseDetailsModel.BrokerHost).To(Equal(core.StringPtr("samplehost")))
-				Expect(databaseDetailsModel.BrokerPort).To(Equal(core.Int64Ptr(int64(4553))))
-				Expect(databaseDetailsModel.Certificate).To(Equal(core.StringPtr("exampleCertificate")))
-				Expect(databaseDetailsModel.CertificateExtension).To(Equal(core.StringPtr("pem")))
+				Expect(databaseDetailsModel.Certificate).To(Equal(core.StringPtr("contents of a pem/crt file")))
+				Expect(databaseDetailsModel.CertificateExtension).To(Equal(core.StringPtr("pem/crt")))
 				Expect(databaseDetailsModel.ConnectionMethod).To(Equal(core.StringPtr("basic, apikey")))
 				Expect(databaseDetailsModel.ConnectionMode).To(Equal(core.StringPtr("service_name")))
 				Expect(databaseDetailsModel.ConnectionModeValue).To(Equal(core.StringPtr("orclpdb")))
@@ -35793,12 +35140,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(databaseDetailsModel.ControllerAuthenticationPassword).To(Equal(core.StringPtr("samplepassword")))
 				Expect(databaseDetailsModel.ControllerAuthenticationType).To(Equal(core.StringPtr("PASSWORD")))
 				Expect(databaseDetailsModel.ControllerAuthenticationUser).To(Equal(core.StringPtr("sampleuser")))
-				Expect(databaseDetailsModel.CoordinatorHost).To(Equal(core.StringPtr("samplehost")))
-				Expect(databaseDetailsModel.CoordinatorPort).To(Equal(core.Int64Ptr(int64(4553))))
 				Expect(databaseDetailsModel.CpdHostname).To(Equal(core.StringPtr("samplecpdhostname")))
 				Expect(databaseDetailsModel.CredentialsKey).To(Equal(core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")))
 				Expect(databaseDetailsModel.DatabaseName).To(Equal(core.StringPtr("new_database")))
-				Expect(databaseDetailsModel.Hostname).To(Equal(core.StringPtr("http://db2@localhost:9900.com")))
+				Expect(databaseDetailsModel.Hostname).To(Equal(core.StringPtr("db2@<hostname>.com")))
 				Expect(databaseDetailsModel.HostnameInCertificate).To(Equal(core.StringPtr("samplehostname")))
 				Expect(databaseDetailsModel.Hosts).To(Equal(core.StringPtr("abc.com:1234,xyz.com:4321")))
 				Expect(databaseDetailsModel.InformixServer).To(Equal(core.StringPtr("ol_informix1410")))
@@ -35806,9 +35151,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(databaseDetailsModel.Port).To(Equal(core.Int64Ptr(int64(4553))))
 				Expect(databaseDetailsModel.ProjectID).To(Equal(core.StringPtr("conops-bigquery")))
 				Expect(databaseDetailsModel.Sasl).To(Equal(core.BoolPtr(true)))
-				Expect(databaseDetailsModel.SaslMechanism).To(Equal(core.StringPtr("plain")))
-				Expect(databaseDetailsModel.SchemaName).To(Equal(core.StringPtr("sampleSchema")))
-				Expect(databaseDetailsModel.Schemas).To(Equal(core.StringPtr("redis__name")))
 				Expect(databaseDetailsModel.ServiceApiKey).To(Equal(core.StringPtr("sampleapikey")))
 				Expect(databaseDetailsModel.ServiceHostname).To(Equal(core.StringPtr("api.dataplatform.dev.cloud.ibm.com")))
 				Expect(databaseDetailsModel.ServicePassword).To(Equal(core.StringPtr("samplepassword")))
@@ -35817,11 +35159,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(databaseDetailsModel.ServiceTokenURL).To(Equal(core.StringPtr("sampletoakenurl")))
 				Expect(databaseDetailsModel.ServiceUsername).To(Equal(core.StringPtr("sampleusername")))
 				Expect(databaseDetailsModel.Ssl).To(Equal(core.BoolPtr(true)))
-				Expect(databaseDetailsModel.Tables).To(Equal(core.StringPtr("kafka_table_name, redis_table_name")))
+				Expect(databaseDetailsModel.Tables).To(Equal(core.StringPtr("kafka_table_name")))
 				Expect(databaseDetailsModel.Username).To(Equal(core.StringPtr("sampleuser")))
 				Expect(databaseDetailsModel.ValidateServerCertificate).To(Equal(core.BoolPtr(true)))
 				Expect(databaseDetailsModel.VerifyHostName).To(Equal(core.BoolPtr(true)))
-				Expect(databaseDetailsModel.WarehouseName).To(Equal(core.StringPtr("samplewrehouse")))
 
 				// Construct an instance of the DatabaseRegistrationPrototypeDatabasePropertiesItems model
 				databaseRegistrationPrototypeDatabasePropertiesItemsModel := new(watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems)
@@ -35839,7 +35180,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createDatabaseRegistrationOptionsModel := watsonxDataService.NewCreateDatabaseRegistrationOptions(createDatabaseRegistrationOptionsDatabaseDisplayName, createDatabaseRegistrationOptionsDatabaseType)
 				createDatabaseRegistrationOptionsModel.SetDatabaseDisplayName("new_database")
 				createDatabaseRegistrationOptionsModel.SetDatabaseType("db2")
-				createDatabaseRegistrationOptionsModel.SetAssociatedCatalog(databaseCatalogPrototypeModel)
+				createDatabaseRegistrationOptionsModel.SetAssociatedCatalog(databaseCatalogModel)
 				createDatabaseRegistrationOptionsModel.SetCreatedOn("1686792721")
 				createDatabaseRegistrationOptionsModel.SetDatabaseDetails(databaseDetailsModel)
 				createDatabaseRegistrationOptionsModel.SetDatabaseProperties([]watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel})
@@ -35850,7 +35191,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(createDatabaseRegistrationOptionsModel).ToNot(BeNil())
 				Expect(createDatabaseRegistrationOptionsModel.DatabaseDisplayName).To(Equal(core.StringPtr("new_database")))
 				Expect(createDatabaseRegistrationOptionsModel.DatabaseType).To(Equal(core.StringPtr("db2")))
-				Expect(createDatabaseRegistrationOptionsModel.AssociatedCatalog).To(Equal(databaseCatalogPrototypeModel))
+				Expect(createDatabaseRegistrationOptionsModel.AssociatedCatalog).To(Equal(databaseCatalogModel))
 				Expect(createDatabaseRegistrationOptionsModel.CreatedOn).To(Equal(core.StringPtr("1686792721")))
 				Expect(createDatabaseRegistrationOptionsModel.DatabaseDetails).To(Equal(databaseDetailsModel))
 				Expect(createDatabaseRegistrationOptionsModel.DatabaseProperties).To(Equal([]watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel}))
@@ -35884,6 +35225,28 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(createDb2EngineOptionsModel.Tags).To(Equal([]string{"tag1", "tag2"}))
 				Expect(createDb2EngineOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createDb2EngineOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
+			})
+			It(`Invoke NewCreateDriverRegistrationOptions successfully`, func() {
+				// Construct an instance of the CreateDriverRegistrationOptions model
+				driver := CreateMockReader("This is a mock file.")
+				driverName := "testString"
+				connectionType := "testString"
+				createDriverRegistrationOptionsModel := watsonxDataService.NewCreateDriverRegistrationOptions(driver, driverName, connectionType)
+				createDriverRegistrationOptionsModel.SetDriver(CreateMockReader("This is a mock file."))
+				createDriverRegistrationOptionsModel.SetDriverName("testString")
+				createDriverRegistrationOptionsModel.SetConnectionType("testString")
+				createDriverRegistrationOptionsModel.SetDriverContentType("testString")
+				createDriverRegistrationOptionsModel.SetVersion("testString")
+				createDriverRegistrationOptionsModel.SetAuthInstanceID("testString")
+				createDriverRegistrationOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
+				Expect(createDriverRegistrationOptionsModel).ToNot(BeNil())
+				Expect(createDriverRegistrationOptionsModel.Driver).To(Equal(CreateMockReader("This is a mock file.")))
+				Expect(createDriverRegistrationOptionsModel.DriverName).To(Equal(core.StringPtr("testString")))
+				Expect(createDriverRegistrationOptionsModel.ConnectionType).To(Equal(core.StringPtr("testString")))
+				Expect(createDriverRegistrationOptionsModel.DriverContentType).To(Equal(core.StringPtr("testString")))
+				Expect(createDriverRegistrationOptionsModel.Version).To(Equal(core.StringPtr("testString")))
+				Expect(createDriverRegistrationOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
+				Expect(createDriverRegistrationOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewCreateExecuteQueryOptions successfully`, func() {
 				// Construct an instance of the CreateExecuteQueryOptions model
@@ -36106,17 +35469,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				createMilvusServiceOptionsModel.SetServiceDisplayName("sampleService")
 				createMilvusServiceOptionsModel.SetBucketType("Sample bucket type")
 				createMilvusServiceOptionsModel.SetDescription("milvus service for running sql queries")
-				createMilvusServiceOptionsModel.SetIndexType("FLAT")
-				createMilvusServiceOptionsModel.SetIwCpu(int64(1))
-				createMilvusServiceOptionsModel.SetIwMemory(int64(1))
-				createMilvusServiceOptionsModel.SetIwReplicas(int64(1))
-				createMilvusServiceOptionsModel.SetManagedBy("customer")
-				createMilvusServiceOptionsModel.SetQwCpu(int64(1))
-				createMilvusServiceOptionsModel.SetQwMemory(int64(1))
-				createMilvusServiceOptionsModel.SetQwReplicas(int64(1))
 				createMilvusServiceOptionsModel.SetTags([]string{"tag1", "tag2"})
 				createMilvusServiceOptionsModel.SetTshirtSize("small")
-				createMilvusServiceOptionsModel.SetVectorDimension(int64(384))
 				createMilvusServiceOptionsModel.SetAuthInstanceID("testString")
 				createMilvusServiceOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createMilvusServiceOptionsModel).ToNot(BeNil())
@@ -36126,17 +35480,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(createMilvusServiceOptionsModel.ServiceDisplayName).To(Equal(core.StringPtr("sampleService")))
 				Expect(createMilvusServiceOptionsModel.BucketType).To(Equal(core.StringPtr("Sample bucket type")))
 				Expect(createMilvusServiceOptionsModel.Description).To(Equal(core.StringPtr("milvus service for running sql queries")))
-				Expect(createMilvusServiceOptionsModel.IndexType).To(Equal(core.StringPtr("FLAT")))
-				Expect(createMilvusServiceOptionsModel.IwCpu).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceOptionsModel.IwMemory).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceOptionsModel.IwReplicas).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceOptionsModel.ManagedBy).To(Equal(core.StringPtr("customer")))
-				Expect(createMilvusServiceOptionsModel.QwCpu).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceOptionsModel.QwMemory).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceOptionsModel.QwReplicas).To(Equal(core.Int64Ptr(int64(1))))
 				Expect(createMilvusServiceOptionsModel.Tags).To(Equal([]string{"tag1", "tag2"}))
 				Expect(createMilvusServiceOptionsModel.TshirtSize).To(Equal(core.StringPtr("small")))
-				Expect(createMilvusServiceOptionsModel.VectorDimension).To(Equal(core.Int64Ptr(int64(384))))
 				Expect(createMilvusServiceOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createMilvusServiceOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -36167,33 +35512,14 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			It(`Invoke NewCreateMilvusServiceScaleOptions successfully`, func() {
 				// Construct an instance of the CreateMilvusServiceScaleOptions model
 				serviceID := "testString"
-				createMilvusServiceScaleOptionsTshirtSize := "testString"
-				createMilvusServiceScaleOptionsModel := watsonxDataService.NewCreateMilvusServiceScaleOptions(serviceID, createMilvusServiceScaleOptionsTshirtSize)
+				createMilvusServiceScaleOptionsModel := watsonxDataService.NewCreateMilvusServiceScaleOptions(serviceID)
 				createMilvusServiceScaleOptionsModel.SetServiceID("testString")
-				createMilvusServiceScaleOptionsModel.SetTshirtSize("testString")
-				createMilvusServiceScaleOptionsModel.SetIndexType("FLAT")
-				createMilvusServiceScaleOptionsModel.SetIwCpu(int64(1))
-				createMilvusServiceScaleOptionsModel.SetIwMemory(int64(1))
-				createMilvusServiceScaleOptionsModel.SetIwReplicas(int64(1))
-				createMilvusServiceScaleOptionsModel.SetMilvusName("milvus123")
-				createMilvusServiceScaleOptionsModel.SetQwCpu(int64(1))
-				createMilvusServiceScaleOptionsModel.SetQwMemory(int64(1))
-				createMilvusServiceScaleOptionsModel.SetQwReplicas(int64(1))
-				createMilvusServiceScaleOptionsModel.SetVectorDimension(int64(384))
+				createMilvusServiceScaleOptionsModel.SetTshirtSize("small")
 				createMilvusServiceScaleOptionsModel.SetAuthInstanceID("testString")
 				createMilvusServiceScaleOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createMilvusServiceScaleOptionsModel).ToNot(BeNil())
 				Expect(createMilvusServiceScaleOptionsModel.ServiceID).To(Equal(core.StringPtr("testString")))
-				Expect(createMilvusServiceScaleOptionsModel.TshirtSize).To(Equal(core.StringPtr("testString")))
-				Expect(createMilvusServiceScaleOptionsModel.IndexType).To(Equal(core.StringPtr("FLAT")))
-				Expect(createMilvusServiceScaleOptionsModel.IwCpu).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.IwMemory).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.IwReplicas).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.MilvusName).To(Equal(core.StringPtr("milvus123")))
-				Expect(createMilvusServiceScaleOptionsModel.QwCpu).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.QwMemory).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.QwReplicas).To(Equal(core.Int64Ptr(int64(1))))
-				Expect(createMilvusServiceScaleOptionsModel.VectorDimension).To(Equal(core.Int64Ptr(int64(384))))
+				Expect(createMilvusServiceScaleOptionsModel.TshirtSize).To(Equal(core.StringPtr("small")))
 				Expect(createMilvusServiceScaleOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createMilvusServiceScaleOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -36257,12 +35583,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				engineID := "testString"
 				createPrestissimoEngineCatalogsOptionsModel := watsonxDataService.NewCreatePrestissimoEngineCatalogsOptions(engineID)
 				createPrestissimoEngineCatalogsOptionsModel.SetEngineID("testString")
-				createPrestissimoEngineCatalogsOptionsModel.SetCatalogNames("testString")
+				createPrestissimoEngineCatalogsOptionsModel.SetCatalogName("testString")
 				createPrestissimoEngineCatalogsOptionsModel.SetAuthInstanceID("testString")
 				createPrestissimoEngineCatalogsOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createPrestissimoEngineCatalogsOptionsModel).ToNot(BeNil())
 				Expect(createPrestissimoEngineCatalogsOptionsModel.EngineID).To(Equal(core.StringPtr("testString")))
-				Expect(createPrestissimoEngineCatalogsOptionsModel.CatalogNames).To(Equal(core.StringPtr("testString")))
+				Expect(createPrestissimoEngineCatalogsOptionsModel.CatalogName).To(Equal(core.StringPtr("testString")))
 				Expect(createPrestissimoEngineCatalogsOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createPrestissimoEngineCatalogsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -36345,12 +35671,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				engineID := "testString"
 				createPrestoEngineCatalogsOptionsModel := watsonxDataService.NewCreatePrestoEngineCatalogsOptions(engineID)
 				createPrestoEngineCatalogsOptionsModel.SetEngineID("testString")
-				createPrestoEngineCatalogsOptionsModel.SetCatalogNames("testString")
+				createPrestoEngineCatalogsOptionsModel.SetCatalogName("testString")
 				createPrestoEngineCatalogsOptionsModel.SetAuthInstanceID("testString")
 				createPrestoEngineCatalogsOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createPrestoEngineCatalogsOptionsModel).ToNot(BeNil())
 				Expect(createPrestoEngineCatalogsOptionsModel.EngineID).To(Equal(core.StringPtr("testString")))
-				Expect(createPrestoEngineCatalogsOptionsModel.CatalogNames).To(Equal(core.StringPtr("testString")))
+				Expect(createPrestoEngineCatalogsOptionsModel.CatalogName).To(Equal(core.StringPtr("testString")))
 				Expect(createPrestoEngineCatalogsOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createPrestoEngineCatalogsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -36728,12 +36054,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				engineID := "testString"
 				createSparkEngineCatalogsOptionsModel := watsonxDataService.NewCreateSparkEngineCatalogsOptions(engineID)
 				createSparkEngineCatalogsOptionsModel.SetEngineID("testString")
-				createSparkEngineCatalogsOptionsModel.SetCatalogNames("testString")
+				createSparkEngineCatalogsOptionsModel.SetCatalogName("testString")
 				createSparkEngineCatalogsOptionsModel.SetAuthInstanceID("testString")
 				createSparkEngineCatalogsOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(createSparkEngineCatalogsOptionsModel).ToNot(BeNil())
 				Expect(createSparkEngineCatalogsOptionsModel.EngineID).To(Equal(core.StringPtr("testString")))
-				Expect(createSparkEngineCatalogsOptionsModel.CatalogNames).To(Equal(core.StringPtr("testString")))
+				Expect(createSparkEngineCatalogsOptionsModel.CatalogName).To(Equal(core.StringPtr("testString")))
 				Expect(createSparkEngineCatalogsOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createSparkEngineCatalogsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -36819,14 +36145,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(createSparkEngineOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(createSparkEngineOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
-			It(`Invoke NewDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems successfully`, func() {
-				encrypt := true
-				key := "hive.metastore"
-				value := "glue"
-				_model, err := watsonxDataService.NewDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems(encrypt, key, value)
-				Expect(_model).ToNot(BeNil())
-				Expect(err).To(BeNil())
-			})
 			It(`Invoke NewDatabaseRegistrationPrototypeDatabasePropertiesItems successfully`, func() {
 				encrypt := true
 				key := "hive.metastore"
@@ -36906,6 +36224,33 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(deleteDeactivateBucketOptionsModel.BucketID).To(Equal(core.StringPtr("testString")))
 				Expect(deleteDeactivateBucketOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(deleteDeactivateBucketOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
+			})
+			It(`Invoke NewDeleteDriverEnginesOptions successfully`, func() {
+				// Construct an instance of the DeleteDriverEnginesOptions model
+				driverID := "testString"
+				engineIds := "testString"
+				deleteDriverEnginesOptionsModel := watsonxDataService.NewDeleteDriverEnginesOptions(driverID, engineIds)
+				deleteDriverEnginesOptionsModel.SetDriverID("testString")
+				deleteDriverEnginesOptionsModel.SetEngineIds("testString")
+				deleteDriverEnginesOptionsModel.SetAuthInstanceID("testString")
+				deleteDriverEnginesOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
+				Expect(deleteDriverEnginesOptionsModel).ToNot(BeNil())
+				Expect(deleteDriverEnginesOptionsModel.DriverID).To(Equal(core.StringPtr("testString")))
+				Expect(deleteDriverEnginesOptionsModel.EngineIds).To(Equal(core.StringPtr("testString")))
+				Expect(deleteDriverEnginesOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
+				Expect(deleteDriverEnginesOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
+			})
+			It(`Invoke NewDeleteDriverRegistrationOptions successfully`, func() {
+				// Construct an instance of the DeleteDriverRegistrationOptions model
+				driverID := "testString"
+				deleteDriverRegistrationOptionsModel := watsonxDataService.NewDeleteDriverRegistrationOptions(driverID)
+				deleteDriverRegistrationOptionsModel.SetDriverID("testString")
+				deleteDriverRegistrationOptionsModel.SetAuthInstanceID("testString")
+				deleteDriverRegistrationOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
+				Expect(deleteDriverRegistrationOptionsModel).ToNot(BeNil())
+				Expect(deleteDriverRegistrationOptionsModel.DriverID).To(Equal(core.StringPtr("testString")))
+				Expect(deleteDriverRegistrationOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
+				Expect(deleteDriverRegistrationOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewDeleteEngineOptions successfully`, func() {
 				// Construct an instance of the DeleteEngineOptions model
@@ -37134,70 +36479,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(_model).ToNot(BeNil())
 				Expect(err).To(BeNil())
 			})
-			It(`Invoke NewGenerateBenchmarkReportOptions successfully`, func() {
-				// Construct an instance of the GenerateBenchmarkReportOptions model
-				bucketName := "testString"
-				engineID := "testString"
-				podName := "testString"
-				generateBenchmarkReportOptionsModel := watsonxDataService.NewGenerateBenchmarkReportOptions(bucketName, engineID, podName)
-				generateBenchmarkReportOptionsModel.SetBucketName("testString")
-				generateBenchmarkReportOptionsModel.SetEngineID("testString")
-				generateBenchmarkReportOptionsModel.SetPodName("testString")
-				generateBenchmarkReportOptionsModel.SetFileCount("testString")
-				generateBenchmarkReportOptionsModel.SetFileSize("testString")
-				generateBenchmarkReportOptionsModel.SetAuthInstanceID("testString")
-				generateBenchmarkReportOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
-				Expect(generateBenchmarkReportOptionsModel).ToNot(BeNil())
-				Expect(generateBenchmarkReportOptionsModel.BucketName).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.EngineID).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.PodName).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.FileCount).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.FileSize).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
-			})
-			It(`Invoke NewGenerateBenchmarkReportStatusOptions successfully`, func() {
-				// Construct an instance of the GenerateBenchmarkReportStatusOptions model
-				reqID := "testString"
-				engineID := "testString"
-				bucketName := "testString"
-				podName := "testString"
-				generateBenchmarkReportStatusOptionsModel := watsonxDataService.NewGenerateBenchmarkReportStatusOptions(reqID, engineID, bucketName, podName)
-				generateBenchmarkReportStatusOptionsModel.SetReqID("testString")
-				generateBenchmarkReportStatusOptionsModel.SetEngineID("testString")
-				generateBenchmarkReportStatusOptionsModel.SetBucketName("testString")
-				generateBenchmarkReportStatusOptionsModel.SetPodName("testString")
-				generateBenchmarkReportStatusOptionsModel.SetAuthInstanceID("testString")
-				generateBenchmarkReportStatusOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
-				Expect(generateBenchmarkReportStatusOptionsModel).ToNot(BeNil())
-				Expect(generateBenchmarkReportStatusOptionsModel.ReqID).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportStatusOptionsModel.EngineID).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportStatusOptionsModel.BucketName).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportStatusOptionsModel.PodName).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportStatusOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
-				Expect(generateBenchmarkReportStatusOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
-			})
-			It(`Invoke NewGenerateEngineDumpOptions successfully`, func() {
-				// Construct an instance of the GenerateEngineDumpOptions model
-				generateEngineDumpOptionsDumpFileName := "prestodump"
-				generateEngineDumpOptionsDumpType := "heat"
-				generateEngineDumpOptionsEngineID := "presto-123"
-				generateEngineDumpOptionsPodName := "presto"
-				generateEngineDumpOptionsModel := watsonxDataService.NewGenerateEngineDumpOptions(generateEngineDumpOptionsDumpFileName, generateEngineDumpOptionsDumpType, generateEngineDumpOptionsEngineID, generateEngineDumpOptionsPodName)
-				generateEngineDumpOptionsModel.SetDumpFileName("prestodump")
-				generateEngineDumpOptionsModel.SetDumpType("heat")
-				generateEngineDumpOptionsModel.SetEngineID("presto-123")
-				generateEngineDumpOptionsModel.SetPodName("presto")
-				generateEngineDumpOptionsModel.SetAuthInstanceID("testString")
-				generateEngineDumpOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
-				Expect(generateEngineDumpOptionsModel).ToNot(BeNil())
-				Expect(generateEngineDumpOptionsModel.DumpFileName).To(Equal(core.StringPtr("prestodump")))
-				Expect(generateEngineDumpOptionsModel.DumpType).To(Equal(core.StringPtr("heat")))
-				Expect(generateEngineDumpOptionsModel.EngineID).To(Equal(core.StringPtr("presto-123")))
-				Expect(generateEngineDumpOptionsModel.PodName).To(Equal(core.StringPtr("presto")))
-				Expect(generateEngineDumpOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
-				Expect(generateEngineDumpOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
-			})
 			It(`Invoke NewGetAllColumnsOptions successfully`, func() {
 				// Construct an instance of the GetAllColumnsOptions model
 				getAllColumnsOptionsModel := watsonxDataService.NewGetAllColumnsOptions()
@@ -37214,22 +36495,22 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(getAllColumnsOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewGetBucketObjectPropertiesOptions successfully`, func() {
-				// Construct an instance of the BucketObjectSizePathsItems model
-				bucketObjectSizePathsItemsModel := new(watsonxdatav2.BucketObjectSizePathsItems)
-				Expect(bucketObjectSizePathsItemsModel).ToNot(BeNil())
-				bucketObjectSizePathsItemsModel.Path = core.StringPtr("testString")
-				Expect(bucketObjectSizePathsItemsModel.Path).To(Equal(core.StringPtr("testString")))
+				// Construct an instance of the Path model
+				pathModel := new(watsonxdatav2.Path)
+				Expect(pathModel).ToNot(BeNil())
+				pathModel.Path = core.StringPtr("string")
+				Expect(pathModel.Path).To(Equal(core.StringPtr("string")))
 
 				// Construct an instance of the GetBucketObjectPropertiesOptions model
 				bucketID := "testString"
 				getBucketObjectPropertiesOptionsModel := watsonxDataService.NewGetBucketObjectPropertiesOptions(bucketID)
 				getBucketObjectPropertiesOptionsModel.SetBucketID("testString")
-				getBucketObjectPropertiesOptionsModel.SetPaths([]watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel})
+				getBucketObjectPropertiesOptionsModel.SetPaths([]watsonxdatav2.Path{*pathModel})
 				getBucketObjectPropertiesOptionsModel.SetAuthInstanceID("testString")
 				getBucketObjectPropertiesOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
 				Expect(getBucketObjectPropertiesOptionsModel).ToNot(BeNil())
 				Expect(getBucketObjectPropertiesOptionsModel.BucketID).To(Equal(core.StringPtr("testString")))
-				Expect(getBucketObjectPropertiesOptionsModel.Paths).To(Equal([]watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel}))
+				Expect(getBucketObjectPropertiesOptionsModel.Paths).To(Equal([]watsonxdatav2.Path{*pathModel}))
 				Expect(getBucketObjectPropertiesOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(getBucketObjectPropertiesOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
@@ -37754,6 +37035,15 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(listDb2EnginesOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(listDb2EnginesOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
+			It(`Invoke NewListDriverRegistrationOptions successfully`, func() {
+				// Construct an instance of the ListDriverRegistrationOptions model
+				listDriverRegistrationOptionsModel := watsonxDataService.NewListDriverRegistrationOptions()
+				listDriverRegistrationOptionsModel.SetAuthInstanceID("testString")
+				listDriverRegistrationOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
+				Expect(listDriverRegistrationOptionsModel).ToNot(BeNil())
+				Expect(listDriverRegistrationOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
+				Expect(listDriverRegistrationOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
+			})
 			It(`Invoke NewListIngestionJobsOptions successfully`, func() {
 				// Construct an instance of the ListIngestionJobsOptions model
 				authInstanceID := "testString"
@@ -37985,24 +37275,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(listTablesOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(listTablesOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
-			It(`Invoke NewLoadTableOptions successfully`, func() {
-				// Construct an instance of the LoadTableOptions model
-				catalogID := "testString"
-				schemaID := "testString"
-				tableID := "testString"
-				loadTableOptionsModel := watsonxDataService.NewLoadTableOptions(catalogID, schemaID, tableID)
-				loadTableOptionsModel.SetCatalogID("testString")
-				loadTableOptionsModel.SetSchemaID("testString")
-				loadTableOptionsModel.SetTableID("testString")
-				loadTableOptionsModel.SetAuthInstanceID("testString")
-				loadTableOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
-				Expect(loadTableOptionsModel).ToNot(BeNil())
-				Expect(loadTableOptionsModel.CatalogID).To(Equal(core.StringPtr("testString")))
-				Expect(loadTableOptionsModel.SchemaID).To(Equal(core.StringPtr("testString")))
-				Expect(loadTableOptionsModel.TableID).To(Equal(core.StringPtr("testString")))
-				Expect(loadTableOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
-				Expect(loadTableOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
-			})
 			It(`Invoke NewOtherEngineDetailsBody successfully`, func() {
 				connectionString := "1.2.3.4"
 				engineType := "netezza"
@@ -38047,27 +37319,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(pauseSparkEngineOptionsModel.Force).To(Equal(core.BoolPtr(true)))
 				Expect(pauseSparkEngineOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(pauseSparkEngineOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
-			})
-			It(`Invoke NewRegisterTableOptions successfully`, func() {
-				// Construct an instance of the RegisterTableOptions model
-				catalogID := "testString"
-				schemaID := "testString"
-				registerTableOptionsMetadataLocation := "s3a://bucketname/path/to/table/metadata_location/_delta_log"
-				registerTableOptionsTableName := "table1"
-				registerTableOptionsModel := watsonxDataService.NewRegisterTableOptions(catalogID, schemaID, registerTableOptionsMetadataLocation, registerTableOptionsTableName)
-				registerTableOptionsModel.SetCatalogID("testString")
-				registerTableOptionsModel.SetSchemaID("testString")
-				registerTableOptionsModel.SetMetadataLocation("s3a://bucketname/path/to/table/metadata_location/_delta_log")
-				registerTableOptionsModel.SetTableName("table1")
-				registerTableOptionsModel.SetAuthInstanceID("testString")
-				registerTableOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
-				Expect(registerTableOptionsModel).ToNot(BeNil())
-				Expect(registerTableOptionsModel.CatalogID).To(Equal(core.StringPtr("testString")))
-				Expect(registerTableOptionsModel.SchemaID).To(Equal(core.StringPtr("testString")))
-				Expect(registerTableOptionsModel.MetadataLocation).To(Equal(core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log")))
-				Expect(registerTableOptionsModel.TableName).To(Equal(core.StringPtr("table1")))
-				Expect(registerTableOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
-				Expect(registerTableOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewRestartPrestissimoEngineOptions successfully`, func() {
 				// Construct an instance of the RestartPrestissimoEngineOptions model
@@ -38252,9 +37503,9 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				// Construct an instance of the NodeDescription model
 				nodeDescriptionModel := new(watsonxdatav2.NodeDescription)
 				Expect(nodeDescriptionModel).ToNot(BeNil())
-				nodeDescriptionModel.NodeType = core.StringPtr("worker")
+				nodeDescriptionModel.NodeType = core.StringPtr("starter")
 				nodeDescriptionModel.Quantity = core.Int64Ptr(int64(38))
-				Expect(nodeDescriptionModel.NodeType).To(Equal(core.StringPtr("worker")))
+				Expect(nodeDescriptionModel.NodeType).To(Equal(core.StringPtr("starter")))
 				Expect(nodeDescriptionModel.Quantity).To(Equal(core.Int64Ptr(int64(38))))
 
 				// Construct an instance of the ScalePrestoEngineOptions model
@@ -38382,6 +37633,21 @@ var _ = Describe(`WatsonxDataV2`, func() {
 				Expect(updateDb2EngineOptionsModel.Body).To(Equal(map[string]interface{}{"anyKey": "anyValue"}))
 				Expect(updateDb2EngineOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
 				Expect(updateDb2EngineOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
+			})
+			It(`Invoke NewUpdateDriverEnginesOptions successfully`, func() {
+				// Construct an instance of the UpdateDriverEnginesOptions model
+				driverID := "testString"
+				body := map[string]interface{}{"anyKey": "anyValue"}
+				updateDriverEnginesOptionsModel := watsonxDataService.NewUpdateDriverEnginesOptions(driverID, body)
+				updateDriverEnginesOptionsModel.SetDriverID("testString")
+				updateDriverEnginesOptionsModel.SetBody(map[string]interface{}{"anyKey": "anyValue"})
+				updateDriverEnginesOptionsModel.SetAuthInstanceID("testString")
+				updateDriverEnginesOptionsModel.SetHeaders(map[string]string{"foo": "bar"})
+				Expect(updateDriverEnginesOptionsModel).ToNot(BeNil())
+				Expect(updateDriverEnginesOptionsModel.DriverID).To(Equal(core.StringPtr("testString")))
+				Expect(updateDriverEnginesOptionsModel.Body).To(Equal(map[string]interface{}{"anyKey": "anyValue"}))
+				Expect(updateDriverEnginesOptionsModel.AuthInstanceID).To(Equal(core.StringPtr("testString")))
+				Expect(updateDriverEnginesOptionsModel.Headers).To(Equal(map[string]string{"foo": "bar"}))
 			})
 			It(`Invoke NewUpdateIntegrationOptions successfully`, func() {
 				// Construct an instance of the UpdateIntegrationOptions model
@@ -38567,13 +37833,13 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		It(`Invoke UnmarshalBucketDetails successfully`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.BucketDetails)
-			model.AccessKey = core.StringPtr("<access_key>")
+			model.AccessKey = core.StringPtr("b9cbf248ea5c4c96947e64407108559j")
 			model.BucketName = core.StringPtr("sample-bucket")
-			model.Endpoint = core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/")
+			model.Endpoint = core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/")
 			model.KeyFile = core.StringPtr("key_file")
-			model.Provider = core.StringPtr("ibm-cos")
+			model.Provider = core.StringPtr("ibm_cos")
 			model.Region = core.StringPtr("us-south")
-			model.SecretKey = core.StringPtr("secret_key")
+			model.SecretKey = core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87")
 
 			b, err := json.Marshal(model)
 			Expect(err).To(BeNil())
@@ -38588,31 +37854,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
 		})
-		It(`Invoke UnmarshalBucketObjectSizePathsItems successfully`, func() {
-			// Construct an instance of the model.
-			model := new(watsonxdatav2.BucketObjectSizePathsItems)
-			model.Path = core.StringPtr("testString")
-
-			b, err := json.Marshal(model)
-			Expect(err).To(BeNil())
-
-			var raw map[string]json.RawMessage
-			err = json.Unmarshal(b, &raw)
-			Expect(err).To(BeNil())
-
-			var result *watsonxdatav2.BucketObjectSizePathsItems
-			err = watsonxdatav2.UnmarshalBucketObjectSizePathsItems(raw, &result)
-			Expect(err).To(BeNil())
-			Expect(result).ToNot(BeNil())
-			Expect(result).To(Equal(model))
-		})
 		It(`Invoke UnmarshalBucketRegistrationPatch successfully`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.BucketRegistrationPatch)
 			model.BucketDetails = nil
 			model.BucketDisplayName = core.StringPtr("sample-bucket-displayname")
 			model.Description = core.StringPtr("COS bucket for customer data")
-			model.SystemBucketUpdateCredentials = core.BoolPtr(true)
 			model.Tags = []string{"testbucket", "userbucket"}
 
 			b, err := json.Marshal(model)
@@ -38635,8 +37882,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.Comment = core.StringPtr("expenses column")
 			model.Extra = core.StringPtr("varchar")
 			model.Length = core.StringPtr("30")
-			model.Precision = core.StringPtr("10")
 			model.Scale = core.StringPtr("2")
+			model.Precision = core.StringPtr("10")
 			model.Type = core.StringPtr("varchar")
 
 			b, err := json.Marshal(model)
@@ -38670,10 +37917,11 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
 		})
-		It(`Invoke UnmarshalDatabaseCatalogPrototype successfully`, func() {
+		It(`Invoke UnmarshalDatabaseCatalog successfully`, func() {
 			// Construct an instance of the model.
-			model := new(watsonxdatav2.DatabaseCatalogPrototype)
+			model := new(watsonxdatav2.DatabaseCatalog)
 			model.CatalogName = core.StringPtr("sampleCatalog")
+			model.CatalogTags = []string{"catalog_tag_1", "catalog_tag_2"}
 			model.CatalogType = core.StringPtr("iceberg")
 
 			b, err := json.Marshal(model)
@@ -38683,8 +37931,8 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			err = json.Unmarshal(b, &raw)
 			Expect(err).To(BeNil())
 
-			var result *watsonxdatav2.DatabaseCatalogPrototype
-			err = watsonxdatav2.UnmarshalDatabaseCatalogPrototype(raw, &result)
+			var result *watsonxdatav2.DatabaseCatalog
+			err = watsonxdatav2.UnmarshalDatabaseCatalog(raw, &result)
 			Expect(err).To(BeNil())
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
@@ -38693,14 +37941,11 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.DatabaseDetails)
 			model.AuthenticationType = core.StringPtr("LDAP")
-			model.AuthenticationValue = core.StringPtr("LDAP")
 			model.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
 			model.BrokerAuthenticationType = core.StringPtr("PASSWORD")
 			model.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-			model.BrokerHost = core.StringPtr("samplehost")
-			model.BrokerPort = core.Int64Ptr(int64(4553))
-			model.Certificate = core.StringPtr("exampleCertificate")
-			model.CertificateExtension = core.StringPtr("pem")
+			model.Certificate = core.StringPtr("contents of a pem/crt file")
+			model.CertificateExtension = core.StringPtr("pem/crt")
 			model.ConnectionMethod = core.StringPtr("basic, apikey")
 			model.ConnectionMode = core.StringPtr("service_name")
 			model.ConnectionModeValue = core.StringPtr("orclpdb")
@@ -38708,12 +37953,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
 			model.ControllerAuthenticationType = core.StringPtr("PASSWORD")
 			model.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-			model.CoordinatorHost = core.StringPtr("samplehost")
-			model.CoordinatorPort = core.Int64Ptr(int64(4553))
 			model.CpdHostname = core.StringPtr("samplecpdhostname")
 			model.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
 			model.DatabaseName = core.StringPtr("new_database")
-			model.Hostname = core.StringPtr("http://db2@localhost:9900.com")
+			model.Hostname = core.StringPtr("db2@<hostname>.com")
 			model.HostnameInCertificate = core.StringPtr("samplehostname")
 			model.Hosts = core.StringPtr("abc.com:1234,xyz.com:4321")
 			model.InformixServer = core.StringPtr("ol_informix1410")
@@ -38721,9 +37964,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.Port = core.Int64Ptr(int64(4553))
 			model.ProjectID = core.StringPtr("conops-bigquery")
 			model.Sasl = core.BoolPtr(true)
-			model.SaslMechanism = core.StringPtr("plain")
-			model.SchemaName = core.StringPtr("sampleSchema")
-			model.Schemas = core.StringPtr("redis__name")
 			model.ServiceApiKey = core.StringPtr("sampleapikey")
 			model.ServiceHostname = core.StringPtr("api.dataplatform.dev.cloud.ibm.com")
 			model.ServicePassword = core.StringPtr("samplepassword")
@@ -38732,11 +37972,10 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.ServiceTokenURL = core.StringPtr("sampletoakenurl")
 			model.ServiceUsername = core.StringPtr("sampleusername")
 			model.Ssl = core.BoolPtr(true)
-			model.Tables = core.StringPtr("kafka_table_name, redis_table_name")
+			model.Tables = core.StringPtr("kafka_table_name")
 			model.Username = core.StringPtr("sampleuser")
 			model.ValidateServerCertificate = core.BoolPtr(true)
 			model.VerifyHostName = core.BoolPtr(true)
-			model.WarehouseName = core.StringPtr("samplewrehouse")
 
 			b, err := json.Marshal(model)
 			Expect(err).To(BeNil())
@@ -38757,7 +37996,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.DatabaseDetails = nil
 			model.DatabaseDisplayName = core.StringPtr("new_database")
 			model.Description = core.StringPtr("External database description")
-			model.Tables = nil
 			model.Tags = []string{"testdatabase", "userdatabase"}
 			model.Topics = nil
 
@@ -38777,15 +38015,6 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		It(`Invoke UnmarshalDatabaseRegistrationPatchDatabaseDetails successfully`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails)
-			model.AuthenticationValue = core.StringPtr("LDAP")
-			model.BrokerAuthenticationPassword = core.StringPtr("samplepassword")
-			model.BrokerAuthenticationType = core.StringPtr("PASSWORD")
-			model.BrokerAuthenticationUser = core.StringPtr("sampleuser")
-			model.ControllerAuthenticationPassword = core.StringPtr("samplepassword")
-			model.ControllerAuthenticationType = core.StringPtr("PASSWORD")
-			model.ControllerAuthenticationUser = core.StringPtr("sampleuser")
-			model.CredentialsKey = core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......")
-			model.DatabaseProperties = nil
 			model.Password = core.StringPtr("samplepassword")
 			model.Username = core.StringPtr("sampleuser")
 
@@ -38802,54 +38031,12 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
 		})
-		It(`Invoke UnmarshalDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems successfully`, func() {
-			// Construct an instance of the model.
-			model := new(watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems)
-			model.Encrypt = core.BoolPtr(true)
-			model.Key = core.StringPtr("hive.metastore")
-			model.Value = core.StringPtr("glue")
-
-			b, err := json.Marshal(model)
-			Expect(err).To(BeNil())
-
-			var raw map[string]json.RawMessage
-			err = json.Unmarshal(b, &raw)
-			Expect(err).To(BeNil())
-
-			var result *watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems
-			err = watsonxdatav2.UnmarshalDatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems(raw, &result)
-			Expect(err).To(BeNil())
-			Expect(result).ToNot(BeNil())
-			Expect(result).To(Equal(model))
-		})
-		It(`Invoke UnmarshalDatabaseRegistrationPatchTablesItems successfully`, func() {
-			// Construct an instance of the model.
-			model := new(watsonxdatav2.DatabaseRegistrationPatchTablesItems)
-			model.CreatedOn = core.StringPtr("1686792721")
-			model.FileContents = core.StringPtr("sample file content")
-			model.FileName = core.StringPtr("test.json")
-			model.SchemaName = core.StringPtr("customer")
-			model.TableName = core.StringPtr("customer")
-
-			b, err := json.Marshal(model)
-			Expect(err).To(BeNil())
-
-			var raw map[string]json.RawMessage
-			err = json.Unmarshal(b, &raw)
-			Expect(err).To(BeNil())
-
-			var result *watsonxdatav2.DatabaseRegistrationPatchTablesItems
-			err = watsonxdatav2.UnmarshalDatabaseRegistrationPatchTablesItems(raw, &result)
-			Expect(err).To(BeNil())
-			Expect(result).ToNot(BeNil())
-			Expect(result).To(Equal(model))
-		})
 		It(`Invoke UnmarshalDatabaseRegistrationPatchTopicsItems successfully`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.DatabaseRegistrationPatchTopicsItems)
 			model.CreatedOn = core.StringPtr("1686792721")
 			model.FileContents = core.StringPtr("sample file contents")
-			model.FileName = core.StringPtr("test.json")
+			model.FileName = core.StringPtr("sample file name")
 			model.TopicName = core.StringPtr("customer")
 
 			b, err := json.Marshal(model)
@@ -38919,6 +38106,24 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 			var result *watsonxdatav2.Db2EnginePatch
 			err = watsonxdatav2.UnmarshalDb2EnginePatch(raw, &result)
+			Expect(err).To(BeNil())
+			Expect(result).ToNot(BeNil())
+			Expect(result).To(Equal(model))
+		})
+		It(`Invoke UnmarshalDriverRegistrationEnginePrototype successfully`, func() {
+			// Construct an instance of the model.
+			model := new(watsonxdatav2.DriverRegistrationEnginePrototype)
+			model.Engines = []string{"testString"}
+
+			b, err := json.Marshal(model)
+			Expect(err).To(BeNil())
+
+			var raw map[string]json.RawMessage
+			err = json.Unmarshal(b, &raw)
+			Expect(err).To(BeNil())
+
+			var result *watsonxdatav2.DriverRegistrationEnginePrototype
+			err = watsonxdatav2.UnmarshalDriverRegistrationEnginePrototype(raw, &result)
 			Expect(err).To(BeNil())
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
@@ -39100,7 +38305,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 			model.Resource = core.StringPtr("presto01")
 			model.State = core.StringPtr("active")
 			model.StorageCatalogs = []string{"iceberg_data", "hive_data"}
-			model.URL = core.StringPtr("http://abcd.efgh.com:9876/")
+			model.URL = core.StringPtr("ikc.url")
 			model.Username = core.StringPtr("username@email.com")
 
 			b, err := json.Marshal(model)
@@ -39198,7 +38403,7 @@ var _ = Describe(`WatsonxDataV2`, func() {
 		It(`Invoke UnmarshalNodeDescription successfully`, func() {
 			// Construct an instance of the model.
 			model := new(watsonxdatav2.NodeDescription)
-			model.NodeType = core.StringPtr("worker")
+			model.NodeType = core.StringPtr("starter")
 			model.Quantity = core.Int64Ptr(int64(38))
 
 			b, err := json.Marshal(model)
@@ -39248,6 +38453,24 @@ var _ = Describe(`WatsonxDataV2`, func() {
 
 			var result *watsonxdatav2.OtherEngineDetailsBody
 			err = watsonxdatav2.UnmarshalOtherEngineDetailsBody(raw, &result)
+			Expect(err).To(BeNil())
+			Expect(result).ToNot(BeNil())
+			Expect(result).To(Equal(model))
+		})
+		It(`Invoke UnmarshalPath successfully`, func() {
+			// Construct an instance of the model.
+			model := new(watsonxdatav2.Path)
+			model.Path = core.StringPtr("string")
+
+			b, err := json.Marshal(model)
+			Expect(err).To(BeNil())
+
+			var raw map[string]json.RawMessage
+			err = json.Unmarshal(b, &raw)
+			Expect(err).To(BeNil())
+
+			var result *watsonxdatav2.Path
+			err = watsonxdatav2.UnmarshalPath(raw, &result)
 			Expect(err).To(BeNil())
 			Expect(result).ToNot(BeNil())
 			Expect(result).To(Equal(model))
