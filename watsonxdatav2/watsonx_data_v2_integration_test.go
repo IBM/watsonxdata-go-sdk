@@ -119,13 +119,13 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			}
 
 			bucketDetailsModel := &watsonxdatav2.BucketDetails{
-				AccessKey: core.StringPtr("<access_key>"),
+				AccessKey: core.StringPtr("b9cbf248ea5c4c96947e64407108559j"),
 				BucketName: core.StringPtr("sample-bucket"),
-				Endpoint: core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/"),
+				Endpoint: core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/"),
 				KeyFile: core.StringPtr("key_file"),
-				Provider: core.StringPtr("ibm-cos"),
+				Provider: core.StringPtr("ibm_cos"),
 				Region: core.StringPtr("us-south"),
-				SecretKey: core.StringPtr("secret_key"),
+				SecretKey: core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"),
 			}
 
 			storageDetailsModel := &watsonxdatav2.StorageDetails{
@@ -141,12 +141,12 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			}
 
 			createBucketRegistrationOptions := &watsonxdatav2.CreateBucketRegistrationOptions{
-				BucketDisplayName: core.StringPtr("sample-bucket-displayname"),
 				BucketType: core.StringPtr("ibm_cos"),
 				Description: core.StringPtr("COS bucket for customer data"),
 				ManagedBy: core.StringPtr("ibm"),
 				AssociatedCatalog: bucketCatalogModel,
 				BucketDetails: bucketDetailsModel,
+				BucketDisplayName: core.StringPtr("sample-bucket-displayname"),
 				Region: core.StringPtr("us-south"),
 				StorageDetails: storageDetailsModel,
 				Tags: []string{"bucket-tag1", "bucket-tag2"},
@@ -183,20 +183,19 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		})
 		It(`UpdateBucketRegistration(updateBucketRegistrationOptions *UpdateBucketRegistrationOptions)`, func() {
 			bucketDetailsModel := &watsonxdatav2.BucketDetails{
-				AccessKey: core.StringPtr("<access_key>"),
+				AccessKey: core.StringPtr("b9cbf248ea5c4c96947e64407108559j"),
 				BucketName: core.StringPtr("sample-bucket"),
-				Endpoint: core.StringPtr("https://s3.us-south.cloud-object-storage.appdomain.cloud/"),
+				Endpoint: core.StringPtr("https://s3.<region>.cloud-object-storage.appdomain.cloud/"),
 				KeyFile: core.StringPtr("key_file"),
-				Provider: core.StringPtr("ibm-cos"),
+				Provider: core.StringPtr("ibm_cos"),
 				Region: core.StringPtr("us-south"),
-				SecretKey: core.StringPtr("secret_key"),
+				SecretKey: core.StringPtr("13b4045cac1a0be54c9fjbe53cb22df5fn397cd2c45b66c87"),
 			}
 
 			bucketRegistrationPatchModel := &watsonxdatav2.BucketRegistrationPatch{
 				BucketDetails: bucketDetailsModel,
 				BucketDisplayName: core.StringPtr("sample-bucket-displayname"),
 				Description: core.StringPtr("COS bucket for customer data"),
-				SystemBucketUpdateCredentials: core.BoolPtr(true),
 				Tags: []string{"testbucket", "userbucket"},
 			}
 			bucketRegistrationPatchModelAsPatch, asPatchErr := bucketRegistrationPatchModel.AsPatch()
@@ -255,13 +254,13 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			shouldSkipTest()
 		})
 		It(`GetBucketObjectProperties(getBucketObjectPropertiesOptions *GetBucketObjectPropertiesOptions)`, func() {
-			bucketObjectSizePathsItemsModel := &watsonxdatav2.BucketObjectSizePathsItems{
-				Path: core.StringPtr("testString"),
+			pathModel := &watsonxdatav2.Path{
+				Path: core.StringPtr("string"),
 			}
 
 			getBucketObjectPropertiesOptions := &watsonxdatav2.GetBucketObjectPropertiesOptions{
 				BucketID: core.StringPtr("testString"),
-				Paths: []watsonxdatav2.BucketObjectSizePathsItems{*bucketObjectSizePathsItemsModel},
+				Paths: []watsonxdatav2.Path{*pathModel},
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -269,47 +268,6 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			Expect(err).To(BeNil())
 			Expect(response.StatusCode).To(Equal(201))
 			Expect(bucketObjectProperties).ToNot(BeNil())
-		})
-	})
-
-	Describe(`GenerateBenchmarkReport - Generate generate_benchmark_report specific to storage`, func() {
-		BeforeEach(func() {
-			shouldSkipTest()
-		})
-		It(`GenerateBenchmarkReport(generateBenchmarkReportOptions *GenerateBenchmarkReportOptions)`, func() {
-			generateBenchmarkReportOptions := &watsonxdatav2.GenerateBenchmarkReportOptions{
-				BucketName: core.StringPtr("testString"),
-				EngineID: core.StringPtr("testString"),
-				PodName: core.StringPtr("testString"),
-				FileCount: core.StringPtr("testString"),
-				FileSize: core.StringPtr("testString"),
-				AuthInstanceID: core.StringPtr("testString"),
-			}
-
-			generateBenchmarkReportOkBody, response, err := watsonxDataService.GenerateBenchmarkReport(generateBenchmarkReportOptions)
-			Expect(err).To(BeNil())
-			Expect(response.StatusCode).To(Equal(200))
-			Expect(generateBenchmarkReportOkBody).ToNot(BeNil())
-		})
-	})
-
-	Describe(`GenerateBenchmarkReportStatus - Get generate_benchmark_report status`, func() {
-		BeforeEach(func() {
-			shouldSkipTest()
-		})
-		It(`GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptions *GenerateBenchmarkReportStatusOptions)`, func() {
-			generateBenchmarkReportStatusOptions := &watsonxdatav2.GenerateBenchmarkReportStatusOptions{
-				ReqID: core.StringPtr("testString"),
-				EngineID: core.StringPtr("testString"),
-				BucketName: core.StringPtr("testString"),
-				PodName: core.StringPtr("testString"),
-				AuthInstanceID: core.StringPtr("testString"),
-			}
-
-			benchmarkStatusResponse, response, err := watsonxDataService.GenerateBenchmarkReportStatus(generateBenchmarkReportStatusOptions)
-			Expect(err).To(BeNil())
-			Expect(response.StatusCode).To(Equal(200))
-			Expect(benchmarkStatusResponse).ToNot(BeNil())
 		})
 	})
 
@@ -369,21 +327,19 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			shouldSkipTest()
 		})
 		It(`CreateDatabaseRegistration(createDatabaseRegistrationOptions *CreateDatabaseRegistrationOptions)`, func() {
-			databaseCatalogPrototypeModel := &watsonxdatav2.DatabaseCatalogPrototype{
+			databaseCatalogModel := &watsonxdatav2.DatabaseCatalog{
 				CatalogName: core.StringPtr("sampleCatalog"),
+				CatalogTags: []string{"catalog_tag_1", "catalog_tag_2"},
 				CatalogType: core.StringPtr("iceberg"),
 			}
 
 			databaseDetailsModel := &watsonxdatav2.DatabaseDetails{
 				AuthenticationType: core.StringPtr("LDAP"),
-				AuthenticationValue: core.StringPtr("LDAP"),
 				BrokerAuthenticationPassword: core.StringPtr("samplepassword"),
 				BrokerAuthenticationType: core.StringPtr("PASSWORD"),
 				BrokerAuthenticationUser: core.StringPtr("sampleuser"),
-				BrokerHost: core.StringPtr("samplehost"),
-				BrokerPort: core.Int64Ptr(int64(4553)),
-				Certificate: core.StringPtr("exampleCertificate"),
-				CertificateExtension: core.StringPtr("pem"),
+				Certificate: core.StringPtr("contents of a pem/crt file"),
+				CertificateExtension: core.StringPtr("pem/crt"),
 				ConnectionMethod: core.StringPtr("basic, apikey"),
 				ConnectionMode: core.StringPtr("service_name"),
 				ConnectionModeValue: core.StringPtr("orclpdb"),
@@ -391,12 +347,10 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				ControllerAuthenticationPassword: core.StringPtr("samplepassword"),
 				ControllerAuthenticationType: core.StringPtr("PASSWORD"),
 				ControllerAuthenticationUser: core.StringPtr("sampleuser"),
-				CoordinatorHost: core.StringPtr("samplehost"),
-				CoordinatorPort: core.Int64Ptr(int64(4553)),
 				CpdHostname: core.StringPtr("samplecpdhostname"),
 				CredentialsKey: core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......"),
 				DatabaseName: core.StringPtr("new_database"),
-				Hostname: core.StringPtr("http://db2@localhost:9900.com"),
+				Hostname: core.StringPtr("db2@<hostname>.com"),
 				HostnameInCertificate: core.StringPtr("samplehostname"),
 				Hosts: core.StringPtr("abc.com:1234,xyz.com:4321"),
 				InformixServer: core.StringPtr("ol_informix1410"),
@@ -404,9 +358,6 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				Port: core.Int64Ptr(int64(4553)),
 				ProjectID: core.StringPtr("conops-bigquery"),
 				Sasl: core.BoolPtr(true),
-				SaslMechanism: core.StringPtr("plain"),
-				SchemaName: core.StringPtr("sampleSchema"),
-				Schemas: core.StringPtr("redis__name"),
 				ServiceApiKey: core.StringPtr("sampleapikey"),
 				ServiceHostname: core.StringPtr("api.dataplatform.dev.cloud.ibm.com"),
 				ServicePassword: core.StringPtr("samplepassword"),
@@ -415,11 +366,10 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				ServiceTokenURL: core.StringPtr("sampletoakenurl"),
 				ServiceUsername: core.StringPtr("sampleusername"),
 				Ssl: core.BoolPtr(true),
-				Tables: core.StringPtr("kafka_table_name, redis_table_name"),
+				Tables: core.StringPtr("kafka_table_name"),
 				Username: core.StringPtr("sampleuser"),
 				ValidateServerCertificate: core.BoolPtr(true),
 				VerifyHostName: core.BoolPtr(true),
-				WarehouseName: core.StringPtr("samplewrehouse"),
 			}
 
 			databaseRegistrationPrototypeDatabasePropertiesItemsModel := &watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{
@@ -431,7 +381,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			createDatabaseRegistrationOptions := &watsonxdatav2.CreateDatabaseRegistrationOptions{
 				DatabaseDisplayName: core.StringPtr("new_database"),
 				DatabaseType: core.StringPtr("db2"),
-				AssociatedCatalog: databaseCatalogPrototypeModel,
+				AssociatedCatalog: databaseCatalogModel,
 				CreatedOn: core.StringPtr("1686792721"),
 				DatabaseDetails: databaseDetailsModel,
 				DatabaseProperties: []watsonxdatav2.DatabaseRegistrationPrototypeDatabasePropertiesItems{*databaseRegistrationPrototypeDatabasePropertiesItemsModel},
@@ -469,38 +419,15 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			shouldSkipTest()
 		})
 		It(`UpdateDatabase(updateDatabaseOptions *UpdateDatabaseOptions)`, func() {
-			databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel := &watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{
-				Encrypt: core.BoolPtr(true),
-				Key: core.StringPtr("abc"),
-				Value: core.StringPtr("xyz"),
-			}
-
 			databaseRegistrationPatchDatabaseDetailsModel := &watsonxdatav2.DatabaseRegistrationPatchDatabaseDetails{
-				AuthenticationValue: core.StringPtr("LDAP"),
-				BrokerAuthenticationPassword: core.StringPtr("samplepassword"),
-				BrokerAuthenticationType: core.StringPtr("PASSWORD"),
-				BrokerAuthenticationUser: core.StringPtr("sampleuser"),
-				ControllerAuthenticationPassword: core.StringPtr("samplepassword"),
-				ControllerAuthenticationType: core.StringPtr("PASSWORD"),
-				ControllerAuthenticationUser: core.StringPtr("sampleuser"),
-				CredentialsKey: core.StringPtr("eyJ0eXBlIjoic2VydmljZV9hY2NvdW50IiwicHJvamVjdF9pZCI6ImNvbm9wcy1iaWdxdWVyeSIsInByaXZhdGVfa2V5X2lkIjoiMGY3......"),
-				DatabaseProperties: []watsonxdatav2.DatabaseRegistrationPatchDatabaseDetailsDatabasePropertiesItems{*databaseRegistrationPatchDatabaseDetailsDatabasePropertiesItemsModel},
 				Password: core.StringPtr("samplepassword"),
 				Username: core.StringPtr("sampleuser"),
-			}
-
-			databaseRegistrationPatchTablesItemsModel := &watsonxdatav2.DatabaseRegistrationPatchTablesItems{
-				CreatedOn: core.StringPtr("1686792721"),
-				FileContents: core.StringPtr("sample file content"),
-				FileName: core.StringPtr("test.json"),
-				SchemaName: core.StringPtr("customer"),
-				TableName: core.StringPtr("customer"),
 			}
 
 			databaseRegistrationPatchTopicsItemsModel := &watsonxdatav2.DatabaseRegistrationPatchTopicsItems{
 				CreatedOn: core.StringPtr("1686792721"),
 				FileContents: core.StringPtr("sample file contents"),
-				FileName: core.StringPtr("test.json"),
+				FileName: core.StringPtr("sample file name"),
 				TopicName: core.StringPtr("customer"),
 			}
 
@@ -508,7 +435,6 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				DatabaseDetails: databaseRegistrationPatchDatabaseDetailsModel,
 				DatabaseDisplayName: core.StringPtr("new_database"),
 				Description: core.StringPtr("External database description"),
-				Tables: []watsonxdatav2.DatabaseRegistrationPatchTablesItems{*databaseRegistrationPatchTablesItemsModel},
 				Tags: []string{"testdatabase", "userdatabase"},
 				Topics: []watsonxdatav2.DatabaseRegistrationPatchTopicsItems{*databaseRegistrationPatchTopicsItemsModel},
 			}
@@ -528,23 +454,64 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		})
 	})
 
-	Describe(`GenerateEngineDump - Generate heat or thread dump specific to presto worker or coordinator`, func() {
+	Describe(`ListDriverRegistration - Get drivers`, func() {
 		BeforeEach(func() {
 			shouldSkipTest()
 		})
-		It(`GenerateEngineDump(generateEngineDumpOptions *GenerateEngineDumpOptions)`, func() {
-			generateEngineDumpOptions := &watsonxdatav2.GenerateEngineDumpOptions{
-				DumpFileName: core.StringPtr("prestodump"),
-				DumpType: core.StringPtr("heat"),
-				EngineID: core.StringPtr("presto-123"),
-				PodName: core.StringPtr("presto"),
+		It(`ListDriverRegistration(listDriverRegistrationOptions *ListDriverRegistrationOptions)`, func() {
+			listDriverRegistrationOptions := &watsonxdatav2.ListDriverRegistrationOptions{
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
-			generateEngineDumpOkBody, response, err := watsonxDataService.GenerateEngineDump(generateEngineDumpOptions)
+			driverRegistrationCollection, response, err := watsonxDataService.ListDriverRegistration(listDriverRegistrationOptions)
 			Expect(err).To(BeNil())
 			Expect(response.StatusCode).To(Equal(200))
-			Expect(generateEngineDumpOkBody).ToNot(BeNil())
+			Expect(driverRegistrationCollection).ToNot(BeNil())
+		})
+	})
+
+	Describe(`CreateDriverRegistration - Register driver`, func() {
+		BeforeEach(func() {
+			shouldSkipTest()
+		})
+		It(`CreateDriverRegistration(createDriverRegistrationOptions *CreateDriverRegistrationOptions)`, func() {
+			createDriverRegistrationOptions := &watsonxdatav2.CreateDriverRegistrationOptions{
+				Driver: CreateMockReader("This is a mock file."),
+				DriverName: core.StringPtr("testString"),
+				ConnectionType: core.StringPtr("testString"),
+				DriverContentType: core.StringPtr("testString"),
+				Version: core.StringPtr("testString"),
+				AuthInstanceID: core.StringPtr("testString"),
+			}
+
+			driverRegistration, response, err := watsonxDataService.CreateDriverRegistration(createDriverRegistrationOptions)
+			Expect(err).To(BeNil())
+			Expect(response.StatusCode).To(Equal(201))
+			Expect(driverRegistration).ToNot(BeNil())
+		})
+	})
+
+	Describe(`UpdateDriverEngines - Associate engines to driver`, func() {
+		BeforeEach(func() {
+			shouldSkipTest()
+		})
+		It(`UpdateDriverEngines(updateDriverEnginesOptions *UpdateDriverEnginesOptions)`, func() {
+			driverRegistrationEnginePrototypeModel := &watsonxdatav2.DriverRegistrationEnginePrototype{
+				Engines: []string{"testString"},
+			}
+			driverRegistrationEnginePrototypeModelAsPatch, asPatchErr := driverRegistrationEnginePrototypeModel.AsPatch()
+			Expect(asPatchErr).To(BeNil())
+
+			updateDriverEnginesOptions := &watsonxdatav2.UpdateDriverEnginesOptions{
+				DriverID: core.StringPtr("testString"),
+				Body: driverRegistrationEnginePrototypeModelAsPatch,
+				AuthInstanceID: core.StringPtr("testString"),
+			}
+
+			driverRegistrationEngine, response, err := watsonxDataService.UpdateDriverEngines(updateDriverEnginesOptions)
+			Expect(err).To(BeNil())
+			Expect(response.StatusCode).To(Equal(200))
+			Expect(driverRegistrationEngine).ToNot(BeNil())
 		})
 	})
 
@@ -1103,7 +1070,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		It(`CreatePrestissimoEngineCatalogs(createPrestissimoEngineCatalogsOptions *CreatePrestissimoEngineCatalogsOptions)`, func() {
 			createPrestissimoEngineCatalogsOptions := &watsonxdatav2.CreatePrestissimoEngineCatalogsOptions{
 				EngineID: core.StringPtr("testString"),
-				CatalogNames: core.StringPtr("testString"),
+				CatalogName: core.StringPtr("testString"),
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -1442,7 +1409,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		It(`CreatePrestoEngineCatalogs(createPrestoEngineCatalogsOptions *CreatePrestoEngineCatalogsOptions)`, func() {
 			createPrestoEngineCatalogsOptions := &watsonxdatav2.CreatePrestoEngineCatalogsOptions{
 				EngineID: core.StringPtr("testString"),
-				CatalogNames: core.StringPtr("testString"),
+				CatalogName: core.StringPtr("testString"),
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -1567,7 +1534,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		})
 		It(`ScalePrestoEngine(scalePrestoEngineOptions *ScalePrestoEngineOptions)`, func() {
 			nodeDescriptionModel := &watsonxdatav2.NodeDescription{
-				NodeType: core.StringPtr("worker"),
+				NodeType: core.StringPtr("starter"),
 				Quantity: core.Int64Ptr(int64(38)),
 			}
 
@@ -2194,7 +2161,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		It(`CreateSparkEngineCatalogs(createSparkEngineCatalogsOptions *CreateSparkEngineCatalogsOptions)`, func() {
 			createSparkEngineCatalogsOptions := &watsonxdatav2.CreateSparkEngineCatalogsOptions{
 				EngineID: core.StringPtr("testString"),
-				CatalogNames: core.StringPtr("testString"),
+				CatalogName: core.StringPtr("testString"),
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -2500,8 +2467,8 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				Comment: core.StringPtr("expenses column"),
 				Extra: core.StringPtr("varchar"),
 				Length: core.StringPtr("30"),
-				Precision: core.StringPtr("10"),
 				Scale: core.StringPtr("2"),
+				Precision: core.StringPtr("10"),
 				Type: core.StringPtr("varchar"),
 			}
 
@@ -2643,17 +2610,8 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 				ServiceDisplayName: core.StringPtr("sampleService"),
 				BucketType: core.StringPtr("Sample bucket type"),
 				Description: core.StringPtr("milvus service for running sql queries"),
-				IndexType: core.StringPtr("FLAT"),
-				IwCpu: core.Int64Ptr(int64(1)),
-				IwMemory: core.Int64Ptr(int64(1)),
-				IwReplicas: core.Int64Ptr(int64(1)),
-				ManagedBy: core.StringPtr("customer"),
-				QwCpu: core.Int64Ptr(int64(1)),
-				QwMemory: core.Int64Ptr(int64(1)),
-				QwReplicas: core.Int64Ptr(int64(1)),
 				Tags: []string{"tag1", "tag2"},
 				TshirtSize: core.StringPtr("small"),
-				VectorDimension: core.Int64Ptr(int64(384)),
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -2810,16 +2768,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		It(`CreateMilvusServiceScale(createMilvusServiceScaleOptions *CreateMilvusServiceScaleOptions)`, func() {
 			createMilvusServiceScaleOptions := &watsonxdatav2.CreateMilvusServiceScaleOptions{
 				ServiceID: core.StringPtr("testString"),
-				TshirtSize: core.StringPtr("testString"),
-				IndexType: core.StringPtr("FLAT"),
-				IwCpu: core.Int64Ptr(int64(1)),
-				IwMemory: core.Int64Ptr(int64(1)),
-				IwReplicas: core.Int64Ptr(int64(1)),
-				MilvusName: core.StringPtr("milvus123"),
-				QwCpu: core.Int64Ptr(int64(1)),
-				QwMemory: core.Int64Ptr(int64(1)),
-				QwReplicas: core.Int64Ptr(int64(1)),
-				VectorDimension: core.Int64Ptr(int64(384)),
+				TshirtSize: core.StringPtr("small"),
 				AuthInstanceID: core.StringPtr("testString"),
 			}
 
@@ -3008,7 +2957,7 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 		})
 	})
 
-	Describe(`GetEndpoints - Get CPG and CAS endpoints`, func() {
+	Describe(`GetEndpoints - Get CPG and DAS endpoints`, func() {
 		BeforeEach(func() {
 			shouldSkipTest()
 		})
@@ -3021,45 +2970,6 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			Expect(err).To(BeNil())
 			Expect(response.StatusCode).To(Equal(200))
 			Expect(endpointCollection).ToNot(BeNil())
-		})
-	})
-
-	Describe(`RegisterTable - Register table`, func() {
-		BeforeEach(func() {
-			shouldSkipTest()
-		})
-		It(`RegisterTable(registerTableOptions *RegisterTableOptions)`, func() {
-			registerTableOptions := &watsonxdatav2.RegisterTableOptions{
-				CatalogID: core.StringPtr("testString"),
-				SchemaID: core.StringPtr("testString"),
-				MetadataLocation: core.StringPtr("s3a://bucketname/path/to/table/metadata_location/_delta_log"),
-				TableName: core.StringPtr("table1"),
-				AuthInstanceID: core.StringPtr("testString"),
-			}
-
-			registerTableCreatedBody, response, err := watsonxDataService.RegisterTable(registerTableOptions)
-			Expect(err).To(BeNil())
-			Expect(response.StatusCode).To(Equal(201))
-			Expect(registerTableCreatedBody).ToNot(BeNil())
-		})
-	})
-
-	Describe(`LoadTable - Load table metadata`, func() {
-		BeforeEach(func() {
-			shouldSkipTest()
-		})
-		It(`LoadTable(loadTableOptions *LoadTableOptions)`, func() {
-			loadTableOptions := &watsonxdatav2.LoadTableOptions{
-				CatalogID: core.StringPtr("testString"),
-				SchemaID: core.StringPtr("testString"),
-				TableID: core.StringPtr("testString"),
-				AuthInstanceID: core.StringPtr("testString"),
-			}
-
-			loadTableResponse, response, err := watsonxDataService.LoadTable(loadTableOptions)
-			Expect(err).To(BeNil())
-			Expect(response.StatusCode).To(Equal(200))
-			Expect(loadTableResponse).ToNot(BeNil())
 		})
 	})
 
@@ -3197,6 +3107,39 @@ var _ = Describe(`WatsonxDataV2 Integration Tests`, func() {
 			}
 
 			response, err := watsonxDataService.DeleteDatabaseCatalog(deleteDatabaseCatalogOptions)
+			Expect(err).To(BeNil())
+			Expect(response.StatusCode).To(Equal(204))
+		})
+	})
+
+	Describe(`DeleteDriverRegistration - Delete driver`, func() {
+		BeforeEach(func() {
+			shouldSkipTest()
+		})
+		It(`DeleteDriverRegistration(deleteDriverRegistrationOptions *DeleteDriverRegistrationOptions)`, func() {
+			deleteDriverRegistrationOptions := &watsonxdatav2.DeleteDriverRegistrationOptions{
+				DriverID: core.StringPtr("testString"),
+				AuthInstanceID: core.StringPtr("testString"),
+			}
+
+			response, err := watsonxDataService.DeleteDriverRegistration(deleteDriverRegistrationOptions)
+			Expect(err).To(BeNil())
+			Expect(response.StatusCode).To(Equal(204))
+		})
+	})
+
+	Describe(`DeleteDriverEngines - Disassociate engines from driver`, func() {
+		BeforeEach(func() {
+			shouldSkipTest()
+		})
+		It(`DeleteDriverEngines(deleteDriverEnginesOptions *DeleteDriverEnginesOptions)`, func() {
+			deleteDriverEnginesOptions := &watsonxdatav2.DeleteDriverEnginesOptions{
+				DriverID: core.StringPtr("testString"),
+				EngineIds: core.StringPtr("testString"),
+				AuthInstanceID: core.StringPtr("testString"),
+			}
+
+			response, err := watsonxDataService.DeleteDriverEngines(deleteDriverEnginesOptions)
 			Expect(err).To(BeNil())
 			Expect(response.StatusCode).To(Equal(204))
 		})
