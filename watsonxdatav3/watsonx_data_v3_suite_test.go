@@ -1,5 +1,5 @@
 /**
- * (C) Copyright IBM Corp. 2025.
+ * (C) Copyright IBM Corp. 2026.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package watsonxdatav2_test
+package watsonxdatav3_test
 
 import (
 	"testing"
@@ -23,7 +23,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestWatsonxDataV2(t *testing.T) {
+func TestWatsonxDataV3(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "WatsonxDataV2 Suite")
+	RunSpecs(t, "WatsonxDataV3 Suite")
 }
